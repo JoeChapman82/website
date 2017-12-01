@@ -15,7 +15,7 @@ const gulpConfig = {
         scss: `${__dirname}/dev/scss/**/*.scss`,
         scssDest: `${__dirname}/app/static/css`,
         js: `${__dirname}/dev/scripts/**/*.js`,
-        jsDest: `${__dirname}/app/statis/scripts`,
+        jsDest: `${__dirname}/app/static/scripts`,
         nunjucks: `${__dirname}/app/views/**/*.njk`,
     }
 };

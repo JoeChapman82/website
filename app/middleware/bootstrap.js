@@ -8,11 +8,14 @@ const helmet = require('helmet');
 const csrf = require('csurf');
 const express = require('express');
 
+const config = require('../config/main');
+
 module.exports = (app) => {
 
     app.set('trust proxy', 1);
     app.use(helmet());
-    // app.use(favicon(path.join(__dirname, '../assets/images/', 'favicon.ico')));
+    // dealt with by nginx now
+    app.use(favicon(path.join(__dirname, '../static/images/', 'favicon.ico')));
     app.use(express.static(path.join(__dirname, '../static/')));
 
     // Set nunjucks as templating engine and set default path for templates
@@ -29,6 +32,22 @@ module.exports = (app) => {
 
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded( {extended : false} ));
+
+    app.use(csrf({cookie: {maxAge: config.csrfLifespan, httpOnly: true, signed: true, secure: true}}));
+
+    app.use((req, res, next) => {
+        res.locals._csrf = req.csrfToken();
+        next();
+    });
+
+    app.use((err, req, res, next) => {
+        if (err.code !== 'EBADCSRFTOKEN') {
+            return next(err);
+        }
+            res.clearCookie('_csrf');
+            res.status(403);
+            res.redirect('/');
+    });
 
     return app;
 };

@@ -6,4 +6,4 @@ node_modules/*
 .snyk
 .nyc_output
 .sass-lint.yml
-.elasticbeanstalk/*
+build.sh

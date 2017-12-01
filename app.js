@@ -2,40 +2,44 @@ if(process.NODE_ENV !== 'production') {
     require('dotenv').config();
 }
 
-// Include the cluster module
-var cluster = require('cluster');
-// Code to run if we're in the master process
-if (cluster.isMaster) {
-    // Count the machine's CPUs
-    var cpuCount = require('os').cpus().length;
-    // Create a worker for each CPU
-    for (var i = 0; i < cpuCount; i += 1) {
-        cluster.fork();
-    }
-    // Listen for terminating workers
-    cluster.on('exit', function (worker) {
-        // Replace the terminated workers
-        console.log('Worker ' + worker.id + ' died :(');
-        cluster.fork();
-    });
-// Code to run if we're in a worker process
-} else {
-    const bootstrap = require('./app/middleware/bootstrap');
-    var AWS = require('aws-sdk');
-    var express = require('express');
-    AWS.config.region = process.env.REGION;
-    var app = express();
-    bootstrap(app);
+const path = require('path');
+const AWS = require('aws-sdk');
+const cluster = require('cluster');
+const express = require('express');
+const https = require('https');
+const fs = require('fs');
+const tutorial = express.Router();
+const api = express.Router();
 
-    // var sns = new AWS.SNS();
-    // var ddb = new AWS.DynamoDB();
-    app.get('/', function(req, res) {
-        res.render('index');
-    });
+const port = process.env.PORT || 3000;
+const environment = process.env.NODE_ENV || 'production';
 
-    var port = process.env.PORT || 3000;
+const bootstrap = require('./app/middleware/bootstrap');
+const baseRoutes = require('./app/routes/base');
+const apiRoutes = require('./app/routes/api');
+const tutorialRoutes = require('./app/routes/tutorials');
+const coverallRoutes = require('./app/routes/coverall');
+const errorHandler = require('./app/middleware/errorHandler');
 
-    var server = app.listen(port, function () {
-        console.log('Server running at http://127.0.0.1:' + port + '/');
-    });
-}
+const options = {
+  key: fs.readFileSync(path.join(__dirname, `app/etc/certs/${environment}.key`)),
+  cert: fs.readFileSync(path.join(__dirname, `app/etc/certs/${environment}.crt`)),
+};
+
+AWS.config.region = process.env.REGION;
+var app = express();
+bootstrap(app);
+
+app.use('/api', api);
+app.use('/tutorials', tutorial);
+
+baseRoutes(app);
+apiRoutes(api);
+tutorialRoutes(tutorial);
+coverallRoutes(app);
+
+app.use(errorHandler);
+
+https.createServer(options, app).listen(port, () => {
+    console.log(`server listening on port ${port} in ${process.env.NODE_ENV} mode`);
+});
