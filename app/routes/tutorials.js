@@ -1,4 +1,6 @@
-module.exports = (app) => {
-    app.get('/', (req, res) => res.status(200).send('Tutorial routes'));
-    return app;
+const tutorialsController = require('../controllers/tutorialsController');
+
+module.exports = (tutorials) => {
+    tutorials.get('/', tutorialsController.index);
+    return tutorials;
 };

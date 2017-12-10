@@ -1,4 +1,6 @@
-module.exports = (app) => {
-    app.get('/', (req, res) => res.status(200).send('Api routes'));
-    return app;
+const apisController = require('../controllers/apisController');
+
+module.exports = (apis) => {
+    apis.get('/', apisController.index);
+    return apis;
 };

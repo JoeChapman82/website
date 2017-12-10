@@ -9,6 +9,7 @@ const csrf = require('csurf');
 const express = require('express');
 
 const config = require('../config/main');
+const defineActiveView = require('./defineActiveView');
 
 module.exports = (app) => {
 
@@ -45,9 +46,12 @@ module.exports = (app) => {
             return next(err);
         }
             res.clearCookie('_csrf');
-            res.status(403);
-            res.redirect('/');
+            res.send(err);
+            // res.status(403);
+            // res.redirect('/');
     });
+
+    app.use(defineActiveView);
 
     return app;
 };

@@ -1,0 +1,73 @@
+.topnav {
+    background-color: $slate-grey;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    font-family: fantasy;
+    z-index: 200;
+    position: fixed;
+
+}
+
+.topnav-main-link {
+    color: $white;
+    text-decoration: none;
+    padding: .3rem 2rem;
+    font-size: 1.5rem;
+}
+
+.topnav-primary-list li {
+    display: inline-block;
+    position: relative;
+    padding: 1rem 0 .6rem;
+    vertical-align: middle;
+}
+
+.topnav-sub-list {
+    position: absolute;
+    display: none;
+    list-style: none;
+    padding: 1rem 2rem 1rem .75rem;
+    background-color: $slate-grey;
+    width: 100%;
+    text-align: left;
+}
+
+.topnav-primary-list li:hover ul {
+    display: block;
+}
+
+.topnav-primary-list li:hover ul li {
+    display: block;
+}
+
+.topnav-sub-link {
+    color: $white;
+    text-decoration: none;
+}
+
+.topnav-sub-list li {
+    padding: 1rem;
+}
+
+.topnav-sub-list li:hover {
+    background-color: $white;
+}
+
+.topnav-sub-list li:hover a {
+    color: $black;
+}
+
+.topnav-active {
+    border-top: 5px solid $white;
+}
+
+.home-link {
+    float: left;
+    padding: 1rem;
+    background-image: url('../icons/home.svg');
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 2.2rem;
+    margin-left: 1rem;
+}

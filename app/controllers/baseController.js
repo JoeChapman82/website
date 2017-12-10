@@ -1,5 +1,7 @@
 const renderBase = require('./renders/renderBase');
+const selectRandomCanvas = require('../middleware/selectRandomCanvas');
 
 module.exports = {
-    index: [renderBase.index]
+    index: [renderBase.index],
+    random: [selectRandomCanvas, renderBase.random]
 };

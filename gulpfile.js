@@ -72,7 +72,11 @@ gulp.task('browserSync', () => {
         forms: false,
         scroll: false
     },
-    open: false
+    open: false,
+    https: {
+    key: './app/etc/certs/local.key',
+    cert: './app/etc/certs/local.crt'
+}
     });
 });
 

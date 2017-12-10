@@ -1,0 +1,53 @@
+.homepage-button-wrapper {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+.homepage-button {
+    display: inline-block;
+    text-align: center;
+    padding: .5rem 1.5rem;
+    width: 12vw;
+    font-weight: bold;
+    font-size: calc(12px + 1.5vw);
+    text-shadow: 1px 1px $black;
+    margin-right: 3.2rem;
+    margin-bottom: 2rem;
+    color: #007ba7;
+    background-color: #9c9fd2;
+    border-radius: 0;
+    border: 0;
+    box-shadow: 3px 3px 3px #00f;
+    transition: background-color .2s ease;
+    text-decoration: none;
+}
+
+.homepage-button:hover {
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, .6);
+}
+
+.homepage-button:active {
+    box-shadow: 1px 1px 1px #00f;
+}
+
+@media screen and(max-width: 900px) {
+    .homepage-button {
+        width: 25vw;
+    }
+}
+
+@media screen and(max-width: 600px) {
+    .homepage-button-wrapper {
+        text-align: center;
+        left: 0;
+    }
+    .homepage-button {
+        width: 60vw;
+        margin-right: 0;
+        margin-left: 0;
+    }
+}

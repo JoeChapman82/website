@@ -1,12 +1,18 @@
 {% extends 'nunjucks/templates/base.njk' %}
 
 {% block title %}Home{% endblock %}
-{% block body_class %}dark-bg{% endblock %}
 
 {% block body %}
-    <div class="dark-bg">
+    <div>
         <div class="full-screen-canvas-wrapper">
-            <canvas id="starryNightCanvas" class="layered-full-screen-canvas" width="300" height="300"></canvas>
+            <canvas id="timescapeBackgroundCanvas" class="layered-full-screen-canvas" width="300" height="300"></canvas>
+            <canvas id="timescapeForegroundCanvas" class="layered-full-screen-canvas" width="300" height="300"></canvas>
+        </div>
+        <div class="homepage-button-wrapper">
+            <a id="homeScreenButton1" href="/tutorials" class="homepage-button" name="button">Tutorials</a>
+            <a id="homeScreenButton2" href="/games" class="homepage-button" name="button">Games</a>
+            <a id="homeScreenButton3" href="/apis" class="homepage-button" name="button">API's</a>
+            <a id="homeScreenButton4" href="/about" class="homepage-button" name="button">About</a>
         </div>
     </div>
 {% endblock %}

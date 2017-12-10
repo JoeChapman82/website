@@ -1,5 +1,9 @@
 @import 'variables/colours';
-@import 'reset';
-@import 'base';
-@import 'coming-soon';
-@import 'canvas';
+@import 'base/reset';
+@import 'base/base';
+@import 'base/helpers';
+@import 'base/canvas';
+@import 'base/buttons';
+@import 'base/wrappers';
+@import 'base/sections';
+@import 'base/navigation';
