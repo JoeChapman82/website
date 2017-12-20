@@ -1,7 +1,7 @@
 <nav class=topnav>
     <a class="home-link" href="/">&nbsp;</a>
     <ul class="topnav-primary-list">
-        <li>
+        <li class="desktop-primary-list">
             <a class="topnav-main-link {% if activeView === 'tutorials' %}topnav-active{% endif %}"href="/tutorials">Tutorials</a>
             <ul class="topnav-sub-list">
                 <li><a class="topnav-sub-link" href="#">Test 1</a></li>
@@ -11,17 +11,14 @@
                 <li><a class="topnav-sub-link" href="#">Test 5</a></li>
             </ul>
         </li>
-        <li>
+        <li class="desktop-primary-list">
             <a class="topnav-main-link {% if activeView === 'games' %}topnav-active{% endif %}"href="/games">Games</a>
             <ul class="topnav-sub-list">
-                <li><a class="topnav-sub-link" href="#">Test 1</a></li>
-                <li><a class="topnav-sub-link" href="#">Test 2</a></li>
-                <li><a class="topnav-sub-link" href="#">Test 3</a></li>
-                <li><a class="topnav-sub-link" href="#">Test 4</a></li>
-                <li><a class="topnav-sub-link" href="#">Test 5</a></li>
+                <li><a class="topnav-sub-link" href="/games/action">Action</a></li>
+                <li><a class="topnav-sub-link" href="/games/classics">Classics</a></li>
             </ul>
         </li>
-        <li>
+        <li class="desktop-primary-list">
             <a class="topnav-main-link {% if activeView === 'apis' %}topnav-active{% endif %}"href="/apis">Api's</a>
             <ul class="topnav-sub-list">
                 <li><a class="topnav-sub-link" href="#">Test 1</a></li>
@@ -31,15 +28,16 @@
                 <li><a class="topnav-sub-link" href="#">Test 5</a></li>
             </ul>
         </li>
-        <li>
+        <li class="desktop-primary-list">
             <a class="topnav-main-link {% if activeView === 'about' %}topnav-active{% endif %}"href="/about">About</a>
             <ul class="topnav-sub-list">
-                <li><a class="topnav-sub-link" href="#">Test 1</a></li>
-                <li><a class="topnav-sub-link" href="#">Test 2</a></li>
-                <li><a class="topnav-sub-link" href="#">Test 3</a></li>
-                <li><a class="topnav-sub-link" href="#">Test 4</a></li>
-                <li><a class="topnav-sub-link" href="#">Test 5</a></li>
+                <li><a class="topnav-sub-link" href="/about/site">About the site</a></li>
+                <li><a class="topnav-sub-link" href="/about/me">About me</a></li>
+                <li><a class="topnav-sub-link" href="/about/cv">My CV</a></li>
             </ul>
+        </li>
+        <li class="mobile-primary-list">
+            <a class="mobile-hamburger-menu" href="/">&nbsp;</a>
         </li>
     </ul>
 </nav>

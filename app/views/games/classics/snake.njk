@@ -1,0 +1,68 @@
+{% extends 'nunjucks/templates/base.njk' %}
+
+{% block title %}Snake{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="/css/games.css">
+{% endblock %}
+
+{% block body %}
+{% include 'nunjucks/partials/topnav.njk' %}
+    <div class="full-screen-canvas-wrapper">
+        <canvas id="snakeCanvas" class="layered-game-screen-canvas" width="300" height="300"></canvas>
+    </div>
+    <div id="titleScreenUi" class="game-screen-ui">
+        <div class="snake-main-title-wrapper">
+                <h1 class="snake-main-title">Snake</h1>
+        </div>
+        <div class="snake-flex-wrapper">
+            <button id="playButton" class="snake-button title-screen-button change-screen-button" type="button" name="button" data-screen="gameScreen">PLAY</button>
+            <button id="settingsButton" class="snake-button title-screen-button change-screen-button" type="button" name="button" data-screen="settingsScreen">SETTINGS</button>
+            <button id="howToButton" class="snake-button title-screen-button change-screen-button" type="button" name="button" data-screen="howToScreen">HOW TO PLAY</button>
+        </div>
+    </div>
+
+    <div id="settingsScreenUi" class="game-screen-ui js-hidden">
+        <div class="snake-settings-wrapper">
+            <div class="">
+                <h1 class="snake-h1">Difficulty</h1>
+                <button id="difficultyEasy" class="snake-button title-screen-button change-difficulty-button change-screen-button" type="button" name="button" data-difficulty="easy" data-screen="titleScreen">EASY</button>
+                <button id="difficultyMedium" class="snake-button title-screen-button change-difficulty-button change-screen-button" type="button" name="button" data-difficulty="medium" data-screen="titleScreen">MEDIUM</button>
+                <button id="difficultyHard" class="snake-button title-screen-button change-difficulty-button change-screen-button" type="button" name="button" data-difficulty="hard" data-screen="titleScreen">HARD</button>
+            </div>
+
+            <button id="settingsReturn" class="snake-button title-screen-button change-screen-button" type="button" name="button" data-screen="titleScreen">RETURN TO TITLE</button>
+        </div>
+    </div>
+
+    <div id="howToScreenUi" class="game-screen-ui js-hidden">
+        <div class="snake-how-to-wrapper">
+            <h1 class="snake-h1">How to play</h1>
+            <h2 class="snake-h2">Gameplay</h2>
+            <p class="snake-p">Move the snake around the board collecting apples. Take care not to bump into the sides or your own tail.
+            The faster you collect the apples. The more points you are awarded.</p>
+            <h3 class="snake-h3">Keyboard Controls</h3>
+            <p class="snake-p">Use the up, down, left and right arrows to change the direction the snake is moving in.</p>
+            <h3 class="snake-h3">Touch Controls</h3>
+            <p class="snake-p">Touch the right hand side of the screen to rotate clockwise. Touch the left hand side of the screen to rotate counter-clockwise.</p>
+            <button id="howToReturn" class="snake-button title-screen-button change-screen-button" type="button" name="button" data-screen="titleScreen">RETURN TO TITLE</button>
+        </div>
+    </div>
+
+    <div id="gameScreenUi" class="game-screen-ui js-hidden">
+        <div class="snake-flex-wrapper">
+
+        </div>
+    </div>
+
+    <div id="gameOverScreenUi" class="game-screen-ui js-hidden">
+        <div class="snake-flex-wrapper snake-flex-game-over-wrapper">
+            <button id="gameOverReturn" class="snake-button title-screen-button change-screen-button" type="button" name="button" data-screen="titleScreen">RETURN TO TITLE</button>
+            <button id="playAgain" class="snake-button title-screen-button change-screen-button" type="button" name="button" data-screen="gameScreen">PLAY AGAIN</button>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block scripts %}
+    <script type="text/javascript" src="/scripts/games/classics/snake.js"></script>
+{% endblock %}

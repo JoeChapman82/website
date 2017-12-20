@@ -1,0 +1,39 @@
+.homepage-button-wrapper {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+.random-canvas-controls {
+    position: absolute;
+    bottom: 25px;
+    right: 0;
+    box-sizing: border-box;
+    margin-right: 2vw;
+    border: 1px solid rgba(255, 255, 255, .8);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    background-color: rgba(222, 222, 222, .2);
+    z-index: 2;
+    padding: 1.5rem;
+}
+
+.random-canvas-control {
+    display: inline;
+}
+
+@media screen and(max-width: 1050px) {
+    .random-canvas-control {
+        display: block;
+    }
+}
+
+@media screen and(max-width: 600px) {
+    .homepage-button-wrapper {
+        left: 0;
+    }
+}

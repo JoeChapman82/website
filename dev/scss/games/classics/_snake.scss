@@ -1,0 +1,148 @@
+.snake-flex-wrapper {
+    box-sizing: border-box;
+    width: 100%;
+    height: calc(100vh - 50px);
+    margin-top: 50px;
+    border: 3px solid $green;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    position: relative;
+    z-index: 2;
+    align-items: center;
+    justify-content: center;
+};
+
+.snake-flex-game-over-wrapper {
+    box-sizing: border-box;
+    width: 100%;
+    height: calc(100vh - 50px);
+    margin-top: 50px;
+    border: 3px solid $green;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    position: relative;
+    z-index: 2;
+    align-items: center;
+    justify-content: center;
+    padding-top: 10vh;
+}
+
+.snake-how-to-wrapper {
+    box-sizing: border-box;
+    width: 100%;
+    height: calc(100vh - 50px);
+    margin-top: 50px;
+    border: 3px solid $green;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    position: relative;
+    z-index: 2;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Comic Sans MS', Arial;
+    padding: 5vmin 10vmin 0;
+}
+
+.snake-settings-wrapper {
+    box-sizing: border-box;
+    width: 100%;
+    height: calc(100vh - 50px);
+    margin-top: 50px;
+    border: 3px solid $green;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    position: relative;
+    z-index: 2;
+    align-items: space-around;
+    text-align: center;
+    justify-content: space-around;
+    font-family: 'Comic Sans MS', Arial;
+    padding: 5vmin 10vmin 0;
+}
+
+.snake-button {
+    min-width: 25%;
+    width: auto;
+    background-image: linear-gradient(to top, green 0%, lightgreen 100%);
+    border: 2px solid green;
+    border-radius: 5px;
+    font-family: 'Comic Sans MS', Arial;
+    margin: 2rem;
+    padding: 1rem;
+    font-size: 3.5vmin;
+    font-weight: bold;
+    transition: background-color .3s ease;
+}
+
+.snake-button:hover {
+    background-color: mix($white, $green, 85%);
+}
+
+.snake-h1 {
+    font-size: 7vmin;
+    color: $green;
+    margin-bottom: 3vmin;
+}
+
+.snake-h2 {
+    font-size: 5vmin;
+    margin-bottom: 2vmin;
+    color: $green;
+}
+
+.snake-h3 {
+    font-size: 5vmin;
+    margin-bottom: 2vmin;
+    color: $green;
+}
+
+.snake-p {
+    font-size: 3vmin;
+    margin-bottom: 4vmin;
+    color: $green;
+}
+
+.snake-main-title-wrapper {
+    box-sizing: border-box;
+    width: 100%;
+    text-align: center;
+}
+
+.snake-main-title {
+    position: absolute;
+    width: 50%;
+    top: 20vh;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    font-size: 20vmin;
+    font-family: 'Comic Sans MS', Arial;
+    color: $green;
+}
+
+@media screen and(max-width: 700px) {
+    .snake-flex-wrapper {
+        flex-direction: column;
+    }
+    .snake-button {
+        margin: 1rem;
+        font-size: 5vmin;
+        min-width: 75%;
+    }
+    .snake-flex-game-over-wrapper {
+        padding-bottom: 0;
+        border: 2px solid $green;
+
+    }
+    .snake-flex-wrapper {
+        border: 2px solid $green;
+    }
+    .snake-main-title {
+        display: none;
+        visibility: hidden;
+    }
+}

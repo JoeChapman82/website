@@ -1,0 +1,19 @@
+<button id="openButton" class="random-canvas-open-button js-hidden" type="button" name="button"></button>
+<div id="canvasControls" class="random-canvas-controls">
+    <fieldset>
+        <button id="closeButton" class="random-canvas-close-button" type="button" name="button">X</button>
+        {% for key, value in controls %}
+        {% if value.type === 'range' %}
+        <div class="random-canvas-control">
+            <label class="random-canvas-label" for="{{ key }}">{{ value.label }}</label>
+            <input id="{{ key }}" class="random-canvas-input random-range" type="range" name="{{ key }}" value="{{ value.default }}" min="{{ value.min }}" max="{{ value.max }}" {% if value.step %}step="{{ value.step }}"{% endif %}>
+        </div>
+        {% elif value.type === 'colour' %}
+            <div class="random-canvas-control">
+                <label class="random-canvas-label" for="{{ key }}">{{ value.label }}</label>
+                <input id="{{ key }}" class="random-canvas-input" type="color" name="{{ key }}" value="#ffffff">
+            </div>
+        {% endif %}
+        {% endfor %}
+    </fieldset>
+</div>

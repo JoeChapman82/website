@@ -2,7 +2,7 @@
 
 {% block title %}Games - home{% endblock %}
 {% block stylesheets %}
-    <link rel="stylesheet" href="/css/tutorials.css">
+    <link rel="stylesheet" href="/css/games.css">
 {% endblock %}
 
 {% block body %}
@@ -12,9 +12,13 @@
             <canvas id="lightningCanvas" class="layered-full-screen-canvas" width="300" height="300"></canvas>
             <canvas id="rainCanvas" class="layered-full-screen-canvas" width="300" height="300"></canvas>
         </div>
+        <div class="games-flex-wrapper-main">
+            <a class="games-main-link" href="/games/action">Action</a>
+            <a class="games-main-link" href="/games/classics">Classics</a>
+        </div>
     </div>
 {% endblock %}
 
 {% block scripts %}
-    <script type="text/javascript" src="/scripts/canvas/raining.js"></script>
+    {# <script type="text/javascript" src="/scripts/canvas/raining.js"></script> #}
 {% endblock %}

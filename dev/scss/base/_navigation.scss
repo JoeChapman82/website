@@ -4,9 +4,9 @@
     text-align: center;
     box-sizing: border-box;
     font-family: fantasy;
-    z-index: 200;
+    z-index: 5;
     position: fixed;
-
+    height: 50px;
 }
 
 .topnav-main-link {
@@ -23,13 +23,35 @@
     vertical-align: middle;
 }
 
+@media screen and(max-width: 625px) {
+    .topnav-main-link {
+        font-size: 1rem;
+    }
+}
+
+@media screen and(max-width: 550px) {
+    .topnav-primary-list li.desktop-primary-list {
+        display: none;
+    }
+}
+
+@media screen and(min-width: 550px) {
+    .topnav-primary-list li.mobile-primary-list {
+        display: none;
+    }
+}
+
+.mobile-primary-list {
+    float: right;
+}
+
 .topnav-sub-list {
     position: absolute;
     display: none;
     list-style: none;
-    padding: 1rem 2rem 1rem .75rem;
+    padding: 1rem 1rem 1rem .75rem;
     background-color: $slate-grey;
-    width: 100%;
+    width: 150%;
     text-align: left;
 }
 
@@ -51,7 +73,7 @@
 }
 
 .topnav-sub-list li:hover {
-    background-color: $white;
+    background-color: rgba(255, 255, 255, .8);
 }
 
 .topnav-sub-list li:hover a {
@@ -70,4 +92,59 @@
     background-position: 50% 50%;
     background-size: 2.2rem;
     margin-left: 1rem;
+}
+
+.mobile-hamburger-menu {
+    padding: 1rem;
+    background-image: url('../icons/menu.svg');
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 2.2rem;
+    margin-right: 1rem;
+}
+
+// Specific to /random
+.random-page-nav {
+    width: 100%;
+    box-sizing: border-box;
+    background-color: transparent;
+    position: fixed;
+    z-index: 1;
+    padding: .5rem 1rem;
+}
+
+.random-page-home {
+    float: left;
+    background-image: url('../icons/home.svg');
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    vertical-align: super;
+    padding: 1.2rem;
+    margin-top: .5rem;
+    background-size: 2.5rem;
+    transition: background-image .2s ease, background-size .2s ease;
+}
+
+.random-page-refresh {
+    float: right;
+    background-image: url('../icons/refresh.svg');
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    vertical-align: super;
+    padding: 1.2rem;
+    margin-top: .5rem;
+    background-size: 2.5rem;
+    transition: background-image .2s ease, background-size .2s ease;
+}
+
+.random-page-home:hover, {
+    background-image: url('../icons/home-hover.svg');
+    background-size: 2.3rem;
+}
+
+.random-page-refresh:hover, {
+    background-image: url('../icons/refresh-hover.svg');
+    background-size: 2.3rem;
 }

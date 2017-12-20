@@ -636,8 +636,8 @@ function addMouseListeners() {
 
 function addTouchListeners() {
     document.addEventListener('touchmove', getTouchPosition);
-    document.addEventListener('touchstart', touchDown);
-    document.addEventListener('touchEnd', touchUp);
+    canvas.addEventListener('touchstart', touchDown, false);
+    document.addEventListener('touchend', touchUp);
 }
 
 function getTouchPosition(e) {
@@ -648,7 +648,9 @@ function getTouchPosition(e) {
     mouse.y = touch.clientY - rect.top - root.scrollTop;
 }
 
-function touchDown() {
+function touchDown(e) {
+    e.preventDefault();
+    console.log(e);
     var touch = e.touches[0];
     var rect = canvas.getBoundingClientRect();
     var root = document.documentElement;

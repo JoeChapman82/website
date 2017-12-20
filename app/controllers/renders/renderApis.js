@@ -1,3 +1,3 @@
 module.exports = {
-    index: (req, res) => res.render('tutorials/index'),
+    index: (req, res) => res.render('apis/index'),
 };

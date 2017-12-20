@@ -4,15 +4,24 @@
 {# {% block body_class %}dark-bg{% endblock %} #}
 
 {% block body %}
-    <div class="dark-bg">
-        <div class="full-screen-canvas-wrapper">
-            {% for i in range(0, canvasAmount) %}
-            <canvas id="canvas{{ loop.index }}" class="layered-full-screen-canvas" width="300" height="300"></canvas>
-            {% endfor %}
-        </div>
-    </div>
+<nav class="random-page-nav">
+    <a href="/" class="random-page-home" type="button" name="button"> </a>
+    <a href="/random" class="random-page-refresh" type="button" name="button"> </a>
+</nav>
+
+<div class="full-screen-canvas-wrapper">
+    {% for i in range(0, canvasAmount) %}
+    <canvas id="canvas{{ loop.index }}" class="layered-full-screen-canvas" width="300" height="300"></canvas>
+    {% endfor %}
+</div>
+
+{% if controls %}
+    {% include "nunjucks/partials/randomCanvasControls.njk" %}
+{% endif %}
+
+
 {% endblock %}
 
 {% block scripts %}
-    <script type="text/javascript" src="/scripts/canvas/{{ canvasName }}.js"></script>
+    <script type="text/javascript" src="/scripts/canvas/random/{{ canvasName }}.js"></script>
 {% endblock %}

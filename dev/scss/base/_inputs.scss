@@ -1,0 +1,97 @@
+.random-canvas-label {
+    color: $red;
+}
+
+.random-canvas-control input[type='color'] {
+    margin-right: 1rem;
+}
+
+@media screen and(max-width: 1050px) {
+    .random-canvas-control input[type='color'] {
+        margin-bottom: .5rem;
+        border: 0;
+    }
+}
+
+// range for /random slider
+.random-range {
+  -webkit-appearance: none;
+  margin: 4px 10px 4px 0;
+  outline: 0;
+}
+
+.random-range:hover {
+    cursor: pointer;
+}
+
+.random-range::-webkit-slider-runnable-track {
+    height: 11.3px;
+    box-shadow: 1px 1px 1px $black;
+    background-color: rgba(66, 66, 66, 1);
+    border: 1.1px solid $slate-grey;
+}
+
+.random-range::-moz-range-track {
+    height: 11.3px;
+    box-shadow: 1px 1px 1px $black;
+    background-color: rgba(66, 66, 66, 1);
+    border: 1.1px solid $slate-grey;
+}
+
+.random-range::-ms-track {
+    height: 11.3px;
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+}
+
+.random-range::-ms-fill-lower {
+    background-color: rgba(66, 66, 66, 1);
+    border: 1.1px solid $slate-grey;
+    box-shadow: 1px 1px 1px $black;
+}
+
+.random-range::-ms-fill-upper {
+    background-color: rgba(66, 66, 66, 1);
+    border: 1.1px solid $slate-grey;
+    box-shadow: 1px 1px 1px $black;
+}
+
+// range for /random thumb
+.random-range::-webkit-slider-thumb {
+    box-shadow: 1px 1px 1px $black;
+    height: 22px;
+    width: 22px;
+    border-radius: 12px;
+    background-image: -webkit-repeating-linear-gradient(left, hsla(0, 0%, 100%, 0) 0%, hsla(0, 0%, 100%, 0)   6%, hsla(0, 0%, 100%, .1) 7.5%),
+                      -webkit-repeating-linear-gradient(left, hsla(0, 0%, 100%, 0) 0%, hsla(0, 0%,  100%, 0)   4%, hsla(0, 0%,  100%, .03) 4.5%),
+                      -webkit-repeating-linear-gradient(left, hsla(0, 0%, 100%, 0) 0%, hsla(0, 0%, 100%, 0) 1.2%, hsla(0, 0%, 100%, .15) 2.2%),
+                      -webkit-linear-gradient(-90deg, hsl(0, 0%, 78%)  0%, hsl(0, 0%, 90%) 47%, hsl(0, 0%, 78%) 53%, hsl(0, 0%, 70%)100%);
+    -webkit-appearance: none;
+    margin-top: -5.45px;
+    border: 3px solid #5e5e5e;
+}
+
+.random-range::-moz-range-thumb {
+    box-shadow: 1px 1px 1px $black;
+    border: 6px solid #5e5e5e;
+    height: 22px;
+    width: 22px;
+    border-radius: 12px;
+    background-image: -moz-repeating-linear-gradient(left, hsla(0, 0%, 100%, 0) 0%, hsla(0, 0%, 100%, 0)   6%, hsla(0, 0%, 100%, .1) 7.5%),
+                      -moz-repeating-linear-gradient(left, hsla(0, 0%, 100%, 0) 0%, hsla(0, 0%,  100%, 0)   4%, hsla(0, 0%,  100%, .03) 4.5%),
+                      -moz-repeating-linear-gradient(left, hsla(0, 0%, 100%, 0) 0%, hsla(0, 0%, 100%, 0) 1.2%, hsla(0, 0%, 100%, .15) 2.2%),
+                      -moz-linear-gradient(-90deg, hsl(0, 0%, 78%)  0%, hsl(0, 0%, 90%) 47%, hsl(0, 0%, 78%) 53%, hsl(0, 0%, 70%)100%);
+}
+
+.random-range::-ms-thumb {
+    box-shadow: 1px 1px 1px $black;
+    border: 6px solid #5e5e5e;
+    height: 22px;
+    width: 23px;
+    border-radius: 12px;
+    background-image: repeating-linear-gradient(left, hsla(0, 0%, 100%, 0) 0%, hsla(0, 0%, 100%, 0)   6%, hsla(0, 0%, 100%, .1) 7.5%),
+                      repeating-linear-gradient(left, hsla(0, 0%, 100%, 0) 0%, hsla(0, 0%,  100%, 0)   4%, hsla(0, 0%,  100%, .03) 4.5%),
+                      repeating-linear-gradient(left, hsla(0, 0%, 100%, 0) 0%, hsla(0, 0%, 100%, 0) 1.2%, hsla(0, 0%, 100%, .15) 2.2%),
+                      linear-gradient(-90deg, hsl(0, 0%, 78%)  0%, hsl(0, 0%, 90%) 47%, hsl(0, 0%, 78%) 53%, hsl(0, 0%, 70%)100%);
+}
