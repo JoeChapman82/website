@@ -7,4 +7,4 @@ node_modules/*
 .nyc_output
 .sass-lint.yml
 build.sh
-etc/*
+app/etc/*
