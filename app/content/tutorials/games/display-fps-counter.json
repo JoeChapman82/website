@@ -1,0 +1,17 @@
+{
+    "mainHeading": "Displaying an FPS counter and execution time",
+    "subHeading1": "Introduction",
+    "subHeading2": "Setting up the variables",
+    "subHeading3": "Clearing the canvas",
+    "subHeading4": "Calculating FPS and execution time",
+    "subHeading5": "The completed main method should look like this:",
+    "subHeading6": "",
+    "p1": "Two of the most useful things I find when creating and debuging a game are and FPS counter and an output of how long the main game loop is taking to execute. It can be a great indicator of when things have been pushed too far and is great for finetuning variables towards the end of development, such as particle amounts for explosions.",
+    "p2": "The example below is scripted in javascript for an html5 game, but is easily transfered accross to any other language.",
+    "p3": "First we'll need a few variables. We'll start by grabbing the canvas element, it's context for drawing on and another variable to use for canceling the main game loop",
+    "p4": "Well also need a variables to compare times against, for storing the frames per second count, and finally delta time which is commonly used to represent the time between two frames",
+    "p5": "Now we'll create the main draw loop and add a couple of methods to clear the canvas and render a little background",
+    "p6": "All that's left is to caluclate the times assign them to variables and render them on the screen. For that, we'll just need a couple more methods",
+    "p7": "",
+    "p8": ""
+}

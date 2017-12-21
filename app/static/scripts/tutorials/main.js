@@ -1,0 +1,1 @@
+function changeDisplayedCode(){document.querySelectorAll(".full-code-selector").forEach(function(e){document.getElementById(e.dataset.display).classList.add("js-hidden")}),document.getElementById(this.dataset.display).classList.remove("js-hidden")}document.querySelectorAll(".full-code-selector").forEach(function(e){e.addEventListener("click",changeDisplayedCode)});

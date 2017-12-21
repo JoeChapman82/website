@@ -1,0 +1,20 @@
+{% extends 'nunjucks/templates/base.njk' %}
+
+{% block title %}Tutorials - canvas - home{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="/css/tutorials.css">
+{% endblock %}
+
+{% block body %}
+{% include 'nunjucks/partials/topnav.njk' %}
+    <div class="dark-bg">
+        <div class="full-screen-canvas-wrapper">
+            <canvas id="lightningCanvas" class="layered-full-screen-canvas" width="300" height="300"></canvas>
+            <canvas id="rainCanvas" class="layered-full-screen-canvas" width="300" height="300"></canvas>
+        </div>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    <script type="text/javascript" src="/scripts/canvas/raining.js"></script>
+{% endblock %}

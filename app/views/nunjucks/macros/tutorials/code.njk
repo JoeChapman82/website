@@ -1,0 +1,10 @@
+{% macro exampleCodeBlock(startingLine, lines, breakOn, restartLine) %}
+<div class="tutorial-code-block">
+    <code>
+<pre>
+{% for line in lines %}{% if breakOn and loop.index === breakOn %}<span data-c-ln="...">{% elif breakOn and loop.index > breakOn %}<span data-c-ln="{{ loop.index + restartLine - 1 }}">{% else %}<span data-c-ln="{{ loop.index + startingLine - 1 }}">{% endif %}{% for i in range(0, line.i) %} {% endfor %}{% for j in range(0, line.t.length) %}<span class="c-j-{{ line.t[j] }}">{{ line.c[j] }}{% if line.t[j] === 'd' %}.{% endif %}</span></span>{% endfor %}
+{% endfor %}
+</pre>
+    </code>
+</div>
+{% endmacro %}

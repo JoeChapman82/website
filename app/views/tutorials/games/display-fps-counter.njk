@@ -1,0 +1,61 @@
+{% extends 'nunjucks/templates/base.njk' %}
+
+{% import 'nunjucks/macros/tutorials/code.njk' as code %}
+{% import 'nunjucks/macros/typography.njk' as typography %}
+
+{% block title %}Display FPS Tutorial{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="/css/tutorials.css">
+{% endblock %}
+
+{% block body %}
+{% include 'nunjucks/partials/topnav.njk' %}
+<div class="temp-wrapper">
+    {{ typography.heading(1, content.mainHeading) }}
+    {{ typography.heading(2, content.subHeading1) }}
+    {{ typography.parapgraph(content.p1 )}}
+    {{ typography.parapgraph(content.p2 )}}
+
+    {{ typography.heading(2, content.subHeading2) }}
+    {{ typography.parapgraph(content.p3 )}}
+    {{ typography.parapgraph(content.p4 )}}
+    {% include "nunjucks/partials/tutorials/games/display-fps-counter/example-1.njk" %}
+
+    {{ typography.heading(2, content.subHeading3) }}
+    {{ typography.parapgraph(content.p5 )}}
+    {% include "nunjucks/partials/tutorials/games/display-fps-counter/example-2.njk" %}
+
+    {{ typography.heading(2, content.subHeading4) }}
+    {{ typography.parapgraph(content.p6 )}}
+    {% include "nunjucks/partials/tutorials/games/display-fps-counter/example-3.njk" %}
+
+    {{ typography.heading(2, content.subHeading5) }}
+    {% include "nunjucks/partials/tutorials/games/display-fps-counter/example-4.njk" %}
+
+    <div class="full-code-wrapper">
+        <div class="full-code-buttons">
+            <button class="full-code-selector" type="button" name="button" data-display="fullCodeHtml">HTML</button>
+            <button class="full-code-selector" type="button" name="button" data-display="fullCodeCss">CSS</button>
+            <button class="full-code-selector" type="button" name="button" data-display="fullCodeJs">JS</button>
+            <button class="full-code-selector" type="button" name="button" data-display="fullCodeResult">Result</button>
+        </div>
+        <div id="fullCodeHtml" class="full-code-html js-hidden">
+            {% include "nunjucks/partials/tutorials/games/display-fps-counter/full-js.njk" %}
+        </div>
+        <div id="fullCodeCss" class="full-code-css js-hidden">
+            {% include "nunjucks/partials/tutorials/games/display-fps-counter/full-js.njk" %}
+        </div>
+        <div id="fullCodeJs" class="full-code-js js-hidden">
+            {% include "nunjucks/partials/tutorials/games/display-fps-counter/full-js.njk" %}
+        </div>
+        <div id="fullCodeResult" class="full-code-result">
+            <canvas class="demo-canvas" id="demoCanvas" width="680" height="300"></canvas>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+    <script type="text/javascript" src="/scripts/tutorials/main.js"></script>
+    <script type="text/javascript" src="/scripts/tutorials/games/display-fps-counter-tutorial.js"></script>
+{% endblock %}
