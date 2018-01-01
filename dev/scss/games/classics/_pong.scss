@@ -1,0 +1,101 @@
+.pong-ui-wrapper {
+    width: 100%;
+    position: absolute;
+    height: calc(100vh - 50px);
+    top: 50px;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: $white;
+}
+
+.pong-how-to-screen {
+    justify-content: space-evenly;
+    padding: 3rem;
+}
+
+.pong-settings-screen {
+    justify-content: space-around;
+    padding: 3rem;
+}
+
+.pong-settings-inner-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.pong-settings-inner-wrapper h1 {
+    margin-bottom: 1rem;
+}
+
+.pong-title {
+    font-size: 20vmin;
+    padding: 2rem;
+}
+
+.pong-sub-title {
+    font-size: calc(16px + 5vmin);
+    font-weight: bold;
+}
+
+.pong-minor-heading {
+    font-size: calc(12px + 3vmin);
+    font-weight: bold;
+}
+
+.pong-smallest-heading {
+    font-size: calc(12px + 2vmin);
+    font-weight: bold;
+}
+
+.pong-paragraph {
+    font-size: calc(12px + 1vmin);
+}
+
+
+.pong-buttons {
+    padding: .5rem;
+    width: 80%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0 5rem;
+}
+
+.pong-button {
+    font-size: calc(8px + 2vw);
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0 1rem;
+    padding: .5rem 0;
+    border: 2px solid $white;
+    background-color: grey;
+    color: $white;
+}
+
+.pong-small-button {
+    width: 50%;
+}
+
+.pong-selected {
+    border: 3px solid #ffd700;
+}
+
+@media screen and(max-width: 800px) {
+    .pong-buttons {
+        flex-direction: column;
+    }
+
+    .pong-button {
+        margin: .5rem 0;
+    }
+
+    .pong-small-button {
+        width: 100%;
+    }
+}

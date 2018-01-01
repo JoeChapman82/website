@@ -8,6 +8,9 @@ const pump = require('pump');
 const concat = require('gulp-concat');
 const flatten = require('gulp-flatten');
 const rename = require('gulp-rename');
+const changed = require('gulp-changed');
+const jscs = require('gulp-jscs');
+const plumber = require('gulp-plumber');
 // const uglifycss = require('gulp-uglifycss');
 
 const gulpConfig = {
@@ -17,6 +20,7 @@ const gulpConfig = {
         js: `${__dirname}/dev/scripts/**/*.js`,
         jsDest: `${__dirname}/app/static/scripts`,
         nunjucks: `${__dirname}/app/views/**/*.njk`,
+        content: `${__dirname}/app/content/**/*.json`,
     }
 };
 
@@ -36,18 +40,16 @@ gulp.task('sass', () => {
     }
 });
 
-// minifies main.js
-gulp.task('uglyjs', (cb) => {
-    pump([
-        gulp.src(gulpConfig.paths.js),
-        uglify(),
-        gulp.dest(gulpConfig.paths.jsDest)
-    ],
-    cb
-)
-.pipe(browserSync.reload({
-    stream: true
-    }));
+gulp.task('uglyjs', function() {
+    return gulp.src(gulpConfig.paths.js)
+        .pipe(plumber())
+        .pipe(changed(gulpConfig.paths.jsDest))
+        .pipe(jscs())
+        .pipe(uglify())
+        .pipe(gulp.dest(gulpConfig.paths.jsDest))
+        .pipe(browserSync.reload({
+            stream: true
+        }));
 });
 
 // refreshes on njk file change
@@ -60,6 +62,7 @@ gulp.task('watch', ['sass'], () =>{
   gulp.watch(gulpConfig.paths.scss, {interval: 1000, mode: 'poll'}, ['sass']);
   gulp.watch(gulpConfig.paths.js, {interval: 1000, mode: 'poll'}, ['uglyjs']);
   gulp.watch(gulpConfig.paths.nunjucks, {interval: 1000, mode: 'poll'}, ['nunjucks']);
+  gulp.watch(gulpConfig.paths.content, {interval: 1500, mode: 'poll'}, ["nunjucks"]);
 });
 
 gulp.task('browserSync', () => {
@@ -83,7 +86,7 @@ gulp.task('browserSync', () => {
 gulp.task('server', () => {
     nodemon({
         script: 'app.js',
-        ext: 'js',
+        ext: 'json js',
     }).on('quit', function() {
         process.exit(0);
     });

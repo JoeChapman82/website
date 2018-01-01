@@ -3,7 +3,7 @@
 {% block title %}Random{% endblock %}
 {# {% block body_class %}dark-bg{% endblock %} #}
 
-{% block body %}
+{% block main %}
 <nav class="random-page-nav">
     <a href="/" class="random-page-home" type="button" name="button"> </a>
     <a href="/random" class="random-page-refresh" type="button" name="button"> </a>
@@ -23,5 +23,8 @@
 {% endblock %}
 
 {% block scripts %}
+    {% if webgl %}
+        <script type="text/javascript" src="/scripts/glmatrix-min.js"></script>
+    {% endif %}
     <script type="text/javascript" src="/scripts/canvas/random/{{ canvasName }}.js"></script>
 {% endblock %}

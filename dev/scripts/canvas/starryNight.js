@@ -50,9 +50,9 @@ var mountains = [];
 var hedges = [];
 // images needed immediately
 var tree = new Image();
-tree.src = '/images/tree.png';
+tree.src = '/images/games/home/tree.png';
 var tent = new Image();
-tent.src = '/images/tent.png';
+tent.src = '/images/games/home/tent.png';
 // thought bubble
 var thoughtBubbleHeight = 0;
 var isThoughtBubbleHeightIncreasing = true;
@@ -81,13 +81,13 @@ var character = {
     sleeping: {image: new Image(), frames: 1, framesPerImage: 7, fullwidth: 283, fullHeight: 225, width: 283, height: 225, currentFrame: 0, displayedFor: 0
     },
 };
-character.sleeping.image.src = '/images/sleeping.png';
-character.walking.image.src = '/images/walking.png';
-character.walkingReverse.image.src = '/images/walkingReverse.png';
-character.idle.image.src = '/images/idle.png';
-character.idleReverse.image.src = '/images/idleReverse.png';
-character.jumping.image.src = '/images/jumping.png';
-character.jumpingReverse.image.src = '/images/jumpingReverse.png';
+character.sleeping.image.src = '/images/games/home/sleeping.png';
+character.walking.image.src = '/images/games/home/walking.png';
+character.walkingReverse.image.src = '/images/games/home/walkingReverse.png';
+character.idle.image.src = '/images/games/home/idle.png';
+character.idleReverse.image.src = '/images/games/home/idleReverse.png';
+character.jumping.image.src = '/images/games/home/jumping.png';
+character.jumpingReverse.image.src = '/images/games/home/jumpingReverse.png';
 var fireHitBox = {
     x: ww(1.75),
     y: wh(1.35),

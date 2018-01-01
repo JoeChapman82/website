@@ -12,12 +12,15 @@
         {% block stylesheets %}{% endblock %}
     </head>
 
-    <header>
-        {% block header %}{% endblock %}
-    </header>
-
     <body class="{% block body_class %}{% endblock %}">
-        {% block body %}{% endblock %}
+        <header>
+            {% block header %}{% endblock %}
+        </header>
+
+        {% block main %}{% endblock %}
+
+        {% block footer %}{% endblock %}
+
         <script type="text/javascript" src="/scripts/main.js"></script>
         {% block scripts %}{% endblock %}
     </body>

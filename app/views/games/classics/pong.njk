@@ -1,0 +1,82 @@
+{% extends 'nunjucks/templates/base.njk' %}
+
+{% block title %}Action games{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="/css/games.css">
+{% endblock %}
+
+{% block header %}
+    {% include 'nunjucks/partials/topnav.njk' %}
+{% endblock %}
+{% block main %}
+
+<div class="full-screen-canvas-wrapper">
+    <canvas id="pongCanvas" class="layered-game-screen-canvas" width="300" height="300"></canvas>
+
+    <div id="titleScreenUi" class="game-screen-ui pong-ui-wrapper pong-title-screen-ui">
+        <div>
+            <h1 class="pong-title">PONG</h1>
+        </div>
+        <div class="pong-buttons">
+            <button class="change-screen-button pong-button" type="button" name="button" data-screen="gameScreen">PLAY</button>
+            <button class="change-screen-button pong-button" type="button" name="button" data-screen="settingsScreen">SETTINGS</button>
+            <button class="change-screen-button pong-button" type="button" name="button" data-screen="howToScreen">HOW TO PLAY</button>
+        </div>
+    </div>
+
+    <div id="settingsScreenUi" class="game-screen-ui pong-ui-wrapper pong-settings-screen js-hidden">
+        <div>
+            <h1 class="pong-sub-title">SETTINGS</h1>
+        </div>
+
+        <div class="pong-settings-inner-wrapper">
+
+        <div>
+            <h1 class="pong-sub-title">Players</h1>
+        </div>
+        <div class="pong-buttons">
+            <button class="pong-button player-select-button" type="button" name="button" data-screen="titleScreen" data-players="0">Demo Match</button>
+            <button class="pong-button player-select-button pong-selected" type="button" name="button" data-screen="titleScreen" data-players="1">One Player</button>
+            <button class="pong-button player-select-button" type="button" name="button" data-screen="titleScreen" data-players="2">Two Players</button>
+        </div>
+    </div>
+
+
+        <div class="pong-buttons">
+            <button class="change-screen-button pong-button pong-small-button" type="button" name="button" data-screen="titleScreen">RETURN TO TITLE</button>
+        </div>
+    </div>
+
+    <div id="howToScreenUi" class="game-screen-ui pong-ui-wrapper pong-how-to-screen js-hidden">
+        <div>
+            <h1 class="pong-sub-title">HOW TO PLAY</h1>
+        </div>
+            <h2 class="pong-minor-heading">Keyboard Controls</h2>
+            <p class="pong-smallest-heading">Player 1</p>
+            <p class="pong-paragraph">Use the up and down arrow keys to control your paddle on the left of the screen</p>
+            <p class="pong-smallest-heading">Player 2</p>
+            <p class="pong-paragraph">Use the W and S keys to control your paddle on the right of the screen</p>
+            <hr>
+            <h2 class="pong-minor-heading">Touch Controls</h2>
+            <p class="pong-smallest-heading">Player 1</p>
+            <p class="pong-paragraph">Touch the top half of the left hand side of the screen to move up and the bottom half of the screen to move down</p>
+            <p class="pong-smallest-heading">Player 2</p>
+            <p class="pong-paragraph">Touch the top half of the right hand side of the screen to move up and the bottom half of the screen to move down</p>
+        <div class="pong-buttons">
+            <button class="change-screen-button pong-button pong-small-button" type="button" name="button" data-screen="titleScreen">RETURN TO TITLE</button>
+        </div>
+    </div>
+
+    <div id="gameScreenUi" class="game-screen-ui js-hidden">
+
+    </div>
+
+    <div id="gameOverScreenUi" class="game-screen-ui js-hidden">
+
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+    <script type="text/javascript" src="/scripts/games/classics/pong.js"></script>
+{% endblock %}

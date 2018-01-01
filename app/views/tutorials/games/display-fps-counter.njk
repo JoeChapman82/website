@@ -1,58 +1,83 @@
 {% extends 'nunjucks/templates/base.njk' %}
 
 {% import 'nunjucks/macros/tutorials/code.njk' as code %}
+{% import 'nunjucks/macros/tutorials/navigation.njk' as navigation %}
 {% import 'nunjucks/macros/typography.njk' as typography %}
 
-{% block title %}Display FPS Tutorial{% endblock %}
+{% block title %}{{ content.pageTitle }}{% endblock %}
 {% block stylesheets %}
     <link rel="stylesheet" href="/css/tutorials.css">
 {% endblock %}
 
-{% block body %}
-{% include 'nunjucks/partials/topnav.njk' %}
-<div class="temp-wrapper">
-    {{ typography.heading(1, content.mainHeading) }}
-    {{ typography.heading(2, content.subHeading1) }}
-    {{ typography.parapgraph(content.p1 )}}
-    {{ typography.parapgraph(content.p2 )}}
+{% block header %}
+    {% include 'nunjucks/partials/topnav.njk' %}
+{% endblock %}
 
-    {{ typography.heading(2, content.subHeading2) }}
-    {{ typography.parapgraph(content.p3 )}}
-    {{ typography.parapgraph(content.p4 )}}
+{% block main %}
+<main class="tutorials-main-wrapper">
+    <div class="main-heading-wrapper">
+        {{ typography.heading(1, content.mainHeading, false, 'main-heading') }}
+        {{ typography.heading(2, content.authorHeading, false, 'main-subheading')}}
+    </div>
+    {{ navigation.internalPage([{whyUseful: content.pageLink1},{variables: content.pageLink2},
+        {canvasSetup: content.pageLink3}, {calcFps: content.pageLink4}, {theCode: content.pageLink5}]) }}
+    <canvas class="demo-canvas centred-display-canvas" id="demoCanvas2" width="700" height="300"></canvas>
+    {{ typography.heading(2, content.subHeading1, 'whyUseful', 'anchor-point') }}
+    {{ typography.parapgraph(content.p1) }}
+    {{ typography.parapgraph(content.p2) }}
+    {{ typography.parapgraph(content.p3) }}
+    {{ typography.parapgraph(content.p4) }}
+
+    {{ typography.rule('tutorials-seperator')}}
+    {{ typography.heading(2, content.subHeading2, 'variables', 'anchor-point') }}
+    {{ typography.parapgraph(content.p5) }}
+    {{ typography.parapgraph(content.p6) }}
+    {{ typography.parapgraph(content.p7) }}
+    {{ typography.parapgraph(content.p8) }}
     {% include "nunjucks/partials/tutorials/games/display-fps-counter/example-1.njk" %}
 
-    {{ typography.heading(2, content.subHeading3) }}
-    {{ typography.parapgraph(content.p5 )}}
+    {{ typography.heading(2, content.subHeading3, 'canvasSetup', 'anchor-point') }}
+    {{ typography.parapgraph(content.p9) }}
+    {{ typography.parapgraph(content.p10) }}
+    {{ typography.parapgraph(content.p11) }}
+    {{ typography.parapgraph(content.p12) }}
     {% include "nunjucks/partials/tutorials/games/display-fps-counter/example-2.njk" %}
 
-    {{ typography.heading(2, content.subHeading4) }}
-    {{ typography.parapgraph(content.p6 )}}
+    {{ typography.heading(2, content.subHeading4, 'calcFps', 'anchor-point') }}
+    {{ typography.parapgraph(content.p13) }}
+    {{ typography.parapgraph(content.p14) }}
+    {{ typography.parapgraph(content.p15) }}
+    {{ typography.parapgraph(content.p16) }}
+    {{ typography.parapgraph(content.p17) }}
+    {{ typography.parapgraph(content.p18) }}
     {% include "nunjucks/partials/tutorials/games/display-fps-counter/example-3.njk" %}
 
-    {{ typography.heading(2, content.subHeading5) }}
+    {{ typography.heading(2, content.subHeading5, 'endResult') }}
+    {{ typography.parapgraph(content.p19) }}
+    {{ typography.parapgraph(content.p20) }}
     {% include "nunjucks/partials/tutorials/games/display-fps-counter/example-4.njk" %}
 
+    {{ typography.heading(2, content.subHeading6, 'theCode', 'anchor-point') }}
+    {{ typography.parapgraph(content.p21) }}
     <div class="full-code-wrapper">
-        <div class="full-code-buttons">
-            <button class="full-code-selector" type="button" name="button" data-display="fullCodeHtml">HTML</button>
-            <button class="full-code-selector" type="button" name="button" data-display="fullCodeCss">CSS</button>
-            <button class="full-code-selector" type="button" name="button" data-display="fullCodeJs">JS</button>
-            <button class="full-code-selector" type="button" name="button" data-display="fullCodeResult">Result</button>
-        </div>
-        <div id="fullCodeHtml" class="full-code-html js-hidden">
-            {% include "nunjucks/partials/tutorials/games/display-fps-counter/full-js.njk" %}
-        </div>
-        <div id="fullCodeCss" class="full-code-css js-hidden">
-            {% include "nunjucks/partials/tutorials/games/display-fps-counter/full-js.njk" %}
-        </div>
-        <div id="fullCodeJs" class="full-code-js js-hidden">
-            {% include "nunjucks/partials/tutorials/games/display-fps-counter/full-js.njk" %}
-        </div>
+        {% include "nunjucks/partials/tutorials/code-buttons-html-css-js.njk" %}
+        {% include "nunjucks/partials/tutorials/base-html-code.njk" %}
+        {% include "nunjucks/partials/tutorials/empty-css-code-block.njk" %}
+        {% include "nunjucks/partials/tutorials/games/display-fps-counter/full-js.njk" %}
         <div id="fullCodeResult" class="full-code-result">
-            <canvas class="demo-canvas" id="demoCanvas" width="680" height="300"></canvas>
+            <canvas class="demo-canvas" id="demoCanvas" width="700" height="300"></canvas>
         </div>
     </div>
-</div>
+
+    <div class="linked-tutorials">
+        <p>Other tutorial links will go here once they're made</p>
+    </div>
+
+</main>
+{% endblock %}
+
+{% block footer %}
+{% include "nunjucks/partials/footer.njk" %}
 {% endblock %}
 
 {% block scripts %}

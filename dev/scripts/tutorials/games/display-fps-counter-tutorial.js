@@ -1,5 +1,8 @@
 var canvas = document.getElementById('demoCanvas');
+var canvas2 = document.getElementById('demoCanvas2');
 var ctx = canvas.getContext('2d');
+ctx.font = '6vmin Impact';
+var ctx2 = canvas2.getContext('2d');
 
 var lastTime = 0;
 var deltaTime = 0;
@@ -29,19 +32,22 @@ function renderBackground() {
 
 function renderFps() {
     ctx.fillStyle = 'rgba(255, 255, 255, 1)';
-    ctx.fillText(fps + ' FPS', canvas.width / 2, canvas.height / 2);
-    ctx.fillText(executionTime + ' ms', canvas.width / 2, canvas.height / 2 + 50);
+    ctx.fillText(fps + ' FPS', 10, canvas.height - 10);
+    ctx.textAlign = 'end';
+    ctx.fillText(executionTime + ' ms', canvas.width - 10, canvas.height - 10);
+    ctx.textAlign = 'start';
 }
 
 function main(time) {
-    var start = performance.now();
+    var startTime = performance.now();
     setDeltaTime(time);
     clearCanvas();
     renderBackground();
     updateFps();
     renderFps();
-    var end = performance.now();
-    executionTime = (end - start).toFixed(2);
+    var endTime = performance.now();
+    executionTime = (endTime - startTime).toFixed(1);
+    ctx2.drawImage(canvas, 0, 0);
     animation = requestAnimationFrame(main);
 }
 

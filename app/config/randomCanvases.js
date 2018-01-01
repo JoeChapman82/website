@@ -49,8 +49,15 @@ const randomCanvas = [
                 max: 10
             }
         },
-
-
+    },
+    {
+        canvasName: 'matrix-effect',
+        canvasAmount: 1,
+    },
+    {
+        canvasName: 'webgl-cube',
+        canvasAmount: 1,
+        webgl: true
     }
 ];
 

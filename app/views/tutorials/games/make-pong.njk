@@ -1,0 +1,123 @@
+{% extends 'nunjucks/templates/base.njk' %}
+
+{% import 'nunjucks/macros/tutorials/code.njk' as code %}
+{% import 'nunjucks/macros/tutorials/navigation.njk' as navigation %}
+{% import 'nunjucks/macros/typography.njk' as typography %}
+
+{% block title %}{{ content.pageTitle }}{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="/css/tutorials.css">
+{% endblock %}
+
+{% block header %}
+    {% include 'nunjucks/partials/topnav.njk' %}
+{% endblock %}
+
+{% block main %}
+<main class="tutorials-main-wrapper">
+    <div class="main-heading-wrapper">
+        {{ typography.heading(1, content.mainHeading, false, 'main-heading') }}
+        {{ typography.heading(2, content.authorHeading, false, 'main-subheading')}}
+    </div>
+    {{ navigation.internalPage([{introduction: content.pageLink1},{settingUp: content.pageLink2},
+    {gameBoard: content.pageLink3}, {theBall: content.pageLink4}, {thePlayers: content.pageLink5}]) }}
+    <canvas class="demo-canvas centred-display-canvas" id="displayCanvas" width="600" height="300"></canvas>
+    {{ typography.heading(2, content.subHeading1, 'introduction', 'anchor-point') }}
+    {{ typography.parapgraph(content.p1) }}
+    {{ typography.parapgraph(content.p2) }}
+
+    {{ typography.heading(2, content.subHeading2, 'settingUp', 'anchor-point') }}
+    {% include "nunjucks/partials/tutorials/games/make-pong/base-html-code.njk" %}
+    {{ typography.parapgraph(content.p3) }}
+    {% include "nunjucks/partials/tutorials/games/make-pong/example-1.njk" %}
+    {{ typography.parapgraph(content.p4) }}
+    {{ typography.parapgraph(content.p5) }}
+    {{ typography.parapgraph(content.p6) }}
+    {{ typography.parapgraph(content.p7) }}
+
+    {{ typography.heading(2, content.subHeading3)}}
+    {{ typography.parapgraph(content.p8) }}
+    {% include "nunjucks/partials/tutorials/games/make-pong/example-2.njk" %}
+    {{ typography.parapgraph(content.p9) }}
+    {% include "nunjucks/partials/tutorials/games/make-pong/example-3.njk" %}
+    {{ typography.parapgraph(content.p10) }}
+
+    {{ typography.heading(2, content.subHeading4, 'gameBoard', 'anchor-point') }}
+    {{ typography.parapgraph(content.p11) }}
+    {% include "nunjucks/partials/tutorials/games/make-pong/example-4.njk" %}
+    {{ typography.parapgraph(content.p12) }}
+    {{ typography.parapgraph(content.p13) }}
+    {{ typography.parapgraph(content.p14) }}
+    {% include "nunjucks/partials/tutorials/games/make-pong/example-5.njk" %}
+    {{ typography.parapgraph(content.p16) }}
+    {{ typography.parapgraph(content.p17) }}
+    {{ typography.parapgraph(content.p18) }}
+    {{ typography.parapgraph(content.p19) }}
+
+    {{ typography.heading(2, content.subHeading5) }}
+    {{ typography.parapgraph(content.p20) }}
+    {% include "nunjucks/partials/tutorials/games/make-pong/example-6.njk" %}
+    {{ typography.parapgraph(content.p21) }}
+    {{ typography.parapgraph(content.p22) }}
+    {{ typography.parapgraph(content.p23) }}
+    <canvas class="demo-canvas centred-display-canvas" id="displayCanvas2" width="600" height="300"></canvas>
+
+    {{ typography.heading(2, content.subHeading6, 'theBall', 'anchor-point') }}
+    {{ typography.parapgraph(content.p24) }}
+    {% include "nunjucks/partials/tutorials/games/make-pong/example-7.njk" %}
+    {{ typography.parapgraph(content.p25) }}
+    {{ typography.parapgraph(content.p26) }}
+    {{ typography.parapgraph(content.p27) }}
+    {{ typography.parapgraph(content.p28) }}
+    {{ typography.parapgraph(content.p29) }}
+    {{ typography.parapgraph(content.p30) }}
+
+    {{ typography.heading(2, content.subHeading7, 'thePlayers', 'anchor-point') }}
+    {{ typography.parapgraph(content.p31) }}
+    {% include "nunjucks/partials/tutorials/games/make-pong/example-8.njk" %}
+    {{ typography.parapgraph(content.p32) }}
+    {{ typography.parapgraph(content.p33) }}
+    {{ typography.parapgraph(content.p34) }}
+
+    {{ typography.heading(2, content.subHeading8) }}
+    {{ typography.parapgraph(content.p35) }}
+    {% include "nunjucks/partials/tutorials/games/make-pong/example-9.njk" %}
+    {{ typography.parapgraph(content.p36) }}
+    {{ typography.parapgraph(content.p37) }}
+
+    {{ typography.heading(2, content.subHeading9) }}
+    {{ typography.parapgraph(content.p38) }}
+    {% include "nunjucks/partials/tutorials/games/make-pong/example-10.njk" %}
+    {{ typography.parapgraph(content.p39) }}
+    {{ typography.parapgraph(content.p40) }}
+
+    {{ typography.heading(2, content.subHeading10, 'theCode', 'anchor-point') }}
+    <div class="full-code-wrapper">
+        {% include "nunjucks/partials/tutorials/code-buttons-html-css-js.njk" %}
+        {% include "nunjucks/partials/tutorials/games/make-pong/complete-html-code.njk" %}
+        {% include "nunjucks/partials/tutorials/empty-css-code-block.njk" %}
+        {% include "nunjucks/partials/tutorials/games/make-pong/full-js.njk" %}
+        <div id="fullCodeResult" class="full-code-result">
+            <canvas class="demo-canvas" id="displayCanvas3" width="600" height="300"></canvas>
+        </div>
+    </div>
+
+    {{ typography.heading(2, content.subHeading11, 'theCode', 'anchor-point') }}
+    {{ typography.parapgraph(content.p41) }}
+
+
+    <div class="linked-tutorials">
+        <p>Other tutorial links will go here once they're made</p>
+    </div>
+
+</main>
+{% endblock %}
+
+{% block footer %}
+{% include "nunjucks/partials/footer.njk" %}
+{% endblock %}
+
+{% block scripts %}
+    <script type="text/javascript" src="/scripts/tutorials/main.js"></script>
+    <script type="text/javascript" src="/scripts/tutorials/games/make-pong.js"></script>
+{% endblock %}

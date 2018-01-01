@@ -1,0 +1,57 @@
+h1 {
+    font-size: calc(8px + 5vmin);
+    margin-bottom: 1rem;
+    color: rgba(44, 44, 44, 1);
+}
+
+h2 {
+    font-size: calc(8px + 2vmin);
+    line-height: 1.5;
+    color: rgba(44, 44, 44, 1);
+    font-family: Arial;
+    font-weight: bold;
+}
+
+p {
+    margin-bottom: 1rem;
+    font-size: calc(12px + 1vmin);
+    color: rgba(44, 44, 44, 1);
+    font-family: Charter Times Helvetica;
+    line-height: 1.4;
+}
+
+.main-heading {
+    color: #414042;
+    font-weight: bold;
+    font-family: fantasy;
+    padding-top: 1vmin;
+}
+
+.main-subheading {
+    color: #414042;
+    font-weight: bold;
+    font-family: fantasy;
+    font-size: calc(12px + 1vmin);
+}
+
+.linked-tutorials-text {
+    color: rgba(155, 155, 155, 1);
+    font-size: calc(8px + 1.5vmin);
+}
+
+
+.tutorials-seperator {
+    margin: 4vmin auto;
+    width: 75%;
+}
+
+.subindex-heading {
+    font-size: calc(8px + 3vmin);
+    text-align: center;
+    margin-bottom: 1vmin;
+}
+
+.tutorials-index-link-text {
+    font-size: calc(12px + 1vmin);
+    color: $white;
+}

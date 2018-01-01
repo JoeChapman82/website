@@ -1,0 +1,24 @@
+{% macro internalPage(links) %}
+<div class="page-navigation">
+    {% for link in links %}
+        {% for key, value in link %}
+            <a type="link" href="#{{ key }}">{{ value }}</a>
+        {% endfor %}
+    {% endfor %}
+</div>
+{% endmacro %}
+
+{% macro indexNavRow(links, size) %}
+<div class="tutorials-index-flex-wrapper">
+    {% for item in links %}
+        <a class="tutorials-index-link" href="{{ item.href }}">
+        <div class="tutorials-index-link-image-{{ size }}" {% if item.img %}style="background-image: url({{ item.img }}), linear-gradient(to top, #4c6778, #96a7af)"{% endif %}>
+
+        </div>
+        <div class="tutorials-index-link-title-{{ size }}">
+            <h2 class="tutorials-index-link-text">{{ item.title }}</h2>
+        </div>
+    </a>
+    {% endfor %}
+</div>
+{% endmacro %}

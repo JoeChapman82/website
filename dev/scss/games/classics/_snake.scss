@@ -67,8 +67,8 @@
 .snake-button {
     min-width: 25%;
     width: auto;
-    background-image: linear-gradient(to top, green 0%, lightgreen 100%);
-    border: 2px solid green;
+    background-image: linear-gradient(to top, $green 0%, #90ee90 100%);
+    border: 2px solid $green;
     border-radius: 5px;
     font-family: 'Comic Sans MS', Arial;
     margin: 2rem;
@@ -128,19 +128,23 @@
     .snake-flex-wrapper {
         flex-direction: column;
     }
+
     .snake-button {
         margin: 1rem;
         font-size: 5vmin;
         min-width: 75%;
     }
+
     .snake-flex-game-over-wrapper {
         padding-bottom: 0;
         border: 2px solid $green;
 
     }
+
     .snake-flex-wrapper {
         border: 2px solid $green;
     }
+
     .snake-main-title {
         display: none;
         visibility: hidden;

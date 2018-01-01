@@ -1,15 +1,36 @@
 {% extends 'nunjucks/templates/base.njk' %}
 
-{% block title %}Tutorials - gmaes - home{% endblock %}
+{% import 'nunjucks/macros/typography.njk' as typography %}
+{% import "nunjucks/macros/tutorials/navigation.njk" as navigation %}
+
+{% block title %}Tutorials - games - home{% endblock %}
 {% block stylesheets %}
     <link rel="stylesheet" href="/css/tutorials.css">
 {% endblock %}
 
-{% block body %}
-{% include 'nunjucks/partials/topnav.njk' %}
-<div class="temp-wrapper">
-    <a href="/tutorials/games/display-fps-counter-tutorial">FPS counter</a>
+{% block header %}
+    {% include 'nunjucks/partials/topnav.njk' %}
+{% endblock %}
+
+{% block main %}
+<div class="tutorials-main-index-wrapper">
+    <div class="main-heading-wrapper">
+        {{ typography.heading(1, 'Games tutorials', false, 'main-heading') }}
+        {{ typography.heading(2, 'From quick tips to full games', false, 'main-subheading')}}
+    </div>
+    <h2 class="subindex-heading">Tips and tricks</h2>
+    {{ navigation.indexNavRow([
+        {href: '/tutorials/games/display-fps-counter', title: 'Display frames per second', img: '/images/tutorials/games/fps.png'}
+    ], 'large') }}
+    <h2 class="subindex-heading">Full games</h2>
+    {{ navigation.indexNavRow([
+        {href: '/tutorials/games/make-pong', title: 'Make a Pong game', img: '/images/tutorials/games/pong.png'}
+    ], 'large') }}
 </div>
+{% endblock %}
+
+{% block footer %}
+{% include "nunjucks/partials/footer.njk" %}
 {% endblock %}
 
 {% block scripts %}

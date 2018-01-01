@@ -5,8 +5,11 @@
     <link rel="stylesheet" href="/css/about.css">
 {% endblock %}
 
-{% block body %}
-{% include 'nunjucks/partials/topnav.njk' %}
+{% block header %}
+    {% include 'nunjucks/partials/topnav.njk' %}
+{% endblock %}
+
+{% block main %}
     <div class="full-screen-canvas-wrapper">
         <canvas id="canvas1" class="layered-full-screen-canvas" width="300" height="300"></canvas>
     </div>

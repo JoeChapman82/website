@@ -1,0 +1,13 @@
+.games-index-main-heading {
+    text-align: center;
+    font-size: calc(16px + 5vmin);
+    color: rgba(222, 222, 222, 1);
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 800px) {
+    .games-index-main-heading {
+        margin-bottom: 0;
+    }
+}

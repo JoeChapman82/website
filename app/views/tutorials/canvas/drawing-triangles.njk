@@ -1,0 +1,92 @@
+{% extends 'nunjucks/templates/base.njk' %}
+
+{% import 'nunjucks/macros/tutorials/code.njk' as code %}
+{% import 'nunjucks/macros/tutorials/navigation.njk' as navigation %}
+{% import 'nunjucks/macros/typography.njk' as typography %}
+
+{% block title %}{{ content.pageTitle }}{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="/css/tutorials.css">
+{% endblock %}
+
+{% block header %}
+    {% include 'nunjucks/partials/topnav.njk' %}
+{% endblock %}
+
+{% block main %}
+<main class="tutorials-main-wrapper">
+    <div class="main-heading-wrapper">
+        {{ typography.heading(1, content.mainHeading, false, 'main-heading') }}
+        {{ typography.heading(2, content.authorHeading, false, 'main-subheading')}}
+    </div>
+    {{ navigation.internalPage([{introdution: content.pageLink1},{drawTriangle: content.pageLink2},
+        {fillTriangle: content.pageLink3}, {makeMethod: content.pageLink4}, {conclusion: content.pageLink5}]) }}
+    <canvas class="demo-canvas centred-empty-display-canvas" id="demoCanvasTop" width="700" height="300"></canvas>
+    {{ typography.heading(2, content.subHeading1, 'introdution', 'anchor-point') }}
+    {{ typography.parapgraph(content.p1) }}
+    {{ typography.parapgraph(content.p2) }}
+    {% include "nunjucks/partials/tutorials/canvas/base-html.njk" %}
+
+    {{ typography.rule('tutorials-seperator')}}
+    {{ typography.heading(2, content.subHeading2, 'drawTriangle', 'anchor-point') }}
+    {{ typography.parapgraph(content.p3) }}
+    {{ typography.parapgraph(content.p4) }}
+    {% include "nunjucks/partials/tutorials/canvas/drawing-triangles/example-1.njk" %}
+    {{ typography.parapgraph(content.p5) }}
+    <canvas class="demo-canvas centred-empty-display-canvas" id="demoCanvas1" width="600" height="300"></canvas>
+    {{ typography.rule('tutorials-seperator')}}
+
+    {{ typography.heading(2, content.subHeading3, 'fillTriangle', 'anchor-point') }}
+    {{ typography.parapgraph(content.p6) }}
+    {% include "nunjucks/partials/tutorials/canvas/drawing-triangles/example-2.njk" %}
+    {{ typography.parapgraph(content.p7) }}
+    <canvas class="demo-canvas centred-empty-display-canvas" id="demoCanvas2" width="600" height="300"></canvas>
+    {{ typography.rule('tutorials-seperator')}}
+
+    {{ typography.heading(2, content.subHeading4, 'makeMethod', 'anchor-point') }}
+    {{ typography.parapgraph(content.p8) }}
+    {% include "nunjucks/partials/tutorials/canvas/drawing-triangles/example-3.njk" %}
+    {{ typography.parapgraph(content.p9) }}
+    {{ typography.parapgraph(content.p10) }}
+    {{ typography.parapgraph(content.p11) }}
+    {{ typography.parapgraph(content.p12) }}
+    <canvas class="demo-canvas centred-empty-display-canvas" id="demoCanvas3" width="600" height="300"></canvas>
+    {{ typography.rule('tutorials-seperator')}}
+
+    {{ typography.heading(2, content.subHeading6, 'conclusion', 'anchor-point') }}
+    {{ typography.parapgraph(content.p13) }}
+    {{ typography.rule('tutorials-seperator')}}
+
+
+    {{ typography.heading(2, content.subHeading7) }}
+    {{ typography.parapgraph(content.p14) }}
+    <div class="full-code-wrapper">
+        {% include "nunjucks/partials/tutorials/code-buttons-html-css-js.njk" %}
+        {% include "nunjucks/partials/tutorials/canvas/fullHtml.njk" %}
+        {% include "nunjucks/partials/tutorials/empty-css-code-block.njk" %}
+        {% include "nunjucks/partials/tutorials/canvas/drawing-triangles/full-js.njk" %}
+        <div id="fullCodeResult" class="full-code-result">
+            <canvas class="demo-canvas" id="demoCanvas" width="600" height="300"></canvas>
+        </div>
+    </div>
+
+    {{ typography.rule('tutorials-seperator')}}
+    <div class="linked-tutorials">
+        <h3 class="linked-tutorials-text">{{ content.otherTutorials }}</h3>
+        {{ navigation.indexNavRow([
+            {href: '/tutorials/canvas/drawing-squares', title: 'Drawing Squares', img: '/images/tutorials/canvas/drawing-squares.png'},
+            {href: '/tutorials/canvas/drawing-circles', title: 'Drawing Circles', img: '/images/tutorials/canvas/drawing-circles.png'}
+        ], 'small') }}
+    </div>
+
+</main>
+{% endblock %}
+
+{% block footer %}
+{% include "nunjucks/partials/footer.njk" %}
+{% endblock %}
+
+{% block scripts %}
+    <script type="text/javascript" src="/scripts/tutorials/main.js"></script>
+    <script type="text/javascript" src="/scripts/tutorials/canvas/drawing-triangles.js"></script>
+{% endblock %}

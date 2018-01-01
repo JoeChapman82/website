@@ -1,5 +1,10 @@
 @import 'variables/colours';
+@import 'games/variables/colours';
 
+@import 'games/base';
+@import 'games/footer';
 @import 'games/links';
 @import 'games/wrappers';
+@import 'games/typography';
 @import 'games/classics/snake';
+@import 'games/classics/pong';

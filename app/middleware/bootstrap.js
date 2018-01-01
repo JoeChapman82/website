@@ -10,6 +10,7 @@ const express = require('express');
 
 const config = require('../config/main');
 const defineActiveView = require('./defineActiveView');
+const getCurrentYear = require('./getCurrentYear');
 
 module.exports = (app) => {
 
@@ -41,14 +42,15 @@ module.exports = (app) => {
         next();
     });
 
+    app.use(getCurrentYear);
+    
     app.use((err, req, res, next) => {
         if (err.code !== 'EBADCSRFTOKEN') {
             return next(err);
         }
             res.clearCookie('_csrf');
             res.send(err);
-            // res.status(403);
-            // res.redirect('/');
+            res.redirect('/');
     });
 
     app.use(defineActiveView);

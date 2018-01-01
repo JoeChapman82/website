@@ -5,8 +5,11 @@
     <link rel="stylesheet" href="/css/about.css">
 {% endblock %}
 
-{% block body %}
-{% include 'nunjucks/partials/topnav.njk' %}
+{% block main %}
+{% block header %}
+    {% include 'nunjucks/partials/topnav.njk' %}
+{% endblock %}
+
     <div class="dark-bg">
         <div class="full-screen-canvas-wrapper">
             <canvas id="lightningCanvas" class="layered-full-screen-canvas" width="300" height="300"></canvas>

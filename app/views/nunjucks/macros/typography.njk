@@ -1,7 +1,11 @@
-{% macro heading(type, content, class) %}
-<h{{ type }} {% if class %}class="{{ class }}"{% endif %}>{{ content }}</h{{ type }}>
+{% macro heading(type, content, id, class) %}
+<h{{ type }}{% if id %} id="{{ id }}"{% endif %}{% if class %} class="{{ class }}"{% endif %}>{{ content }}</h{{ type }}>
 {% endmacro %}
 
 {% macro parapgraph(content, class) %}
     <p {% if class %}class="{{ class }}"{% endif %}>{{ content }}</p>
+{% endmacro %}
+
+{% macro rule(class) %}
+    <hr class="{{ class }}">
 {% endmacro %}

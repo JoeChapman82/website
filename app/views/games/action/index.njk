@@ -5,8 +5,10 @@
     <link rel="stylesheet" href="/css/games.css">
 {% endblock %}
 
-{% block body %}
-{% include 'nunjucks/partials/topnav.njk' %}
+{% block header %}
+    {% include 'nunjucks/partials/topnav.njk' %}
+{% endblock %}
+{% block main %}
     <div class="dark-bg">
         <div class="full-screen-canvas-wrapper">
             <canvas id="lightningCanvas" class="layered-full-screen-canvas" width="300" height="300"></canvas>
@@ -18,5 +20,5 @@
 {% endblock %}
 
 {% block scripts %}
-    {# <script type="text/javascript" src="/scripts/canvas/raining.js"></script> #}
+    <script type="text/javascript" src="/scripts/canvas/raining.js"></script>
 {% endblock %}

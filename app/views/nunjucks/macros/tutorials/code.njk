@@ -1,10 +1,7 @@
-{% macro exampleCodeBlock(startingLine, lines, breakOn, restartLine) %}
-<div class="tutorial-code-block">
-    <code>
-<pre>
-{% for line in lines %}{% if breakOn and loop.index === breakOn %}<span data-c-ln="...">{% elif breakOn and loop.index > breakOn %}<span data-c-ln="{{ loop.index + restartLine - 1 }}">{% else %}<span data-c-ln="{{ loop.index + startingLine - 1 }}">{% endif %}{% for i in range(0, line.i) %} {% endfor %}{% for j in range(0, line.t.length) %}<span class="c-j-{{ line.t[j] }}">{{ line.c[j] }}{% if line.t[j] === 'd' %}.{% endif %}</span></span>{% endfor %}
-{% endfor %}
-</pre>
-    </code>
+{% macro exampleCodeBlock(codeType, startingLine, lines, breakOn, restartLine) %}
+<div class="tutorial-code-block tutorial-code-block-{{ codeType }} clearfix">
+<pre class="tutorial-code-pre"><code class="language-{% if codeType === 'j' %}javascript{% elif codeType === 'h'%}html{% elif codeType === 'c'%}css{% endif %}">
+{% for line in lines %}{% if breakOn and loop.index === breakOn %}<span data-c-ln="...">{% elif breakOn and loop.index > breakOn %}<span data-c-ln="{{ loop.index + restartLine - 1 }}">{% else %}<span data-c-ln="{{ loop.index + startingLine - 1 }}">{% endif %}{% for i in range(0, line.i) %} {% endfor %}{% for j in range(0, line.t.length) %}<span class="c-{{ codeType }}-{{ line.t[j] }}">{{ line.c[j] }}</span>{% if line.t[j] === 'd' %}.{% endif %}</span>{% endfor %}
+{% endfor %}</code></pre>
 </div>
 {% endmacro %}

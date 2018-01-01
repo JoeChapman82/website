@@ -6,21 +6,22 @@
     font-family: fantasy;
     z-index: 5;
     position: fixed;
+    top: 0;
+    left: 0;
     height: 50px;
 }
 
 .topnav-main-link {
     color: $white;
     text-decoration: none;
-    padding: .3rem 2rem;
+    padding: .6rem 2rem;
     font-size: 1.5rem;
 }
 
-.topnav-primary-list li {
-    display: inline-block;
+.desktop-primary-list {
     position: relative;
-    padding: 1rem 0 .6rem;
-    vertical-align: middle;
+    display: inline-flex;
+    box-sizing: border-box;
 }
 
 @media screen and(max-width: 625px) {
@@ -49,10 +50,12 @@
     position: absolute;
     display: none;
     list-style: none;
-    padding: 1rem 1rem 1rem .75rem;
     background-color: $slate-grey;
     width: 150%;
     text-align: left;
+    margin-top: 40px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 .topnav-primary-list li:hover ul {
@@ -66,10 +69,9 @@
 .topnav-sub-link {
     color: $white;
     text-decoration: none;
-}
-
-.topnav-sub-list li {
-    padding: 1rem;
+    width: 100%;
+    display: block;
+    padding: 1rem 1rem 1rem 2rem;
 }
 
 .topnav-sub-list li:hover {
@@ -81,6 +83,7 @@
 }
 
 .topnav-active {
+    box-sizing: border-box;
     border-top: 5px solid $white;
 }
 
@@ -95,10 +98,13 @@
 }
 
 .mobile-hamburger-menu {
-    padding: 1rem;
+    padding: 1.5rem 1rem 1rem;
+    position: absolute;
+    top: 1px;
+    right: 0px;
     background-image: url('../icons/menu.svg');
     background-repeat: no-repeat;
-    background-position: 50% 50%;
+    background-position: 50% 30%;
     background-size: 2.2rem;
     margin-right: 1rem;
 }

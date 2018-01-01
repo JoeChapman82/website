@@ -1,0 +1,21 @@
+{{ code.exampleCodeBlock('j', 40, [
+    {i: 0, t: 'kmv', c: ['function', ' setDeltaTime', '(time) {']},
+    {i: 4, t: 'vovovononovovononv', c: ['deltaTime', ' = ', '(time', ' - ', 'lastTime)', ' / ', '1000', ' <= ', '0.5', ' ? ', '(time', ' - ', 'lastTime)', ' / ', '1000',' : ', '0.167',';']},
+    {i: 4, t: 'vov', c: ['lastTime', ' = ', 'time;']},
+    {i: 0, t: 'v', c: ['}']},
+    {},
+    {i: 0, t: 'kmv', c: ['function', ' calculateReturnTrajectory', '(player) {']},
+    {i: 4, t: 'kvodpovdponv', c: ['var', ' paddleCenter', ' = ', 'player', 'y', ' + ', '(', 'player', 'height', ' / ', '2', ');']},
+    {i: 4, t: 'kvodpovdponv', c: ['var', ' ballCenter', ' = ', 'ball', 'y', ' + ', '(', 'ball', 'height', ' / ', '2', ');']},
+    {i: 4, t: 'kvovov', c: ['var', ' difference', ' = ', 'paddleCenter', ' - ', 'ballCenter;']},
+    {i: 4, t: 'kvocvxvovdponvodpv', c: ['var', ' trajectory', ' = ', 'Math', '.', 'abs', '(difference)', ' / ', '(', 'player', 'height', ' / ', '2', ')', ' * ', 'ball', 'vyMax', ';']},
+    {i: 4, t: 'kvonovoov', c: ['return',  ' difference', ' <= ', '0', ' ? ', 'trajectory',  ' : ', '-', 'trajectory;']},
+    {i: 0, t: 'v', c: ['}']},
+    {},
+    {i: 0, t: 'kmv', c: ['function', ' isColliding', '(ob1, ob2) {']},
+    {i: 4, t: 'kdpodpodpodpodpodpodpodpodpodpodpodpv', c: ['return', ' ob2', 'x', ' + ', 'ob2', 'width', ' >= ', 'ob1', 'x', ' && ',
+                        'ob2', 'x', ' <= ', 'ob1', 'x', ' + ', 'ob1', 'width', ' && ',
+                         'ob2', 'y', ' + ', 'ob2', 'height', ' >= ', 'ob1', 'y', ' && ',
+                          'ob2', 'y', ' <= ', 'ob1', 'y', ' + ', 'ob1', 'height', ';']},
+    {i: 0, t: 'v', c: ['}']}
+])}}

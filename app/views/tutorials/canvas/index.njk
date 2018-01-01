@@ -1,20 +1,40 @@
 {% extends 'nunjucks/templates/base.njk' %}
 
-{% block title %}Tutorials - canvas - home{% endblock %}
+{% import 'nunjucks/macros/typography.njk' as typography %}
+{% import "nunjucks/macros/tutorials/navigation.njk" as navigation %}
+
+{% block title %}Tutorials - Canvas - home{% endblock %}
 {% block stylesheets %}
     <link rel="stylesheet" href="/css/tutorials.css">
 {% endblock %}
 
-{% block body %}
-{% include 'nunjucks/partials/topnav.njk' %}
-    <div class="dark-bg">
-        <div class="full-screen-canvas-wrapper">
-            <canvas id="lightningCanvas" class="layered-full-screen-canvas" width="300" height="300"></canvas>
-            <canvas id="rainCanvas" class="layered-full-screen-canvas" width="300" height="300"></canvas>
-        </div>
+{% block header %}
+    {% include 'nunjucks/partials/topnav.njk' %}
+{% endblock %}
+
+{% block main %}
+<div class="tutorials-main-index-wrapper">
+    <div class="main-heading-wrapper">
+        {{ typography.heading(1, 'Canvas tutorials', false, 'main-heading') }}
+        {{ typography.heading(2, 'Fun with the canvas', false, 'main-subheading')}}
     </div>
+    <h2 class="subindex-heading">Basics</h2>
+    {{ navigation.indexNavRow([
+        {href: '/tutorials/canvas/drawing-squares', title: 'Drawing Squares', img: '/images/tutorials/canvas/drawing-squares.png'},
+        {href: '/tutorials/canvas/drawing-triangles', title: 'Drawing Triangles', img: '/images/tutorials/canvas/drawing-triangles.png'},
+        {href: '/tutorials/canvas/drawing-circles', title: 'Drawing Circles', img: '/images/tutorials/canvas/drawing-circles.png'}
+    ], 'small') }}
+    <h2 class="subindex-heading">Utilising the canvas</h2>
+    {{ navigation.indexNavRow([
+        {href: '/tutorials/canvas/loading-spinner', title: 'Loading Spinner', img: '/images/tutorials/canvas/loading-spinner.png'},
+        {href: '/tutorials/canvas/matrix-effect', title: 'Matrix Effect', img: '/images/tutorials/canvas/matrix-effect.png'}
+    ], 'small') }}
+</div>
+{% endblock %}
+
+{% block footer %}
+{% include "nunjucks/partials/footer.njk" %}
 {% endblock %}
 
 {% block scripts %}
-    <script type="text/javascript" src="/scripts/canvas/raining.js"></script>
 {% endblock %}

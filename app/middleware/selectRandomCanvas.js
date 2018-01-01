@@ -6,6 +6,5 @@ module.exports = (req, res, next) => {
     for(let key in chosenCanvas) {
         res.locals[key] = chosenCanvas[key];
     }
-    console.log(res.locals);
     next();
 };

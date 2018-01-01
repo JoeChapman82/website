@@ -1,0 +1,129 @@
+.tutorials-main-wrapper {
+    box-sizing: border-box;
+    padding-left: 13vw;
+    padding-right: 13vw;
+    padding-bottom: 3rem;
+    max-width: 1024px;
+    margin: 65px auto 30px;
+    border-radius: 5px;
+    background-color: rgba(249, 249, 249, 1);
+    box-shadow: 0 0 .5cm rgba(0, 0, 0, .5);
+    position: relative;
+    padding-top: 10rem;
+}
+
+.main-heading-wrapper {
+    text-align: center;
+    background: url('../icons/playhouse.svg'), linear-gradient(to right, #83a4d4, #b6fbff);
+    background-repeat: no-repeat;
+    margin-bottom: 1rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 9rem;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    box-sizing: border-box;
+    border: 1px solid #70808e;
+}
+
+.tutorials-main-index-wrapper {
+    box-sizing: border-box;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    padding-bottom: 3rem;
+    max-width: 1024px;
+    margin: 65px auto 30px;
+    border-radius: 5px;
+    background-color: rgb(234, 239, 232);
+    box-shadow: 0 0 .5cm rgba(0, 0, 0, .5);
+    position: relative;
+    padding-top: 10rem;
+}
+
+.index-links-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.index-links-row-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 1rem;
+}
+
+.linked-tutorials {
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+@media screen and(max-width: 1100px) {
+    .tutorials-main-wrapper {
+        padding-left: 13vw;
+        padding-right: 13vw;
+    }
+}
+
+@media screen and(max-width: 1050px) {
+    .tutorials-main-wrapper,
+     .tutorials-main-index-wrapper {
+        margin: 60px 2vw 30px;
+    }
+}
+
+@media screen and(max-width: 800px) {
+    .tutorials-main-wrapper {
+        padding-left: 6vw;
+        padding-right: 6vw;
+    }
+
+    .index-links-row-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .main-heading-wrapper {
+        height: 7rem;
+    }
+
+    .tutorials-main-wrapper {
+        padding-top: 8rem;
+        padding-left: 3vw;
+        padding-right: 3vw;
+    }
+
+    .tutorials-main-index-wrapper {
+        padding-top: 8rem;
+    }
+}
+
+.tutorials-index-flex-wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: center;
+}
+
+@media screen and (max-width: 800px) {
+    .tutorials-index-flex-wrapper {
+        flex-wrap: wrap;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+}

@@ -1,12 +1,12 @@
 var canvas = document.getElementById('snakeCanvas');
 var ctx = canvas.getContext('2d');
 var twoPi = 2 * Math.PI;
-var time = 0;
 var lastTime = 0;
 var deltaTime = 0;
 var animation;
 var clicksMade = 0;
 
+console.log('hithere you');
 // main game
 var snake = {
     x: 0,
@@ -43,7 +43,6 @@ var Apple = function(x, y) {
     this.scoreTime = difficulty === 'hard' ? 0.5 : difficulty === 'medium' ? 0.75 : 1;
 };
 var apples = [];
-
 
 // measurements
 var worldWidth = 16;
@@ -113,22 +112,6 @@ function showHideUiElements(uiElement) {
 
 function randomNumber(min, max) {
   return Math.random() * (max - min) + min;
-}
-
-function drawDebugGrid() {
-    ctx.strokeStyle = 'rgba(222, 222, 222, 0.2)';
-    for(var i = 0; i <= worldWidth; i += 0.5) {
-        ctx.beginPath();
-        ctx.moveTo(ww(i), 0);
-        ctx.lineTo(ww(i), canvas.height);
-        ctx.stroke();
-    }
-    for(var j = 0; j <= worldHeight; j += 0.5) {
-        ctx.beginPath();
-        ctx.moveTo(0, ww(j));
-        ctx.lineTo(canvas.width, ww(j));
-        ctx.stroke();
-    }
 }
 
 // game screen specific functions
@@ -219,12 +202,6 @@ function renderSnake() {
     ctx.rect(snake.x, snake.y, snake.width, snake.height);
     ctx.fill();
     ctx.stroke();
-    // ctx.beginPath();
-    // ctx.rect(snake.x + snake.width / 4, snake.y + snake.height / 4, snake.width / 2, snake.height / 2);
-    // ctx.strokeStyle = 'lightgreen';
-    // ctx.stroke();
-    // ctx.fillStyle = 'lightblue';
-    // ctx.fill();
 
     snake.body.forEach(function(bodypart) {
         ctx.beginPath();

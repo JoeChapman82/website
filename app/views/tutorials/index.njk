@@ -1,16 +1,32 @@
 {% extends 'nunjucks/templates/base.njk' %}
 
+{% import 'nunjucks/macros/typography.njk' as typography %}
+{% import "nunjucks/macros/tutorials/navigation.njk" as navigation %}
+
 {% block title %}Tutorials - Home{% endblock %}
 {% block stylesheets %}
     <link rel="stylesheet" href="/css/tutorials.css">
 {% endblock %}
 
-{% block body %}
-{% include 'nunjucks/partials/topnav.njk' %}
-    <div class="temp-wrapper">
-        <a href="/tutorials/canvas/index">Canvas tutorials</a>
-        <a href="/tutorials/games/index">Games tutorials</a>
+{% block header %}
+    {% include 'nunjucks/partials/topnav.njk' %}
+{% endblock %}
+
+{% block main %}
+    <div class="tutorials-main-index-wrapper">
+        <div class="main-heading-wrapper">
+            {{ typography.heading(1, 'Tutorials', false, 'main-heading') }}
+            {{ typography.heading(2, 'Learning with words and pictures', false, 'main-subheading')}}
+        </div>
+        {{ navigation.indexNavRow([
+            {href: '/tutorials/games/index', title: 'Games tutorials', img: '/images/tutorials/joystick.png'},
+            {href: '/tutorials/canvas/index', title: 'Canvas tutorials', img: '/images/tutorials/canvas.png'}
+        ], 'large') }}
     </div>
+{% endblock %}
+
+{% block footer %}
+{% include "nunjucks/partials/footer.njk" %}
 {% endblock %}
 
 {% block scripts %}
