@@ -1,8 +1,7 @@
 .snake-flex-wrapper {
     box-sizing: border-box;
     width: 100%;
-    height: calc(100vh - 50px);
-    margin-top: 50px;
+    height: 100vh;
     border: 3px solid $green;
     display: flex;
     flex-direction: row;
@@ -16,8 +15,7 @@
 .snake-flex-game-over-wrapper {
     box-sizing: border-box;
     width: 100%;
-    height: calc(100vh - 50px);
-    margin-top: 50px;
+    height: 100vh;
     border: 3px solid $green;
     display: flex;
     flex-direction: row;
@@ -32,8 +30,7 @@
 .snake-how-to-wrapper {
     box-sizing: border-box;
     width: 100%;
-    height: calc(100vh - 50px);
-    margin-top: 50px;
+    height: 100vh;
     border: 3px solid $green;
     display: flex;
     flex-direction: column;
@@ -49,8 +46,7 @@
 .snake-settings-wrapper {
     box-sizing: border-box;
     width: 100%;
-    height: calc(100vh - 50px);
-    margin-top: 50px;
+    height: 100vh;
     border: 3px solid $green;
     display: flex;
     flex-direction: column;
@@ -122,6 +118,14 @@
     font-size: 20vmin;
     font-family: 'Comic Sans MS', Arial;
     color: $green;
+}
+
+.snake-ingame-button-home {
+    top: 13px;
+}
+
+.snake-ingame-button-menu {
+    top: 10px;
 }
 
 @media screen and(max-width: 700px) {

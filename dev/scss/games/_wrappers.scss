@@ -11,9 +11,13 @@
     justify-content: center;
 };
 
+.full-screen-game-canvas-wrapper {
+    position: relative;
+}
+
 .layered-game-screen-canvas {
     position: absolute;
-    top: 50px;
+    top: 0;
     left: 0;
 }
 
@@ -24,11 +28,11 @@
 }
 
 .game-screen-ui {
+    box-sizing: border-box;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    box-sizing: border-box;
 }
 
 .games-main-wrapper {

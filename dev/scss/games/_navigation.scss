@@ -1,0 +1,42 @@
+// Specific to /in games
+
+.ingame-page-home {
+    z-index: 5;
+    position: absolute;
+    top: 25px;
+    left: 15px;
+}
+
+.ingame-home-svg {
+    width: 2.5rem;
+    height: 2.5rem;
+    transition: width .2s ease, height .2s ease, stroke .2s ease;
+}
+
+.ingame-home-svg:hover {
+    stroke: #00f;
+    width: 2.3rem;
+    height: 2.3rem;
+}
+
+.ingame-page-menu {
+    z-index: 5;
+    position: absolute;
+    top: 22px;
+    right: 15px;
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+}
+
+.ingame-menu-svg {
+    width: 2.5rem;
+    height: 2.5rem;
+    transition: width .2s ease, height .2s ease, stroke .2s ease;
+}
+
+.ingame-menu-svg:hover {
+    stroke: #00f;
+    width: 2.3rem;
+    height: 2.3rem;
+}

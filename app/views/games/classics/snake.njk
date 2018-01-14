@@ -1,19 +1,17 @@
 {% extends 'nunjucks/templates/base.njk' %}
+{% import "nunjucks/macros/games/navigation.njk" as navigation %}
+
 
 {% block title %}Snake{% endblock %}
 {% block stylesheets %}
     <link rel="stylesheet" href="/css/games.css">
 {% endblock %}
 
-{% block header %}
-    {% include 'nunjucks/partials/topnav.njk' %}
-{% endblock %}
-
 {% block main %}
 
-    <div class="full-screen-canvas-wrapper">
+    <div class="full-screen-game-canvas-wrapper">
+        {{ navigation.inGameButtons('snake-ingame-button') }}
         <canvas id="snakeCanvas" class="layered-game-screen-canvas" width="300" height="300"></canvas>
-    </div>
     <div id="titleScreenUi" class="game-screen-ui">
         <div class="snake-main-title-wrapper">
                 <h1 class="snake-main-title">Snake</h1>
@@ -64,7 +62,7 @@
             <button id="playAgain" class="snake-button title-screen-button change-screen-button" type="button" name="button" data-screen="gameScreen">PLAY AGAIN</button>
         </div>
     </div>
-
+</div>
 {% endblock %}
 
 

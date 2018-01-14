@@ -97,18 +97,6 @@
     margin-left: 1rem;
 }
 
-.mobile-hamburger-menu {
-    padding: 1.5rem 1rem 1rem;
-    position: absolute;
-    top: 1px;
-    right: 0px;
-    background-image: url('../icons/menu.svg');
-    background-repeat: no-repeat;
-    background-position: 50% 30%;
-    background-size: 2.2rem;
-    margin-right: 1rem;
-}
-
 // Specific to /random
 .random-page-nav {
     width: 100%;
@@ -153,4 +141,139 @@
 .random-page-refresh:hover, {
     background-image: url('../icons/refresh-hover.svg');
     background-size: 2.3rem;
+}
+
+// Mobile menu specific styles
+.mobile-menu-button {
+    background: 0;
+    border: 0;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+.mobile-menu-button-svg {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.mobile-menu-button-svg:hover {
+    width: 2.3rem;
+    height: 2.3rem;
+    stroke: rgba(0, 0, 255, 1);
+}
+
+.mobile-page-menu {
+    z-index: 5;
+    position: absolute;
+    top: 22px;
+    right: 15px;
+    background-color: transparent;
+    border: 0;
+}
+
+.mobile-menu-svg {
+    width: 2.5rem;
+    height: 2.5rem;
+    transition: width .2s ease, height .2s ease, stroke .2s ease;
+}
+
+.mobile-menu-svg:hover {
+    stroke: #00f;
+    width: 2.3rem;
+    height: 2.3rem;
+}
+
+.mobile-menu {
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    right: 0;
+    box-sizing: border-box;
+    height: 100vh;
+    width: 0;
+    overflow-x: hidden;
+    background: repeating-linear-gradient(45deg, transparent, transparent 9px, rgba(0, 0, 0, .1) 10px, rgba(0, 0, 0, .1) 12px),
+    linear-gradient(to top right, rgba(115, 0, 0, .98) -10%, rgba(0, 0, 115, .98));
+    transition: width .5s ease;
+}
+
+.mobile-menu * {
+    display: none;
+}
+
+.mobile-menu.mobile-menu-visible * {
+    display: block;
+}
+
+.mobile-menu.mobile-menu-visible {
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    right: 0;
+    box-sizing: border-box;
+    border-left: 2px solid #909c9e;
+    box-shadow: -5px 0 10px 0 darken($slate-grey, 10%);
+    height: 100vh;
+    width: $mobile-menu-width;
+    max-width: 95vw;
+    background: repeating-linear-gradient(45deg, transparent, transparent 9px, rgba(0, 0, 0, .1) 10px, rgba(0, 0, 0, .1) 12px),
+    linear-gradient(to top right, rgba(115, 0, 0, .98) -10%, rgba(0, 0, 115, .98));
+    overflow-y: scroll;
+}
+
+.mobile-menu-wrapper {
+    padding: .5rem;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+}
+
+.mobile-menu-close-wrapper {
+    height: 3.5rem;
+}
+
+.mobile-menu-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: 0;
+    background-color: transparent;
+    outline: 0;
+}
+
+.mobile-menu-close svg {
+    stroke: $white;
+    width: 2rem;
+    height: 2rem;
+    vertical-align: center;
+    fill: none;
+    transition: width .2s ease, height .2s ease, stroke .2s ease;
+}
+
+.mobile-menu-close:hover svg {
+    stroke: rgba(188, 0, 0, 1);
+    width: 1.8rem;
+    height: 1.8rem;
+}
+
+.mobile-menu-heading {
+    color: $white;
+    font-size: 1.8rem;
+}
+
+.mobile-menu-main-link {
+    color: $white;
+    text-decoration: none;
+    font-size: 1.4rem;
+    padding: .5rem .5rem 1.5rem .25rem;
+    display: block;
+    border-top: 1px solid rgba(222, 222, 222, .2);
+}
+
+.mobile-menu-main-link:hover {
+    color: #15868A;
+    background-color: rgba(222, 222, 222, 0.3);
 }

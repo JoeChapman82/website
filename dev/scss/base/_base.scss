@@ -1,5 +1,12 @@
 html {
     font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+*,
+ *::before,
+  *::after {
+  box-sizing: inherit;
 }
 
 .dark-bg {

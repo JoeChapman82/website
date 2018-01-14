@@ -53,7 +53,7 @@ var p2DownPressed = false;
 var winningScore = 10;
 
 function setup() {
-    canvas.height = window.innerHeight - document.getElementById('mainNavigation').getBoundingClientRect().height;
+    canvas.height = window.innerHeight;
     canvas.width = window.innerWidth;
     horizontalUnit = canvas.width / worldWidth;
     verticalUnit = canvas.height / worldHeight;
@@ -418,7 +418,10 @@ function addSelectedButtons() {
     });
 }
 
-document.addEventListener('touchstart', function(e) {
+canvas.addEventListener('touchstart', function(e) {
+    if(e.target.nodeName !== 'BUTTON') {
+        e.preventDefault();
+    }
     if(activeScreen !== 'gameScreen') {
         return;
     }
@@ -427,17 +430,23 @@ document.addEventListener('touchstart', function(e) {
     } else {
         p1UpPressed = true;
     }
-});
+}, true);
 
-document.addEventListener('touchend', function(e) {
+canvas.addEventListener('touchend', function(e) {
+    if(e.target.nodeName !== 'BUTTON') {
+        e.preventDefault();
+    }
     if(activeScreen !== 'gameScreen') {
         return;
     }
     p1UpPressed = false;
     p1DownPressed = false;
-});
+}, true);
 
-document.addEventListener('mousedown', function(e) {
+canvas.addEventListener('mousedown', function(e) {
+    if(e.target.nodeName !== 'BUTTON') {
+        e.preventDefault();
+    }
     if(activeScreen !== 'gameScreen') {
         return;
     }
@@ -446,14 +455,17 @@ document.addEventListener('mousedown', function(e) {
     } else {
         p1UpPressed = true;
     }
-});
+}, true);
 
-document.addEventListener('mouseup', function(e) {
+canvas.addEventListener('mouseup', function(e) {
+    if(e.target.nodeName !== 'BUTTON') {
+        e.preventDefault();
+    }
     if(activeScreen !== 'gameScreen') {
         return;
     }
     p1UpPressed = false;
     p1DownPressed = false;
-});
+}, true);
 
 }());

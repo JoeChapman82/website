@@ -1,16 +1,16 @@
 {% extends 'nunjucks/templates/base.njk' %}
+{% import "nunjucks/macros/games/navigation.njk" as navigation %}
 
 {% block title %}Action games{% endblock %}
 {% block stylesheets %}
     <link rel="stylesheet" href="/css/games.css">
 {% endblock %}
 
-{% block header %}
-    {% include 'nunjucks/partials/topnav.njk' %}
-{% endblock %}
 {% block main %}
+<div class="full-screen-game-canvas-wrapper">
 
-<div class="full-screen-canvas-wrapper">
+    {{ navigation.inGameButtons('pong-ingame-button') }}
+
     <canvas id="pongCanvas" class="layered-game-screen-canvas" width="300" height="300"></canvas>
 
     <div id="titleScreenUi" class="game-screen-ui pong-ui-wrapper pong-title-screen-ui">

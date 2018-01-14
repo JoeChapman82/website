@@ -1,8 +1,8 @@
 .pong-ui-wrapper {
     width: 100%;
     position: absolute;
-    height: calc(100vh - 50px);
-    top: 50px;
+    height: 100vh;
+    top: 0;
     left: 0;
     display: flex;
     flex-direction: column;
@@ -34,7 +34,7 @@
 
 .pong-title {
     font-size: 20vmin;
-    padding: 2rem;
+    padding: 0 2rem 2rem;
 }
 
 .pong-sub-title {

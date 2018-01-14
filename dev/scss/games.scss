@@ -1,4 +1,5 @@
 @import 'variables/colours';
+@import 'games/variables/widths';
 @import 'games/variables/colours';
 
 @import 'games/base';
@@ -6,5 +7,9 @@
 @import 'games/links';
 @import 'games/wrappers';
 @import 'games/typography';
+@import 'games/navigation';
+
+// games at the end so cascade properly
 @import 'games/classics/snake';
 @import 'games/classics/pong';
+@import 'games/puzzle/match-three';

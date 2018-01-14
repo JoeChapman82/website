@@ -80,7 +80,7 @@ var screens = {
 var activeScreen = 'titleScreen';
 
 function setup() {
-    canvas.height = window.innerHeight - 50;
+    canvas.height = window.innerHeight;
     canvas.width = window.innerWidth;
     horizontalUnit = canvas.width / worldWidth;
     worldHeight = canvas.height / ww(1);
@@ -262,19 +262,9 @@ function renderScore() {
     ctx.beginPath();
     ctx.textBaseline = 'top';
     ctx.font = '6vmin Comic Sans MS';
-    ctx.textAlign = 'end';
+    ctx.textAlign = 'center';
     ctx.fillStyle = 'green';
-    ctx.fillText('Score: ' + score, ww(15.75), 0);
-    ctx.textBaseline = 'alphabetic';
-}
-
-function renderDifficulty() {
-    ctx.beginPath();
-    ctx.textBaseline = 'top';
-    ctx.font = '6vmin Comic Sans MS';
-    ctx.textAlign = 'start';
-    ctx.fillStyle = 'green';
-    ctx.fillText('Difficulty: ' + difficulty, ww(0.25), 0);
+    ctx.fillText('Score: ' + score, canvas.width / 2, 0);
     ctx.textBaseline = 'alphabetic';
 }
 
@@ -292,7 +282,6 @@ function isCollidingRectRect(a, b) {
 }
 
 function isPassedWorldsEnd(item) {
-    console.log(item.y, ww(worldHeight));
     return item.x < 0 || item.x > ww(worldWidth - 0.5) || item.y < ww(0) || item.y + item.height > ww(worldHeight + 0.5);
 }
 
@@ -329,7 +318,6 @@ function gameScreen() {
     updateSnake();
     renderSnake();
     renderScore();
-    renderDifficulty();
 }
 
 function gameOverScreen() {

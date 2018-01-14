@@ -1,0 +1,29 @@
+{% extends 'nunjucks/templates/base.njk' %}
+{% import "nunjucks/macros/games/navigation.njk" as navigation %}
+{% import "nunjucks/macros/games/typography.njk" as typography %}
+
+{% block title %}Puzzle games{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="/css/games.css">
+{% endblock %}
+
+{% block header %}
+    {% include 'nunjucks/partials/topnav.njk' %}
+{% endblock %}
+
+{% block main %}
+    <div class="games-main-wrapper">
+
+        {{ typography.mainHeading('Puzzle Games')}}
+        {{ navigation.indexNavRow([
+            {href: '/games/puzzle/match-three', title: 'Match 3', img: '/images/tutorials/games/pong.png'}
+        ]) }}
+    </div>
+{% endblock %}
+
+{% block footer %}
+{% include "nunjucks/partials/footer.njk" %}
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}
