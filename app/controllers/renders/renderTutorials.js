@@ -12,5 +12,7 @@ module.exports = {
     canvasMatrixEffect: (req, res) => res.render('tutorials/canvas/matrix-effect', {content: canvasContent['matrix-effect']}),
     gamesIndex: (req, res) => res.render('tutorials/games/index'),
     gamesFpsCounter: (req, res) => res.render('tutorials/games/display-fps-counter', {content: gamesContent['display-fps-counter']}),
+    gamesGameTimer: (req, res) => res.render('tutorials/games/game-timer', {content: gamesContent['game-timer']}),
+    gamesKeepingScore: (req, res) => res.render('tutorials/games/keeping-score', {content: gamesContent['keeping-score']}),
     gamesMakePong: (req, res) => res.render('tutorials/games/make-pong', {content: gamesContent['make-pong']})
 };

@@ -10,7 +10,7 @@
 
 {% block main %}
 <div id="fullScreenWrapper" class="match-three-wrapper">
-    {{ navigation.inGameButtons('snake-ingame-button') }}
+    {{ navigation.inGameButtons('/games/puzzle/index', 'snake-ingame-button') }}
     <div class="match-three-canvas-wrapper">
         {# Game screen #}
         <div id="gameScreen" class="match-three-game-wrapper js-hidden">
@@ -18,7 +18,7 @@
                 <canvas class="match-three-middle-canvas" id="matchThreeCanvasMiddle" width="600" height="600"></canvas>
                 <div class="match-three-bottom-canvas-wrapper">
 
-                    <canvas class="match-three-bottom-canvas" id="matchThreeCanvasBottom" width="600" height="300"></canvas>
+                    <canvas class="match-three-bottom-canvas" id="matchThreeCanvasBottom" width="600" height="400"></canvas>
 
                     <div class="match-three-explode-button-wrapper">
                         <button id="matchThreeExplodeButton" class="match-three-explode-button" type="button" name="button">
@@ -72,6 +72,9 @@
             </div>
 
         <div class="match-three-title-screen-bottom">
+            <div class="match-three-highscore-wrapper">
+                <p id="highScore"></p>
+            </div>
     </div>
     </div>
     </div>

@@ -10,7 +10,7 @@
 {% block main %}
 
     <div class="full-screen-game-canvas-wrapper">
-        {{ navigation.inGameButtons('snake-ingame-button') }}
+        {{ navigation.inGameButtons('/games/classics/index', 'snake-ingame-button') }}
         <canvas id="snakeCanvas" class="layered-game-screen-canvas" width="300" height="300"></canvas>
     <div id="titleScreenUi" class="game-screen-ui">
         <div class="snake-main-title-wrapper">
@@ -20,6 +20,9 @@
             <button id="playButton" class="snake-button title-screen-button change-screen-button" type="button" name="button" data-screen="gameScreen">PLAY</button>
             <button id="settingsButton" class="snake-button title-screen-button change-screen-button" type="button" name="button" data-screen="settingsScreen">SETTINGS</button>
             <button id="howToButton" class="snake-button title-screen-button change-screen-button" type="button" name="button" data-screen="howToScreen">HOW TO PLAY</button>
+        </div>
+        <div class="snake-highscore-wrapper">
+            <p id="highScore">Highscore: 0</p>
         </div>
     </div>
 

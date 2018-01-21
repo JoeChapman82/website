@@ -10,6 +10,8 @@ module.exports = (tutorials) => {
     tutorials.get('/canvas/matrix-effect', tutorialsController.canvasMatrixEffect);
     tutorials.get('/games/index', tutorialsController.gamesIndex);
     tutorials.get('/games/display-fps-counter', tutorialsController.gamesFpsCounter);
+    tutorials.get('/games/game-timer', tutorialsController.gamesGameTimer);
+    tutorials.get('/games/keeping-score', tutorialsController.gamesKeepingScore);
     tutorials.get('/games/make-pong', tutorialsController.gamesMakePong);
     return tutorials;
 };

@@ -10,5 +10,7 @@ module.exports = {
     canvasMatrixEffect: [renderTutorials.canvasMatrixEffect],
     gamesIndex: [renderTutorials.gamesIndex],
     gamesFpsCounter: [renderTutorials.gamesFpsCounter],
+    gamesGameTimer: [renderTutorials.gamesGameTimer],
+    gamesKeepingScore: [renderTutorials.gamesKeepingScore],
     gamesMakePong: [renderTutorials.gamesMakePong]
 };

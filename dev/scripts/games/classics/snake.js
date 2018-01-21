@@ -6,7 +6,6 @@ var deltaTime = 0;
 var animation;
 var clicksMade = 0;
 
-console.log('hithere you');
 // main game
 var snake = {
     x: 0,
@@ -26,6 +25,8 @@ var SnakeBody = function(x, y) {
 };
 
 var score = 0;
+var highScore = getHighScore();
+document.getElementById('highScore').innerText = 'Highscore: ' + highScore;
 var difficulty = 'easy';
 var difficulties = ['easy', 'medium', 'hard'];
 var directions = ['right', 'down', 'left', 'up'];
@@ -177,6 +178,9 @@ function updateSnake() {
         }
         if(isPassedWorldsEnd(snake)) {
             isAlive = false;
+            if(score > highScore && isInteger(score) && score < 10000) {
+                setHighScore(score);
+            }
             changeGivenScreen('gameOverScreen');
         }
         for(var i = 0; i < snake.body.length; i++) {
@@ -308,6 +312,21 @@ function changeDifficulty() {
     difficulty = difficulties.includes(this.dataset.difficulty) ? this.dataset.difficulty : 'easy';
 }
 
+function getHighScore() {
+    var score = parseInt(localStorage.getItem('snakeHighScore'));
+    return isInteger(score) ? score : 0;
+}
+
+function setHighScore(score) {
+    localStorage.setItem('snakeHighScore', score);
+    highScore = getHighScore();
+    document.getElementById('highScore').innerText = 'Highscore: ' + score;
+}
+
+function isInteger(value) {
+    return typeof value === 'number' && isFinite(value) && Math.floor(value) === value;
+}
+
 function titleScreen() {}
 function settingsScreen() {}
 function howToScreen() {}
@@ -383,5 +402,15 @@ document.addEventListener('click', function(e) {
             snake.direction = e.x > canvas.width / 2 ? directions[(directions.indexOf(snake.direction) + 1) % directions.length] : directions[((directions.indexOf(snake.direction) + 3)) % directions.length];
             snake.hasChangedDirection = false;
         }
+    }
+});
+
+document.getElementById('playButton').addEventListener('click', function() {
+    var el = document.getElementById('body');
+    var rfs = el.requestFullscreen || el.webkitRequestFullScreen || el.mozRequestFullScreen || el.msRequestFullscreen;
+    try {
+        rfs.call(el);
+    } catch(error) {
+        console.log('no full screen');
     }
 });

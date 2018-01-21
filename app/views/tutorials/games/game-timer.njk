@@ -1,0 +1,100 @@
+{% extends 'nunjucks/templates/base.njk' %}
+
+{% import 'nunjucks/macros/tutorials/code.njk' as code %}
+{% import 'nunjucks/macros/tutorials/navigation.njk' as navigation %}
+{% import 'nunjucks/macros/typography.njk' as typography %}
+
+{% block title %}{{ content.pageTitle }}{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="/css/tutorials.css">
+{% endblock %}
+
+{% block header %}
+    {% include 'nunjucks/partials/topnav.njk' %}
+{% endblock %}
+
+{% block main %}
+<main class="tutorials-main-wrapper">
+    <div class="main-heading-wrapper">
+        {{ typography.heading(1, content.mainHeading, false, 'main-heading') }}
+        {{ typography.heading(2, content.authorHeading, false, 'main-subheading')}}
+    </div>
+    {{ navigation.internalPage([{introduction: content.pageLink1},{variables: content.pageLink2},
+        {updateMethods: content.pageLink3}, {renderMethods: content.pageLink4}, {theCode: content.pageLink5}]) }}
+    <canvas class="demo-canvas centred-display-canvas space-background-tutorial-canvas" id="demoCanvas2" width="700" height="300"></canvas>
+    {{ typography.heading(2, content.subHeading1, 'introduction', 'anchor-point') }}
+    {{ typography.parapgraph(content.p1) }}
+    {{ typography.parapgraph(content.p2) }}
+    {% include "nunjucks/partials/tutorials/games/base-html.njk" %}
+    {{ typography.parapgraph(content.p3) }}
+    {{ typography.parapgraph(content.p4) }}
+
+    {{ typography.rule('tutorials-seperator')}}
+    {{ typography.heading(2, content.subHeading2, 'variables', 'anchor-point') }}
+    {{ typography.parapgraph(content.p5) }}
+    {% include "nunjucks/partials/tutorials/games/game-timer/example-1.njk" %}
+    {{ typography.parapgraph(content.p6) }}
+    {{ typography.parapgraph(content.p7) }}
+    {{ typography.rule('tutorials-seperator')}}
+
+    {{ typography.heading(2, content.subHeading3, 'updateMethods', 'anchor-point') }}
+    {{ typography.parapgraph(content.p8) }}
+    {% include "nunjucks/partials/tutorials/games/game-timer/example-2.njk" %}
+    {{ typography.parapgraph(content.p9) }}
+    {{ typography.parapgraph(content.p10) }}
+    {{ typography.parapgraph(content.p11) }}
+
+    {{ typography.rule('tutorials-seperator')}}
+    {{ typography.heading(2, content.subHeading4, 'renderMethods', 'anchor-point') }}
+    {{ typography.parapgraph(content.p12) }}
+    {% include "nunjucks/partials/tutorials/games/game-timer/example-3.njk" %}
+
+    {{ typography.parapgraph(content.p13) }}
+    {{ typography.parapgraph(content.p14) }}
+    {{ typography.parapgraph(content.p15) }}
+    {{ typography.parapgraph(content.p16) }}
+    {% include "nunjucks/partials/tutorials/games/game-timer/example-4.njk" %}
+
+
+
+    {{ typography.parapgraph(content.p17) }}
+    {{ typography.parapgraph(content.p18) }}
+    {{ typography.rule('tutorials-seperator')}}
+
+
+    {{ typography.heading(2, content.subHeading5, 'endResult') }}
+    {{ typography.parapgraph(content.p19) }}
+    {{ typography.rule('tutorials-seperator')}}
+
+
+    {{ typography.heading(2, content.subHeading6, 'theCode', 'anchor-point') }}
+    <div class="full-code-wrapper">
+        {% include "nunjucks/partials/tutorials/code-buttons-html-css-js.njk" %}
+        {% include "nunjucks/partials/tutorials/base-html-code.njk" %}
+        {% include "nunjucks/partials/tutorials/empty-css-code-block.njk" %}
+        {% include "nunjucks/partials/tutorials/games/game-timer/full-js.njk" %}
+        <div id="fullCodeResult" class="full-code-result">
+            <canvas class="demo-canvas space-background-tutorial-canvas" id="demoCanvas" width="700" height="300"></canvas>
+        </div>
+    </div>
+
+    {{ typography.rule('tutorials-seperator')}}
+    <div class="linked-tutorials">
+        <h3 class="linked-tutorials-text">{{ content.otherTutorials }}</h3>
+        {{ navigation.indexNavRow([
+            {href: '/tutorials/games/display-fps-counter', title: 'Displaying FPS', img: '/images/tutorials/games/fps.png'},
+            {href: '/tutorials/canvas/drawing-circles', title: 'Drawing Circles', img: '/images/tutorials/canvas/drawing-circles.png'}
+        ], 'small') }}
+    </div>
+
+</main>
+{% endblock %}
+
+{% block footer %}
+{% include "nunjucks/partials/footer.njk" %}
+{% endblock %}
+
+{% block scripts %}
+    <script type="text/javascript" src="/scripts/tutorials/main.js"></script>
+    <script type="text/javascript" src="/scripts/tutorials/games/game-timer.js"></script>
+{% endblock %}

@@ -7,9 +7,9 @@
 {% endblock %}
 
 {% block main %}
-<div class="full-screen-game-canvas-wrapper">
+<div id="fullScreenWrapper" class="full-screen-game-canvas-wrapper">
 
-    {{ navigation.inGameButtons('pong-ingame-button') }}
+    {{ navigation.inGameButtons('/games/classics/index', 'pong-ingame-button') }}
 
     <canvas id="pongCanvas" class="layered-game-screen-canvas" width="300" height="300"></canvas>
 
@@ -18,7 +18,7 @@
             <h1 class="pong-title">PONG</h1>
         </div>
         <div class="pong-buttons">
-            <button class="change-screen-button pong-button" type="button" name="button" data-screen="gameScreen">PLAY</button>
+            <button id="playButton" class="change-screen-button pong-button" type="button" name="button" data-screen="gameScreen">PLAY</button>
             <button class="change-screen-button pong-button" type="button" name="button" data-screen="settingsScreen">SETTINGS</button>
             <button class="change-screen-button pong-button" type="button" name="button" data-screen="howToScreen">HOW TO PLAY</button>
         </div>

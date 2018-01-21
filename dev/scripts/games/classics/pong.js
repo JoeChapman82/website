@@ -468,4 +468,14 @@ canvas.addEventListener('mouseup', function(e) {
     p1DownPressed = false;
 }, true);
 
+document.getElementById('playButton').addEventListener('click', function() {
+    var el = document.getElementById('body');
+    var rfs = el.requestFullscreen || el.webkitRequestFullScreen || el.mozRequestFullScreen || el.msRequestFullscreen;
+    try {
+        rfs.call(el);
+    } catch(error) {
+        console.log('no full screen');
+    }
+});
+
 }());

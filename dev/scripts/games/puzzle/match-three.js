@@ -41,10 +41,13 @@ var mainGameTimer = 0;
 var isShuffling = false;
 var requiresMovement = false;
 var selectionPermitted = false;
+var highScore = getHighScore();
+document.getElementById('highScore').innerText = 'Highscore: ' + highScore;
+var maximumScore = 999999;
 
 // timers
 var displayAvailableMoveTimer = 0;
-var displayAvailableMoveTime = 5;
+var displayAvailableMoveTime = 50;
 var cpuMoveTimer = 0;
 var cpuMoveTime = 1;
 
@@ -227,7 +230,7 @@ function updateRecentMatches() {
 }
 
 function handlePlayerSwitches(matches) {
-    if(!isSwitching) {
+    if(!isSwitching || picks.length !== 2) {
         return matches;
     }
     var specialMoves = handleSpecialMoves(matches);
@@ -626,7 +629,7 @@ function handleBoardShuffle() {
     var centerX = width / 2 - inUnits(0.5);
     var centerY = height / 2 - inUnits(0.5);
     for(var i = 0; i < columns.length; i++) {
-        for(var j = 0; j < columns.length; j++) {
+        for(var j = 0; j < columns[i].length; j++) {
             if(columns[i][j].x > centerX + increment || columns[i][j].x < centerX - increment) {
                 columns[i][j].x += columns[i][j].x > centerX ? -increment : increment;
                 columns[i][j].x = parseFloat(columns[i][j].x.toFixed(2));
@@ -703,6 +706,9 @@ function manageTimers() {
                     init();
                 } else {
                     activeScreen = 'gameOverScreen';
+                    if(score > highScore && isInteger(score) && score < maximumScore) {
+                        setHighScore(score);
+                    }
                     document.getElementById('gameScreen').classList.add('js-hidden');
                     document.getElementById('matchThreeGameOverScreen').classList.remove('js-hidden');
                 }
@@ -749,7 +755,7 @@ function handleCpuInput() {
 }
 
 function handleMouseDown(e) {
-    if(!selectionPermitted) {
+    if(isSwitching || !selectionPermitted) {
         return;
     }
     isDragging = true;
@@ -760,10 +766,10 @@ function handleMouseDown(e) {
 }
 
 function handleTouchStart(e) {
-    if(activeScreen !== 'gameScreen') {
+    e.preventDefault();
+    if(activeScreen !== 'gameScreen' || !selectionPermitted || isSwitching) {
         return;
     }
-    e.preventDefault();
     isDragging = true;
     var x = ~~((e.touches[0].clientX - canvasRect.x) / (unit * ratioX));
     var y = ~~((e.touches[0].clientY - canvasRect.y) / (unit * ratioY));
@@ -780,11 +786,8 @@ function handleMouseUp(e) {
 }
 
 function handleTouchEnd(e) {
-    if(activeScreen !== 'gameScreen') {
-        return;
-    }
     e.preventDefault();
-    if(isSwitching) {
+    if(activeScreen !== 'gameScreen' || isSwitching) {
         return;
     }
     isDragging = false;
@@ -792,7 +795,7 @@ function handleTouchEnd(e) {
 }
 
 function handleMouseMove(e) {
-    if(!isDragging || picks.length < 1) {
+    if(!isDragging || picks.length < 1 || isSwitching) {
         return;
     }
     var x = ~~((e.x - canvasRect.x) / (unit * ratioX));
@@ -807,11 +810,8 @@ function handleMouseMove(e) {
 }
 
 function handleTouchMove(e) {
-    if(activeScreen !== 'gameScreen') {
-        return;
-    }
     e.preventDefault();
-    if(!isDragging || picks.length < 1) {
+    if(activeScreen !== 'gameScreen' || isSwitching || !isDragging || picks.length < 1) {
         return;
     }
     var x = ~~((e.touches[0].clientX - canvasRect.x) / (unit * ratioX));
@@ -851,6 +851,20 @@ function pause() {
     animation = isPaused ? animation : requestAnimationFrame(main);
 }
 
+function getHighScore() {
+    var score = parseInt(localStorage.getItem('matchThreeHighScore'));
+    return isInteger(score) ? score : 0;
+}
+
+function setHighScore(score) {
+    localStorage.setItem('matchThreeHighScore', score);
+    highScore = getHighScore();
+    document.getElementById('highScore').innerText = 'Highscore: ' + score;
+}
+
+function isInteger(value) {
+    return typeof value === 'number' && isFinite(value) && Math.floor(value) === value;
+}
 
 function titleScreen() {
     ctx.fillStyle = 'rgba(222, 222, 222, 0.1)';

@@ -1,0 +1,12 @@
+.display-canvas-central-button {
+    position: absolute;
+    width: 50%;
+    height: 20%;
+    top: 30%;
+    left: 25%;
+    border-radius: 5px;
+    background-color: rgba(188, 188, 188, .6);
+    color: rgba(244, 244, 244, 1);
+    font-size: calc(8px + 2vmin);
+    z-index: 5;
+}

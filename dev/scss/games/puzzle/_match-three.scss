@@ -48,9 +48,10 @@
 .match-three-title-screen-top {
     width: 600px;
     height: 10vh;
+    min-height: 60px;
     max-width: 100%;
     position: relative;
-    background: url('/images/games/puzzle/match-three/bg.png');
+    background: url('/images/games/puzzle/match-three/space.jpg');
 }
 
 .match-three-title-screen-middle {
@@ -76,7 +77,7 @@
 
 .match-three-title-screen-bottom {
     width: 100%;
-    flex: 0 1 280px;
+    flex: 0 1 400px;
     background: url('/images/games/puzzle/match-three/pyramid.jpg');
     background-size: cover;
     -webkit-background-origin: border;
@@ -151,9 +152,10 @@
 }
 
 .match-three-top-canvas {
-    height: 9vh;
+    height: 10vh;
+    min-height: 60px;
     width: 100%;
-    background: url('/images/games/puzzle/match-three/bg.png');
+    background: url('/images/games/puzzle/match-three/space.jpg');
 }
 
 .match-three-middle-canvas {
@@ -362,4 +364,13 @@
 
 .match-three-title-button {
     bottom: 10%;
+}
+
+.match-three-highscore-wrapper {
+    text-align: center;
+    margin-top: 2vh;
+    font-size: calc(24px + 2vmin);
+    font-weight: bold;
+    color: rgba(0, 0, 128, .8);
+    font-family: 'Comic Sans MS', cursive, sans-serif;
 }
