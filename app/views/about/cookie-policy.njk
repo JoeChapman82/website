@@ -1,0 +1,45 @@
+{% extends 'nunjucks/templates/base.njk' %}
+{% import "nunjucks/macros/typography.njk" as typography %}
+
+{% block title %}Cookie policy{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="/css/about.css">
+{% endblock %}
+
+{% block header %}
+    {% include 'nunjucks/partials/topnav.njk' %}
+{% endblock %}
+
+{% block main %}
+<div id="mainWrapper" class="about-main-wrapper about-dark">
+    <div class="about-options-wrapper-small">
+        <div class="about-toggle-wrapper">
+            <span class="toggle-info">Theme</span>
+            <label class="switch">
+                <input id="aboutToggle" name="aboutToggle" type="checkbox" value="dark" checked>
+                <span class="slider"></span>
+            </label>
+        </div>
+    </div>
+    {{ typography.heading('1', 'COOKIE POLICY', false, 'main-heading')}}
+    {{ typography.rule() }}
+    <div class="about-section-wrapper">
+        <div class="about-left-section">
+            <div class="about-me-image-wrapper">
+                <img src="/images/about/invader.png" alt="The Joes Playhouse logo">
+            </div>
+        </div>
+        <div class="about-right-section">
+            <p>Cookie Policy - Coming soon</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+{% include "nunjucks/partials/footer.njk" %}
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript" src="/scripts/about/main.js"></script>
+{% endblock %}

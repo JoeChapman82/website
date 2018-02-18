@@ -1,0 +1,27 @@
+{% extends 'nunjucks/templates/base.njk' %}
+
+{% block title %}Oops{% endblock %}
+{% block stylesheets %}
+<link rel="stylesheet" href="/css/about.css">
+{% endblock %}
+
+{% block header %}
+    {% include 'nunjucks/partials/topnav.njk' %}
+{% endblock %}
+
+{% block main %}
+    <div class="full-screen-centred-flex">
+        <div class="error-page-text-wrapper">
+            <h1 class="error-page-heading">You broke something!</h1>
+            <p class="error-page-paragraph">Let's just hope this doesn't keep happening. If it does, it would be awfully nice of you to drop my an email using the links in the footer.</p>
+            <a class="error-page-link" href="/">Return to the home page</a>
+        </div>
+    </div>
+{% endblock %}
+
+{% block footer %}
+{% include "nunjucks/partials/footer.njk" %}
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}

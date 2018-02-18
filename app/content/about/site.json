@@ -1,0 +1,23 @@
+{
+    "pageTitle": "About Joes Playhouse",
+    "heading1": "ABOUT THE SITE",
+    "splitHeading1": {
+        "content": "Welcome to ",
+        "span": "Joe's Playhouse."
+    },
+    "p1": "Joes playhouse started out on a cold winter morning of 2017. The site is currently in alpha and there's plenty more work to be done.",
+    "p2": "I wanted to create a place to share some of the things I've made and learnt with others. I thought it would be a great idea to not only make things, but to also show how they're made. For every game, project or API I include on the site, I try to include a tutorial on how to make it... although sometimes I fall a little behind.",
+    "p3": "The site is made to be as accessible to as many people as possible, so outside of the projects section. I've avoided any cutting edge Javascript, and although there's a fair amount of work with the HTML canvas, the site should work just as well without it. If I can pass any work onto the server, I will do.",
+    "splitP1": {
+        "content": "One little section what isn't available through the main menus is the ",
+        "linkContent": "/random",
+        "content2": " page. Here lies lots of little things that don't really fit elsewhere. They're often the result of just a little bit of playing around or learning something new, so it was nice to have a little place to put them all, instead of them having nowhere to go."
+    },
+    "p4": "If you have any thoughts, or anything you'd like to see here, please feel free to get in contact with me and let me know. You'll find various ways to get in contact in the contact section of the footer below.",
+    "splitP2": {
+        "content": "",
+        "span": "Thanks",
+        "content2": " for stopping by. I hope you enjoy the rest of the site."
+    }
+
+}

@@ -1,23 +1,97 @@
 {% extends 'nunjucks/templates/base.njk' %}
+{% import "nunjucks/macros/typography.njk" as typography %}
 
-{% block title %}About - cv{% endblock %}
+{% block title %}{{ content.pageTitle }}{% endblock %}
 {% block stylesheets %}
     <link rel="stylesheet" href="/css/about.css">
+    <link rel="stylesheet" media="print" href="/css/cv-print.css">
 {% endblock %}
 
-{% block main %}
 {% block header %}
     {% include 'nunjucks/partials/topnav.njk' %}
 {% endblock %}
 
-    <div class="dark-bg">
-        <div class="full-screen-canvas-wrapper">
-            <canvas id="lightningCanvas" class="layered-full-screen-canvas" width="300" height="300"></canvas>
-            <canvas id="rainCanvas" class="layered-full-screen-canvas" width="300" height="300"></canvas>
+{% block main %}
+<div id="mainWrapper" class="about-main-wrapper about-dark">
+    <div class="about-options-wrapper no-print">
+        <form action="/about/cv" method="post">
+        <div class="about-options-button-wrapper">
+                <input type="hidden" name="template" value="cv">
+                <input type="hidden" name="_csrf" value="{{ _csrf }}">
+                <button class="cv-options-button" type="submit" name="button">Download (pdf)</button>
+            <button id="printButton" class="cv-options-button" type="button" name="button">Print</button>
+        </div>
+        <div class="about-toggle-wrapper">
+            <span class="toggle-info">Theme</span>
+            <label class="switch">
+                <input id="aboutToggle" name="aboutToggle" type="checkbox" value="dark" checked>
+                <span class="slider"></span>
+            </label>
+        </div>
+    </form>
+    </div>
+    {{ typography.heading('1', content.heading1, false, 'main-heading cv-heading')}}
+    <hr>
+    <div class="about-section-wrapper">
+        <div class="about-left-section">
+            <div class="about-me-image-wrapper">
+                <img src="/images/about/laptop.png" alt="A laptop computer">
+            </div>
+        </div>
+        <div class="about-right-cv-section">
+            {{ typography.splitHeading('2', content.splitHeading1.content, 'about-additional-margin-bottom', content.splitHeading1.span, 'about-highlighted-text', content.splitHeading1.content2) }}
+            {{ typography.heading('3', content.heading2, false, 'about-space-below')}}
+            {{ typography.parapgraph(content.p1) }}
+            {{ typography.parapgraph(content.p2) }}
+            {{ typography.parapgraph(content.p3) }}
         </div>
     </div>
+    <div class="about-section-wrapper-second">
+        <div class="about-left-cv-section">
+            {{ typography.heading('3', content.heading3, false, 'cv-contact-main-heading')}}
+            {{ typography.heading('3', content.heading4, false, 'cv-contact-heading')}}
+            {{ typography.parapgraph(content.p4, 'no-margin-bottom') }}
+            {{ typography.parapgraph(content.p5, 'no-margin-bottom') }}
+            {{ typography.parapgraph(content.p6, 'no-margin-bottom') }}
+
+            {{ typography.heading('3', content.heading5, false, 'cv-contact-heading')}}
+            {{ typography.parapgraph(content.p7, 'no-margin-bottom') }}
+
+            {{ typography.heading('3', content.heading6, false, 'cv-contact-heading')}}
+            {{ typography.parapgraph(content.p8, 'no-margin-bottom') }}
+        </div>
+        <div class="about-right-cv-section">
+            {{ typography.heading('3', content.heading7, false, 'about-space-below')}}
+
+            {{ typography.splitParagraph(content.splitP1.content, 'no-margin-bottom', content.splitP1.span, 'about-highlighted-text', content.splitP1.content2)}}
+            {{ typography.splitParagraph(content.splitP2.content, 'no-margin-bottom', content.splitP2.span, 'about-highlighted-text', content.splitP2.content2)}}
+            {{ typography.splitParagraph(content.splitP3.content, 'no-margin-bottom', content.splitP3.span, 'about-highlighted-text', content.splitP3.content2)}}
+            {{ typography.splitParagraph(content.splitP4.content, 'no-margin-bottom', content.splitP4.span, 'about-highlighted-text', content.splitP4.content2)}}
+            {{ typography.splitParagraph(content.splitP5.content, 'no-margin-bottom', content.splitP5.span, 'about-highlighted-text', content.splitP5.content2)}}
+
+            {{ typography.heading('3', content.heading8, false, 'section-heading')}}
+            {{ typography.heading('4', content.heading9, false, 'about-space-below cv-time-period')}}
+
+            {{typography.parapgraph(content.p9, 'no-margin-bottom') }}
+            {{typography.parapgraph(content.p10, 'no-margin-bottom') }}
+            {{typography.parapgraph(content.p11, 'no-margin-bottom') }}
+            {{typography.parapgraph(content.p12, 'no-margin-bottom') }}
+
+            {{ typography.heading('3', content.heading10, false, 'section-heading')}}
+            {{ typography.heading('4', content.heading11, false, 'about-space-below cv-time-period')}}
+            {{ typography.parapgraph(content.p13) }}
+            {{ typography.unorderedList('bullet-list', [content.list1.item1, content.list1.item2, content.list1.item3])}}
+
+        </div>
+
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+{% include "nunjucks/partials/footer.njk" %}
 {% endblock %}
 
 {% block scripts %}
-    <script type="text/javascript" src="/scripts/canvas/raining.js"></script>
+<script type="text/javascript" src="/scripts/about/main.js"></script>
 {% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'nunjucks/templates/base.njk' %}
+
+{% block title %}404{% endblock %}
+{% block stylesheets %}
+<link rel="stylesheet" href="/css/about.css">
+{% endblock %}
+
+{% block header %}
+{% include 'nunjucks/partials/topnav.njk' %}
+{% endblock %}
+
+{% block main %}
+    <div class="full-screen-centred-flex">
+        <div class="error-page-text-wrapper">
+            <h1 class="error-page-heading">Oh no, this is embarrassing!</h1>
+            <p class="error-page-paragraph">I've not made the 404 page yet, I've got a great idea for one though and as they say, it's the thought that counts.</p>
+            <a class="error-page-link" href="/">Return to the home page</a>
+        </div>
+    </div>
+{% endblock %}
+
+{% block footer %}
+{% include "nunjucks/partials/footer.njk" %}
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}

@@ -5,6 +5,6 @@ module.exports = (err, req, res, next) => { // error handler - prevents any unwa
             Stacktrace:<br \>
             ${err.stack}`);
     } else {
-        res.redirect('/');
+        res.redirect('/errors/gone-wrong');
     }
 };

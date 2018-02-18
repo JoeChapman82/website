@@ -1,0 +1,19 @@
+{
+    "pageTitle": "About me",
+    "heading1": "ABOUT ME",
+    "splitHeading1": {
+        "content": "Hello there. I'm ",
+        "span": "Joe Chapman."
+    },
+    "p1": "I'm a full stack developer from Leeds, England.",
+    "p2": "I greatly enjoy developing just about anything really. Nothing makes me happier than creating something useful to use or something fun to play with. I usually favour Javascript / Node JS, but also work with Java and C#. I also create interesting frontends.",
+    "p3": "When it comes to developing, I have a penchant for performance and optimisation which stems mainly from my main hobby - creating games.",
+    "p4": "Away from the computer screen, I have a love for many different types of music favouring things that are upbeat. Favourite genre, just has to be chiptune, with artists such as Demoscene Time Machine, Sabrepulse Big Giant Circles and Prof.Sakamoto",
+    "p5": "Other interests include, food, sci-fi and films.",
+    "p6": "To the left is a picture of me without a neck...unless you're on a small screen...then it was at the top...the picture that is, not my neck...that still wasn't there.",
+    "splitP1": {
+        "content": "",
+        "span": "Thanks",
+        "content2": " for stopping by."
+    }
+}

@@ -1,0 +1,102 @@
+{% extends 'nunjucks/templates/base.njk' %}
+{% import "nunjucks/macros/typography.njk" as typography %}
+
+{% block title %}Site map{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="/css/about.css">
+{% endblock %}
+
+{% block header %}
+    {% include 'nunjucks/partials/topnav.njk' %}
+{% endblock %}
+
+{% block main %}
+<div id="mainWrapper" class="about-main-wrapper about-dark">
+    <div class="about-options-wrapper-small">
+        <div class="about-toggle-wrapper">
+            <span class="toggle-info">Theme</span>
+            <label class="switch">
+                <input id="aboutToggle" name="aboutToggle" type="checkbox" value="dark" checked>
+                <span class="slider"></span>
+            </label>
+        </div>
+    </div>
+    {{ typography.heading('1', 'SITE MAP', false, 'main-heading')}}
+    {{ typography.rule() }}
+    <div class="about-section-wrapper">
+        <div class="about-left-section">
+            <div class="about-me-image-wrapper">
+                <img src="/images/about/invader.png" alt="The Joes Playhouse logo">
+            </div>
+        </div>
+        <div class="about-right-section">
+            <div class="about-column-wrapper">
+                <div class="about-column">
+                    <ul class="site-map-list">
+                        <li>{{ typography.link('Tutorials', '/tutorials', 'site-map-additional-margin-link') }}</li>
+                        <ul>
+                            <li>{{ typography.link('Games Tutorials', '/tutorials/games/index', 'site-map-additional-margin-link') }}</li>
+                            <ul>
+                                <li>{{ typography.link('Display FPS', '/tutorials/games/display-fps-counter') }}</li>
+                                <li>{{ typography.link('Score effect', '/tutorials/games/keeping-score') }}</li>
+                                <li>{{ typography.link('Game timer', '/tutorials/games/game-timer') }}</li>
+                                <li>{{ typography.link('Make Pong', '/tutorials/games/make-pong', 'site-map-additional-margin-link') }}</li>
+                            </ul>
+                            <li>{{ typography.link('Canvas Tutorials', '/tutorials/canvas/index', 'site-map-additional-margin-link') }}</li>
+                            <ul>
+                                <li>{{ typography.link('Drawing Squares', '/tutorials/canvas/drawing-squares') }}</li>
+                                <li>{{ typography.link('Drawing Circles', '/tutorials/canvas/drawing-circles') }}</li>
+                                <li>{{ typography.link('Drawing Triangles', '/tutorials/canvas/drawing-triangles') }}</li>
+                                <li>{{ typography.link('Loading Spinner', '/tutorials/canvas/loading-spinner') }}</li>
+                                <li>{{ typography.link('Matrix Effect', '/tutorials/canvas/matrix-effect') }}</li>
+                            </ul>
+                        </ul>
+                    </ul>
+                    {{ typography.rule('about-half-rule') }}
+                    <ul class="site-map-list">
+                        <li>{{ typography.link('Apis', '/apis') }}</li>
+                    </ul>
+                </div>
+                <div class="about-column">
+                    <ul class="site-map-list">
+                        <li>{{ typography.link('Games', '/games', 'site-map-additional-margin-link') }}</li>
+                        <ul>
+                            <li>{{ typography.link('Classic Games', '/games/classics/index') }}</li>
+                            <ul>
+                                <li>{{ typography.link('Pong', '/games/classics/pong') }}</li>
+                                <li>{{ typography.link('Snake', '/games/classics/snake') }}</li>
+                            </ul>
+                            <li>{{ typography.link('Puzzle Games', '/games/puzzle/index') }}</li>
+                            <ul>
+                                <li>{{ typography.link('Match Three', '/games/puzzle/match-three') }}</li>
+                            </ul>
+                            <li>{{ typography.link('Adventure Games', '/games/adventure/index') }}</li>
+                            <li>{{ typography.link('Arcade Games', '/games/arcade/index') }}</li>
+                        </ul>
+                    </ul>
+                    {{ typography.rule('about-half-rule') }}
+                    <ul class="site-map-list">
+                        <li>{{ typography.link('About', '/about', 'site-map-additional-margin-link') }}</li>
+                        <ul>
+                            <li>{{ typography.link('About Me', '/about/me') }}</li>
+                            <li>{{ typography.link('About Site', '/about/site') }}</li>
+                            <li>{{ typography.link('My CV', '/about/cv') }}</li>
+                            <li>{{ typography.link('Site Map', '/about/site-map') }}</li>
+                            <li>{{ typography.link('Privacy Statement', '/about/privacy-statement') }}</li>
+                            <li>{{ typography.link('Cookie Policy', '/about/cookie-policy') }}</li>
+                        </ul>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+{% include "nunjucks/partials/footer.njk" %}
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript" src="/scripts/about/main.js"></script>
+{% endblock %}

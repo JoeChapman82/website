@@ -2,10 +2,34 @@
 <h{{ type }}{% if id %} id="{{ id }}"{% endif %}{% if class %} class="{{ class }}"{% endif %}>{{ content }}</h{{ type }}>
 {% endmacro %}
 
+{% macro splitHeading(type, content, class, spannedContent, spannedClass, afterSpanContent) %}
+    <h{{ type }} {% if class %}class="{{ class }}"{% endif %}>{{ content }}<span {% if spannedClass %}class="{{ spannedClass }}"{% endif %}>{{ spannedContent }}</span>{{ afterSpanContent}}</h{{ type }}>
+{% endmacro %}
+
 {% macro parapgraph(content, class) %}
     <p {% if class %}class="{{ class }}"{% endif %}>{{ content }}</p>
 {% endmacro %}
 
+{% macro splitParagraph(content, class, spannedContent, spannedClass, afterSpanContent) %}
+    <p {% if class %}class="{{ class }}"{% endif %}>{{ content }}<span {% if spannedClass %}class="{{ spannedClass }}"{% endif %}>{{ spannedContent }}</span>{{ afterSpanContent}}</p>
+{% endmacro %}
+
+{% macro linkedParagraph(content, class, linkContent, linkClass, linkHref, afterLinkContent) %}
+    <p {% if class %}class="{{ class }}"{% endif %}>{{ content }}<a  href="{{ linkHref }}" {% if linkClass %}class="{{ linkClass }}"{% endif %}>{{ linkContent }}</a>{{ afterLinkContent}}</p>
+{% endmacro %}
+
 {% macro rule(class) %}
     <hr class="{{ class }}">
+{% endmacro %}
+
+{% macro unorderedList(class, items, itemsClass) %}
+    <ul{% if class %} class="{{ class }}"{% endif %}>
+        {% for item in items %}
+        <li{% if itemsClass %} class="{{ itemsClass }}"{% endif %}>{{ item }}</li>
+        {% endfor %}
+    </ul>
+{% endmacro %}
+
+{% macro link(content, href, class) %}
+    <a class="{{ class }}" href="{{ href }}">{{ content }}</a>
 {% endmacro %}

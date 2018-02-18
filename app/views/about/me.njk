@@ -1,22 +1,52 @@
 {% extends 'nunjucks/templates/base.njk' %}
+{% import "nunjucks/macros/typography.njk" as typography %}
 
-{% block title %}About - me{% endblock %}
+{% block title %}{{ content.pageTitle }}{% endblock %}
 {% block stylesheets %}
     <link rel="stylesheet" href="/css/about.css">
 {% endblock %}
 
-{% block main %}
 {% block header %}
     {% include 'nunjucks/partials/topnav.njk' %}
 {% endblock %}
-    <div class="dark-bg">
-        <div class="full-screen-canvas-wrapper">
-            <canvas id="lightningCanvas" class="layered-full-screen-canvas" width="300" height="300"></canvas>
-            <canvas id="rainCanvas" class="layered-full-screen-canvas" width="300" height="300"></canvas>
+
+{% block main %}
+<div id="mainWrapper" class="about-main-wrapper about-dark">
+    <div class="about-options-wrapper-small">
+        <div class="about-toggle-wrapper">
+            <span class="toggle-info">Theme</span>
+            <label class="switch">
+                <input id="aboutToggle" name="aboutToggle" type="checkbox" value="dark" checked>
+                <span class="slider"></span>
+            </label>
         </div>
     </div>
+    {{ typography.heading('1', content.heading1, false, 'main-heading')}}
+    {{ typography.rule() }}
+    <div class="about-section-wrapper">
+        <div class="about-left-section">
+            <div class="about-me-image-wrapper">
+                <img src="/images/about/me.png" alt="a stickfigure representation of me">
+            </div>
+        </div>
+        <div class="about-right-section">
+            {{ typography.splitHeading('2', content.splitHeading1.content, 'about-space-below', content.splitHeading1.span, 'about-highlighted-text') }}
+            {{ typography.parapgraph(content.p1) }}
+            {{ typography.parapgraph(content.p2) }}
+            {{ typography.parapgraph(content.p3) }}
+            {{ typography.parapgraph(content.p4) }}
+            {{ typography.parapgraph(content.p5) }}
+            {{ typography.parapgraph(content.p6) }}
+            {{ typography.splitParagraph(content.splitP1.content, false, content.splitP1.span, 'about-highlighted-text', content.splitP1.content2)}}
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+{% include "nunjucks/partials/footer.njk" %}
 {% endblock %}
 
 {% block scripts %}
-    <script type="text/javascript" src="/scripts/canvas/raining.js"></script>
+<script type="text/javascript" src="/scripts/about/main.js"></script>
 {% endblock %}

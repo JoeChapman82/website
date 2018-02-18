@@ -51,6 +51,7 @@
     "jsonwebtoken": "^8.1.0",
     "nunjucks": "^3.0.1",
     "path": "^0.12.7",
+    "pdfkit": "^0.8.3",
     "request": "^2.83.0",
     "request-promise-native": "^1.0.5",
     "require-dir": "^0.3.2",

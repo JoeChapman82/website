@@ -43,14 +43,15 @@ module.exports = (app) => {
     });
 
     app.use(getCurrentYear);
-    
+
     app.use((err, req, res, next) => {
         if (err.code !== 'EBADCSRFTOKEN') {
             return next(err);
-        }
+        } else {
             res.clearCookie('_csrf');
-            res.send(err);
-            res.redirect('/');
+            return next(err);
+        }
+
     });
 
     app.use(defineActiveView);

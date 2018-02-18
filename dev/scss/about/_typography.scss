@@ -1,0 +1,120 @@
+.main-heading {
+    font-size: calc(3vmin + 12px);
+    color: rgba(222, 222, 222, 1);
+    font-family: Verdana;
+    font-weight: bold;
+}
+
+.cv-contact-main-heading {
+    font-family: cursive, sans-serif;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    color: rgba(222, 222, 222, 1);
+    font-size: calc(2vmin + 12px);
+}
+
+h3 {
+    color: rgba(222, 222, 222, 1);
+    font-size: calc(1.5vmin + 12px);
+}
+
+h5 {
+    color: rgba(222, 222, 222, 1);
+    font-size: calc(1vmin + 12px);
+}
+
+p {
+    color: rgba(222, 222, 222, 1);
+    font-size: calc(.5vmin + 12px);
+    line-height: 1.4;
+    margin-bottom: 1rem;
+}
+
+.no-margin-bottom {
+    margin-bottom: 0;
+}
+
+.reduced-margin-bottom {
+    margin-bottom: .5rem;
+}
+
+.bullet-list {
+    list-style-type: disc;
+    color: rgba(222, 222, 222, 1);
+    font-size: calc(.5vmin + 12px);
+    margin-left: 1rem;
+}
+
+.bullet-list li {
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+.about-highlighted-text,
+.about-text-link,
+.about-text-link:visited {
+    color: rgba(71, 166, 183, 1);
+}
+
+.cv-time-period {
+    color: rgba(188, 188, 188, 1);
+    font-size: calc(.95vmin + 12px);
+    margin-top: .5rem;
+}
+
+.cv-contact-heading {
+    color: rgba(222, 222, 222, 1);
+    font-size: calc(.95vmin + 12px);
+    margin-top: 2rem;
+    margin-bottom: .5rem;
+}
+
+.about-space-below {
+    margin-bottom: 1rem;
+}
+
+.section-heading {
+    margin-top: 2rem;
+}
+
+.about-additional-margin-bottom {
+    margin-bottom: 2rem;
+}
+
+.about-light .main-heading,
+.about-light h2,
+.about-light h3,
+.about-light h3,
+.about-light .cv-contact-heading {
+    font-weight: bold;
+    color: rgba(11, 11, 11, 1);
+}
+
+.about-light p,
+.about-light .bullet-list {
+    color: rgba(11, 11, 11, 1);
+}
+
+.about-light .cv-time-period {
+    color: rgba(99, 99, 99, 1);
+}
+
+.underlined {
+    text-decoration: underline;
+}
+
+.about-half-rule {
+    width: 75%;
+    margin: 2rem 0;
+    height: 1px;
+    border: 0;
+    background-color: grey;
+}
+
+@media screen and(max-width: 700px) {
+    .cv-heading {
+        margin-top: 60px;
+    }
+}

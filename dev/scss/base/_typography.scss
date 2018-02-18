@@ -1,0 +1,22 @@
+.error-page-heading {
+    font-size: calc(3vmin + 12px);
+    color: rgba(222, 222, 222, 1);
+    margin-bottom: 1rem;
+}
+
+.error-page-paragraph {
+    font-size: calc(1.5vmin + 12px);
+    color: rgba(222, 222, 222, 1);
+    margin-bottom: 1rem;
+}
+
+.error-page-link,
+.error-page-link:visited {
+    font-size: calc(1.5vmin + 12px);
+    color: rgba(222, 222, 222, 1);
+    margin-bottom: 1rem;
+}
+
+.error-page-link:hover {
+    color: rgba(22, 22, 222, 1);
+}
