@@ -1,0 +1,47 @@
+{% extends 'nunjucks/templates/base.njk' %}
+
+{% block title %}API's - home{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="/css/apis.css">
+{% endblock %}
+
+{% block header %}
+    {% include 'nunjucks/partials/topnav.njk' %}
+{% endblock %}
+
+{% block main %}
+    <div class="apis-uuid-generator-main-wrapper">
+        <div class="apis-uuid-top">
+            <div class="">
+                <h1 class="uuid-generator-main-heading">UUID Generator</h1>
+                <h2 class="uuid-generator-grey-text">Your UUID v4 is </h2>
+                <p class="uuid-generator-uuid-text">{{ uuidv4 }}</p>
+            </div>
+        </div>
+        <div class="apis-uuid-bottom">
+            <div class="">
+                <h2 class="uuid-generator-uuid-info-heading">What is a v4 UUID?</h2>
+                <p class="uuid-generator-uuid-info">A version 4 UUID is randomly generated. As in other UUIDs, four bits are used to indicate version 4,
+                    and 2 or 3 bits to indicate the variant (10 or 110 for variants 1 and 2, respectively). Thus, for
+                    variant 1 (that is, most UUIDs) a random version 4 UUID will have 6 predetermined variant and version
+                    bits, leaving 122 bits for the randomly-generated part, for a total of 2122, or 5.3x1036 (5.3 undecillion)
+                    possible version 4 variant 1 UUIDs. There are half as many possible version 4 variant 2 UUIDs because
+                    there is one less random bit available, 3 bits being consumed for the variant.</p>
+
+                <p class="uuid-generator-uuid-info">Some pseudorandom number generators lack necessary entropy to produce sufficiently pseudorandom
+                    numbers. For example, the WinAPI GUID generator, which uses a pseudorandom number generator,
+                    has been shown to produce UUIDs which follow a predictable pattern. RFC 4122 advises that
+                    "distributed applications generating UUIDs at a variety of hosts must be willing to rely on
+                    the random number source at all hosts. If this is not feasible, the namespace variant should be
+                    used."</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block footer %}
+{% include "nunjucks/partials/footer.njk" %}
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}

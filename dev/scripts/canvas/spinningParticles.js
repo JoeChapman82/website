@@ -1,4 +1,7 @@
+(function() {
+    'use strict';
 var canvas = document.getElementById('canvas1');
+var animation;
 var ctx = canvas.getContext('2d');
 var twoPi = 2 * Math.PI;
 var time, lastTime, deltaTime;
@@ -104,13 +107,16 @@ function updateParticles() {
 function renderParticles() {
     particles.forEach(function(particle, index) {
         ctx.beginPath();
+        ctx.fillStyle = 'blue';
         ctx.arc(particle.x, particle.y, particle.radius, 0, twoPi);
-        var gradient = ctx.createRadialGradient(particle.x, particle.y, particle.radius / 3, particle.x, particle.y, particle.radius);
-        gradient.addColorStop(0, 'lightblue');
-        gradient.addColorStop(1, 'blue');
-        ctx.fillStyle = gradient;
         ctx.fill();
         ctx.beginPath();
+        ctx.fillStyle = 'lightblue';
+        ctx.shadowBlur = 10;
+        ctx.shadowColor = 'lightblue';
+        ctx.arc(particle.x, particle.y, particle.radius * 0.6, 0, twoPi);
+        ctx.fill();
+        ctx.shadowBlur = 0;
     });
 }
 
@@ -137,3 +143,5 @@ function render(time) {
 document.addEventListener('mousemove', getMousePosition);
 setup(canvas);
 animation = requestAnimationFrame(render);
+
+})();

@@ -1,6 +1,6 @@
 {
   "name": "controller",
-  "version": "0.0.7",
+  "version": "0.0.9",
   "description": "website controller",
   "main": "app.js",
   "directories": {

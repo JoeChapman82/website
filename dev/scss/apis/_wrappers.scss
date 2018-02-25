@@ -1,0 +1,32 @@
+.apis-main-wrapper {
+    box-sizing: border-box;
+    padding-bottom: 3rem;
+    max-width: 1024px;
+    margin: 65px auto 30px;
+    background-color: transparent;
+    position: relative;
+    padding-top: 2rem;
+    min-height: 700px;
+}
+
+.apis-index-flex-wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: center;
+}
+
+@media screen and(max-width: 1050px) {
+    .apis-main-wrapper {
+        margin: 60px 2vw 30px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .apis-index-flex-wrapper {
+        flex-wrap: wrap;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+}

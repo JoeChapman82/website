@@ -1,0 +1,74 @@
+{% extends 'nunjucks/templates/base.njk' %}
+{% import "nunjucks/macros/projects/navigation.njk" as navigation %}
+{% import "nunjucks/macros/projects/typography.njk" as typography %}
+
+{% block title %}Colour converter{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="/css/projects.css">
+{% endblock %}
+
+{% block header %}
+    {% include 'nunjucks/partials/topnav.njk' %}
+{% endblock %}
+
+{% block main %}
+{% include 'nunjucks/partials/topnav.njk' %}
+<div class="colour-converter-wrapper">
+    <div class="colour-converter-flex-wrapper">
+        <div class="colour-converter-main">
+            <div class="colour-converter-left">
+                {{ typography.mainHeading('Colour Converter', 'colour-converter-main-heading') }}
+                <hr class="colour-converter-rule">
+                {{ typography.paragraph('Enter a colour in the box and the colour converter will
+                calculate alternative colour values. You currently use hex, rgb, rgba values or colour names.
+                Others will be added in the future.', 'colour-converter-info') }}
+
+                <label class="colour-converter-label" for="colourConverterInput">Input colour
+                    <span id="invalidColourMessage" class="colour-converter-hidden colour-converter-error-message">Invalid colour</span>
+                    <input class="colour-converter-input" id="colourConverterInput" type="text" name="" value="">
+                </label>
+                <button class="colour-converter-button" id="convertColour" type="button" name="button">Convert</button>
+            </div>
+            <div class="colour-converter-right">
+                <div id="displayResult" class="colour-converter-display"></div>
+                <div class="colour-converter-results-wrapper">
+                    <div class="colour-converter-results-left">
+                        <div class="colour-converter-results-section">
+                            <p class="colour-converter-results">Name:</p>
+                            <p class="colour-converter-results" id="nameResult">black</p>
+                        </div>
+                        <div class="colour-converter-results-section">
+                            <p class="colour-converter-results">Hex:</p>
+                            <p class="colour-converter-results" id="hexResult">#ffffff</p>
+                        </div>
+                        <div class="colour-converter-results-section">
+                            <p class="colour-converter-results">HSL:</p>
+                            <p class="colour-converter-results" id="hslResult">hsl(0, 0, 0)</p>
+                        </div>
+                    </div>
+                    <div class="colour-converter-results-right">
+                        <div class="colour-converter-results-section">
+                            <p class="colour-converter-results">RGB:</p>
+                            <p class="colour-converter-results" id="rgbResult">rgb(0, 0, 0)</p>
+                        </div>
+                        <div class="colour-converter-results-section">
+                            <p class="colour-converter-results">RGBA:</p>
+                            <p class="colour-converter-results" id="rgbaResult">rgba(0, 0, 0, 1)</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+    {% include "nunjucks/partials/footer.njk" %}
+{% endblock %}
+
+{% block scripts %}
+    <script type="text/javascript" src="/scripts/projects/colourConverter.js"></script>
+{% endblock %}

@@ -26,7 +26,7 @@
 }
 
 .about-light {
-    background-color: rgba(249, 249, 249, 1);
+    background-color: rgba(239, 239, 239, 1);
     border: 1px solid rgba(44, 44, 44, 1);
 }
 
@@ -42,10 +42,11 @@
     margin-top: .5rem;
 }
 
-.about-me-image-wrapper {
-    text-align: center;
+.about-image-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 2rem;
-    margin: auto 0;
 }
 
 .about-options-wrapper {
@@ -114,4 +115,10 @@
     .about-column {
         width: 100%;
     }
+
+    .about-image-wrapper img {
+        max-height: 225px;
+        margin-top: -10px;
+    }
+
 }

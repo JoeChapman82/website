@@ -1,0 +1,29 @@
+{% extends 'nunjucks/templates/base.njk' %}
+{% import "nunjucks/macros/projects/navigation.njk" as navigation %}
+{% import "nunjucks/macros/projects/typography.njk" as typography %}
+
+{% block title %}Projects's - home{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="/css/projects.css">
+{% endblock %}
+
+{% block header %}
+    {% include 'nunjucks/partials/topnav.njk' %}
+{% endblock %}
+
+{% block main %}
+    <div class="projects-main-wrapper">
+        {{ typography.mainIndexHeading('Projects')}}
+        <hr>
+        {{ navigation.indexNavRow([
+            {href: '/projects/colour-converter', title: 'Colour Converter'}
+        ]) }}
+    </div>
+{% endblock %}
+
+{% block footer %}
+    {% include "nunjucks/partials/footer.njk" %}
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}

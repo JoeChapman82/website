@@ -1,0 +1,14 @@
+{% macro indexNavRow(links) %}
+<div class="apis-index-flex-wrapper">
+    {% for item in links %}
+        <a class="apis-index-link" href="{{ item.href }}">
+        <div class="apis-index-link-image {% if item.class %}{{ item.class }}{% endif %}" {% if item.img %}style="background-image: url({{ item.img }})"{% endif %}>
+
+        </div>
+        <div class="apis-index-link-title">
+            <p>{{ item.title }}</p>
+        </div>
+    </a>
+    {% endfor %}
+</div>
+{% endmacro %}

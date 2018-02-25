@@ -1,0 +1,15 @@
+{% macro mainIndexHeading(content) %}
+    <h1 class="projects-index-main-heading">{{ content }}</h1>
+{% endmacro %}
+
+{% macro mainHeading(content, class, id) %}
+    <h1{% if id %} id="{{ id }}"{% endif %} class="{{ class }}">{{ content }}</h1>
+{% endmacro %}
+
+{% macro heading(type, content, class, id) %}
+    <h{{ type }}{% if id %} id="{{ id }}"{% endif %} class="{{ class }}">{{ content }}</h{{ type }}>
+{% endmacro %}
+
+{% macro paragraph(content, class, id) %}
+    <p{% if id %} id="{{ id }}"{% endif %} class="{{ class }}">{{ content }}</p>
+{% endmacro %}

@@ -13,6 +13,7 @@ const tutorial = express.Router();
 const games = express.Router();
 const about = express.Router();
 const apis = express.Router();
+const project = express.Router();
 
 const port = process.env.PORT || 3000;
 const environment = process.env.NODE_ENV || 'production';
@@ -24,12 +25,13 @@ const apisRoutes = require('./app/routes/api');
 const tutorialRoutes = require('./app/routes/tutorials');
 const gamesRoutes = require('./app/routes/games');
 const aboutRoutes = require('./app/routes/about');
+const projectRoutes = require('./app/routes/projects');
 const coverallRoutes = require('./app/routes/coverall');
 const errorHandler = require('./app/middleware/errorHandler');
 
 const options = {
-  key: fs.readFileSync(path.join(__dirname, `app/etc/certs/${environment}.key`)),
-  cert: fs.readFileSync(path.join(__dirname, `app/etc/certs/${environment}.crt`)),
+    key: fs.readFileSync(path.join(__dirname, `app/etc/certs/${environment}.key`)),
+    cert: fs.readFileSync(path.join(__dirname, `app/etc/certs/${environment}.crt`)),
 };
 
 AWS.config.region = process.env.REGION;
@@ -40,12 +42,14 @@ app.use('/apis', apis);
 app.use('/tutorials', tutorial);
 app.use('/games', games);
 app.use('/about', about);
+app.use('/projects', project);
 
 baseRoutes(app);
 apisRoutes(apis);
 tutorialRoutes(tutorial);
 gamesRoutes(games);
 aboutRoutes(about);
+projectRoutes(project);
 
 coverallRoutes(app);
 

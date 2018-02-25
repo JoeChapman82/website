@@ -1,0 +1,55 @@
+.apis-main-link:active {
+    box-shadow: 2px 2px 2px rgba(18, 60, 94, .6);
+}
+
+.apis-index-link {
+    display: block;
+    width: 50%;
+    position: relative;
+    margin: 1.5rem;
+    background-color: lightgrey;
+    box-shadow: 15px 12px 2px rgba(20, 25, 35, 1);
+    text-decoration: none;
+}
+
+.apis-index-link:active {
+    box-shadow: 7px 4px 2px darkgrey;
+}
+
+.apis-index-link-image {
+    position: relative;
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    padding-top: 55%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: #fff;
+    background-image: linear-gradient(#f00, #00f);
+}
+
+.apis-index-link-title {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    background-color: grey;
+    padding: 1rem;
+    font-size: calc(12px + 2vmin);
+    color: $white;
+}
+
+.apis-index-link:hover .apis-index-link-title {
+    background-color: lighten(grey, 10%);
+}
+
+@media screen and (max-width: 800px) {
+    .apis-index-link {
+        width: 100%;
+    }
+}
+
+.square-index-img {
+    background-size: 60% 100%;
+    background-color: rgba(33, 33, 33, .9);
+}

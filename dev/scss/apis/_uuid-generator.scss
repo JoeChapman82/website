@@ -1,0 +1,71 @@
+.apis-uuid-generator-main-wrapper {
+    max-width: 1024px;
+    height: auto;
+    margin: 70px auto 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: rgba(242, 242, 242, 1);
+}
+
+.apis-uuid-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40%;
+    width: 100%;
+    border: 1px solid rgba(222, 222, 222, 1);
+    background-color: rgba(16, 20, 25, 1);
+    flex-direction: column;
+    text-align: center;
+    padding: 3rem;
+    margin-bottom: 1rem;
+}
+
+.apis-uuid-bottom {
+    height: 60%;
+    width: 100%;
+    padding: 2rem 10vmin;
+    background-color: #2F3947;
+    border: 1px solid rgba(222, 222, 222, 1);
+}
+
+.uuid-generator-main-heading {
+    font-size: calc(5vmin + 18px);
+    margin-bottom: 2rem;
+    font-weight: bold;
+}
+
+.uuid-generator-grey-text {
+    font-size: calc(1.5vmin + 12px);
+    color: rgba(148, 148, 148, 1);
+}
+
+.uuid-generator-uuid-text {
+    margin: .5rem 0 1rem;
+    font-size: calc(2.5vmin + 16px);
+}
+
+.uuid-generator-uuid-info-heading {
+    font-size: calc(2vmin + 16px);
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.uuid-generator-uuid-info {
+    font-size: calc(1vmin + 12px);
+    line-height: 1.3;
+    margin-bottom: 1rem;
+}
+
+@media screen and(max-width: 1100px) {
+    .apis-uuid-generator-main-wrapper {
+        margin: 70px 2vw;
+    }
+}
+
+@media screen and(max-width: 800px) {
+    .apis-uuid-bottom {
+        padding: 2rem 4vmin;
+    }
+}
