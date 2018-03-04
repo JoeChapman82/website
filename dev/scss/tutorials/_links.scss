@@ -82,8 +82,15 @@
     color: $white;
 }
 
-.tutorials-index-link:hover .games-index-link-title {
-    background-color: lighten(rgba(188, 188, 188, 1), 10%);
+.tutorials-index-link:hover .tutorials-index-link-title-small,
+.tutorials-index-link:hover .tutorials-index-link-title-large {
+    background-color: lighten(rgba(118, 118, 118, 1), 10%);
+}
+
+
+.tutorials-index-link-image-reduced {
+    background-size: 50% 50%;
+    background-color: rgba(22, 22, 22, 1);
 }
 
 @media screen and (max-width: 800px) {

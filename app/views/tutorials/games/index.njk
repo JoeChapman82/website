@@ -1,6 +1,6 @@
 {% extends 'nunjucks/templates/base.njk' %}
 
-{% import 'nunjucks/macros/typography.njk' as typography %}
+{% import 'nunjucks/macros/tutorials/typography.njk' as typography %}
 {% import "nunjucks/macros/tutorials/navigation.njk" as navigation %}
 
 {% block title %}Tutorials - games - home{% endblock %}
@@ -14,10 +14,7 @@
 
 {% block main %}
 <div class="tutorials-main-index-wrapper">
-    <div class="main-heading-wrapper">
-        {{ typography.heading(1, 'Games tutorials', false, 'main-heading') }}
-        {{ typography.heading(2, 'From quick tips to full games', false, 'main-subheading')}}
-    </div>
+    {{ typography.mainHeading('Games Tutorials')}}
     <h2 class="subindex-heading">Tips and tricks</h2>
     {{ navigation.indexNavRow([
         {href: '/tutorials/games/display-fps-counter', title: 'Display FPS', img: '/images/tutorials/games/fps.png'},

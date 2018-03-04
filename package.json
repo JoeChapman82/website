@@ -9,7 +9,7 @@
   "scripts": {
     "test": "NODE_ENV=testing mocha --recursive",
     "start": "node app.js",
-    "package": "zip -r alpha-release-${VERSION}.zip app app.js package.json && mv ./alpha-release-${VERSION}.zip ../releases"
+    "package": "zip -r alpha-release-${VERSION}.zip app app.js package.json && mv ./alpha-release-${VERSION}.zip ../releases/controller"
   },
   "keywords": [
     "website"

@@ -69,7 +69,7 @@
                 break;
             }
             case 'name': {
-                hex = namedColourValues[lowerCasedColourNames.indexOf(colourToConvert.toLowerCase())];
+                hex = '#' + namedColourValues[lowerCasedColourNames.indexOf(colourToConvert.toLowerCase())].toUpperCase();
                 rgb = hexToRgb(hex);
                 hsl = rgbToHsl(rgb.r, rgb.g, rgb.b);
                 rgba = {r: rgb.r, g: rgb.g, b: rgb.b, a: 1};
@@ -196,7 +196,7 @@
             h /= 6;
         }
         return {
-            h: h * 360,
+            h: (h * 360).toFixed(),
             s: (s * 100).toFixed(),
             l: (l * 100).toFixed()
         };

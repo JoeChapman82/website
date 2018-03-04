@@ -1,0 +1,28 @@
+.audio-visualiser-main-wrapper {
+    position: relative;
+    margin-top: 50px;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    min-height: calc(100vh - 50px);
+}
+
+.audio-visualiser-details {
+    bottom: 20px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    padding: .5rem;
+    border: 1px solid rgba(99, 99, 99, 1);
+    background-color: rgba(122, 122, 122, .4);
+}
+
+.audio-visualiser-file-input {
+    display: block;
+    margin-bottom: .5rem;
+    color: rgba(222, 222, 222, 1);
+}
+
+.audio-visualiser-audio-control {
+    display: block;
+}

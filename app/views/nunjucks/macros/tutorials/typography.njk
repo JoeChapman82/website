@@ -1,0 +1,11 @@
+{% macro mainHeading(content) %}
+<h1 class="tutorials-index-main-heading">{{ content }}</h1>
+{% endmacro %}
+
+{% macro heading(type, content, id, class) %}
+<h{{ type }}{% if id %} id="{{ id }}"{% endif %}{% if class %} class="{{ class }}"{% endif %}>{{ content }}</h{{ type }}>
+{% endmacro %}
+
+{% macro rule(class) %}
+    <hr class="{{ class }}">
+{% endmacro %}

@@ -33,9 +33,26 @@
     overflow: scroll;
 }
 
+.terminal-line-wrapper {
+    box-sizing: border-box;
+    background-color: #282c34;
+    color: #abb2bf;
+    margin-bottom: 1rem;
+    padding: 1rem 1rem 1rem 0;
+    max-width: 100%;
+    width: 700px;
+    overflow: scroll;
+    min-width: 45vw;
+    max-height: 80vh;
+    line-height: 1.4;
+    font-family: Menlo Inconsolata, Monaco, Consolas, 'Courier New', Courier;
+    font-size: calc(8px + .75vmin);
+}
+
 .tutorial-code-block {
     box-sizing: border-box;
     background-color: #282c34;
+    border-right: 10px solid #282c34;
     color: #abb2bf;
     margin-bottom: 1rem;
     padding: 0 0 1rem .25rem;
@@ -159,6 +176,16 @@
     text-align: right;
     padding: 0 .75rem 0 .5rem;
     content: attr(data-c-ln);
+    color: #4b5364;
+    margin-right: .25rem;
+}
+
+.terminal-line-span::before {
+    width: 50px;
+    display: inline-block;
+    text-align: right;
+    padding: 0 .75rem 0 .5rem;
+    content: '$';
     color: #4b5364;
     margin-right: .25rem;
 }

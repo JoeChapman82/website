@@ -1,6 +1,6 @@
 {% extends 'nunjucks/templates/base.njk' %}
 
-{% import 'nunjucks/macros/typography.njk' as typography %}
+{% import 'nunjucks/macros/tutorials/typography.njk' as typography %}
 {% import "nunjucks/macros/tutorials/navigation.njk" as navigation %}
 
 {% block title %}Tutorials - Canvas - home{% endblock %}
@@ -14,10 +14,7 @@
 
 {% block main %}
 <div class="tutorials-main-index-wrapper">
-    <div class="main-heading-wrapper">
-        {{ typography.heading(1, 'Canvas tutorials', false, 'main-heading') }}
-        {{ typography.heading(2, 'Fun with the canvas', false, 'main-subheading')}}
-    </div>
+    {{ typography.mainHeading('Canvas Tutorials')}}
     <h2 class="subindex-heading">Basics</h2>
     {{ navigation.indexNavRow([
         {href: '/tutorials/canvas/drawing-squares', title: 'Drawing Squares', img: '/images/tutorials/canvas/drawing-squares.png'},

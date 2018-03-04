@@ -69,8 +69,13 @@
         </div>
     </div>
 
+    {{ typography.rule('tutorials-seperator')}}
     <div class="linked-tutorials">
-        <p>Other tutorial links will go here once they're made</p>
+        <h3 class="linked-tutorials-text">{{ content.otherTutorials }}</h3>
+        {{ navigation.indexNavRow([
+            {href: '/tutorials/games/game-timer', title: 'Game Timer', img: '/images/tutorials/games/game-timer.png'},
+            {href: '/tutorials/games/keeping-score', title: 'Score Effect', img: '/images/tutorials/games/keeping-score.png'}
+        ], 'small') }}
     </div>
 
 </main>

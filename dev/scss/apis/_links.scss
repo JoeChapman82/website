@@ -33,14 +33,14 @@
     box-sizing: border-box;
     display: block;
     width: 100%;
-    background-color: grey;
-    padding: 1rem;
+    background-color: rgba(102, 102, 102, 1);
+    padding: .8rem 1rem;
     font-size: calc(12px + 2vmin);
     color: $white;
 }
 
 .apis-index-link:hover .apis-index-link-title {
-    background-color: lighten(grey, 10%);
+    background-color: lighten(rgba(102, 102, 102, 1), 10%);
 }
 
 @media screen and (max-width: 800px) {

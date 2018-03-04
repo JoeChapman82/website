@@ -5,3 +5,9 @@
 {% endfor %}</code></pre>
 </div>
 {% endmacro %}
+
+{% macro terminalLine(line) %}
+<div class="terminal-line-wrapper">
+    <pre><code><span class="terminal-line-span"></span>{{ line }}</code></pre>
+</div>
+{% endmacro %}

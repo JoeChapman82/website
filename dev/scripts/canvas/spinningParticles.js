@@ -53,9 +53,6 @@ function clearCanvas() {
 }
 
 function renderBackground() {
-    // ctx.fillStyle = 'rgba(22, 22, 22, 1)';
-    // ctx.rect(0, 0, canvas.width, canvas.height);
-    // ctx.fill();
     ctx.globalAlpha = 0.1;
     ctx.drawImage(invader, canvas.width / 2 - circleRadius.initial, canvas.height / 2 - circleRadius.initial, circleRadius.initial * 2, circleRadius.initial * 2);
     ctx.globalAlpha = 1;

@@ -13,5 +13,7 @@ module.exports = (tutorials) => {
     tutorials.get('/games/game-timer', tutorialsController.gamesGameTimer);
     tutorials.get('/games/keeping-score', tutorialsController.gamesKeepingScore);
     tutorials.get('/games/make-pong', tutorialsController.gamesMakePong);
+    tutorials.get('/node/index', tutorialsController.nodeIndex);
+    tutorials.get('/node/cluster-mode', tutorialsController.nodeClusterMode);
     return tutorials;
 };

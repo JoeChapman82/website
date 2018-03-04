@@ -33,5 +33,6 @@
     "p18": "Last but not least, inside the main method, we'll add these three methods, remembering to place them in draw order. Finally, create two variables within the main method, startTime at the start and endTime just before recalling requestAnimationFrame. Set these both to performace.now() which is similar but far more precise than Date.now(). Below endTime, set executionTime to (endTime - startTime).toFixed(1) and we're done!",
     "p19": "That should cover everything. Looking at your canvas now, you should be displaying both the current frames per second count and the time the previous frames execution time. Try playing around to try and increase the execution time to get an idea of what's possible. Try drawing 1000's of rectangles in a for loop each frame. You might be suprised how many can fit into 16ms!",
     "p20": "Your main method whould now look like below:",
-    "p21": "If you want to check your code against mine... or if you've just skipped ahead, I've included the code below for your pleasure. I hope you've enjoyed the tutorial."
+    "p21": "If you want to check your code against mine... or if you've just skipped ahead, I've included the code below for your pleasure. I hope you've enjoyed the tutorial.",
+    "otherTutorials": "Some other tutorials that you might enjoy"
 }

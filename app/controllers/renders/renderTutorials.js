@@ -1,6 +1,7 @@
 const requireDir = require('require-dir');
 const gamesContent = requireDir('../../content/tutorials/games', {recurse: true});
 const canvasContent = requireDir('../../content/tutorials/canvas', {recurse: true});
+const nodeContent = requireDir('../../content/tutorials/node', {recurse: true});
 
 module.exports = {
     index: (req, res) => res.render('tutorials/index'),
@@ -14,5 +15,7 @@ module.exports = {
     gamesFpsCounter: (req, res) => res.render('tutorials/games/display-fps-counter', {content: gamesContent['display-fps-counter']}),
     gamesGameTimer: (req, res) => res.render('tutorials/games/game-timer', {content: gamesContent['game-timer']}),
     gamesKeepingScore: (req, res) => res.render('tutorials/games/keeping-score', {content: gamesContent['keeping-score']}),
-    gamesMakePong: (req, res) => res.render('tutorials/games/make-pong', {content: gamesContent['make-pong']})
+    gamesMakePong: (req, res) => res.render('tutorials/games/make-pong', {content: gamesContent['make-pong']}),
+    nodeIndex: (req, res) => res.render('tutorials/node/index'),
+    nodeClusterMode: (req, res) => res.render('tutorials/node/cluster-mode', {content: nodeContent['cluster-mode']})
 };

@@ -12,5 +12,8 @@ module.exports = {
     gamesFpsCounter: [renderTutorials.gamesFpsCounter],
     gamesGameTimer: [renderTutorials.gamesGameTimer],
     gamesKeepingScore: [renderTutorials.gamesKeepingScore],
-    gamesMakePong: [renderTutorials.gamesMakePong]
+    gamesMakePong: [renderTutorials.gamesMakePong],
+    nodeIndex: [renderTutorials.nodeIndex],
+    nodeClusterMode: [renderTutorials.nodeClusterMode]
+
 };

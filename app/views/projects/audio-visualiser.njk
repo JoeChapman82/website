@@ -1,0 +1,30 @@
+{% extends 'nunjucks/templates/base.njk' %}
+{% import "nunjucks/macros/projects/navigation.njk" as navigation %}
+{% import "nunjucks/macros/projects/typography.njk" as typography %}
+
+{% block title %}Colour converter{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="/css/projects.css">
+{% endblock %}
+
+{% block header %}
+    {% include 'nunjucks/partials/topnav.njk' %}
+{% endblock %}
+
+{% block main %}
+<div class="audio-visualiser-main-wrapper">
+    <div id="controlsWrapper" class="audio-visualiser-details">
+        <input class="audio-visualiser-file-input" type="file" id="fileInput" accept="audio/*" />
+        <audio class="audio-visualiser-audio-control hello" id="audioElement" controls controlsList="nodownload"></audio>
+    </div>
+    <canvas id="canvas" width="900" height="650"></canvas>
+</div>
+{% endblock %}
+
+{% block footer %}
+    {% include "nunjucks/partials/footer.njk" %}
+{% endblock %}
+
+{% block scripts %}
+    <script type="text/javascript" src="/scripts/projects/graphicEqualizer.js"></script>
+{% endblock %}

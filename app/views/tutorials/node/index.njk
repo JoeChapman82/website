@@ -1,0 +1,30 @@
+{% extends 'nunjucks/templates/base.njk' %}
+
+{% import 'nunjucks/macros/tutorials/typography.njk' as typography %}
+{% import "nunjucks/macros/tutorials/navigation.njk" as navigation %}
+
+{% block title %}Tutorials - node - home{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="/css/tutorials.css">
+{% endblock %}
+
+{% block header %}
+    {% include 'nunjucks/partials/topnav.njk' %}
+{% endblock %}
+
+{% block main %}
+<div class="tutorials-main-index-wrapper">
+    {{ typography.mainHeading('NodeJs Tutorials')}}
+    <h2 class="subindex-heading">Node Core</h2>
+    {{ navigation.indexNavRow([
+        {href: '/tutorials/node/cluster-mode', title: 'Cluster Mode', img: '/images/tutorials/node/cluster.jpg'}
+    ], 'small') }}
+</div>
+{% endblock %}
+
+{% block footer %}
+{% include "nunjucks/partials/footer.njk" %}
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}
