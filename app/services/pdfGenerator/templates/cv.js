@@ -144,9 +144,8 @@ module.exports = (stream, requestedStyle) => {
     doc.fontSize(11)
     .text(content.p13, config.mainCvContentX, doc.y);
     doc.moveDown();
-    doc.list([content.list1.item1], {bulletRadius: 2, textIndent: 20, lineGap: 1});
+    doc.list([content.list1.item3], {bulletRadius: 2, textIndent: 20, lineGap: 1, width: config.mainContentWidth});
     doc.moveDown();
-    doc.list([content.list1.item2], {bulletRadius: 2, textIndent: 20, lineGap: 1});
 
     // PAGE 2
     doc.addPage();
@@ -206,7 +205,40 @@ module.exports = (stream, requestedStyle) => {
     doc.moveDown(0.5);
     doc.fontSize(11);
     doc.text('', config.mainCvContentX, doc.y);
-    doc.list([content.list1.item3], {bulletRadius: 2, textIndent: 20, lineGap: 1});
+    doc.list([content.list1.item2], {bulletRadius: 2, textIndent: 20, lineGap: 1});
+    doc.moveDown(0.5);
+    doc.list([content.list1.item1], {bulletRadius: 2, textIndent: 20, lineGap: 1});
+
+    // event particiaption
+    doc.moveDown(1.5);
+    doc.fontSize(16)
+    .text(content.heading12, config.mainCvContentX, doc.y);
+    doc.fontSize(14)
+    .moveDown(0.25)
+    .fillColor(config[style].lightTextColour)
+    .text(content.heading13, config.mainCvContentX, doc.y)
+    .fillColor(config[style].textColour);
+    doc.moveDown(0.5);
+    doc.fontSize(11)
+    .text(content.p14, config.mainCvContentX, doc.y);
+    doc.moveDown();
+
+    doc.fontSize(14)
+    .moveDown(0.25)
+    .fillColor(config[style].lightTextColour)
+    .text(content.heading14, config.mainCvContentX, doc.y)
+    .fillColor(config[style].textColour);
+    doc.moveDown(0.5);
+    doc.fontSize(11)
+    .text(content.p15, config.mainCvContentX, doc.y);
+
+    doc.moveDown(1.5);
+    doc.fontSize(16)
+    .text(content.heading15, config.mainCvContentX, doc.y);
+    doc.moveDown(0.5);
+    doc.fontSize(11)
+    .text(content.p16, config.mainCvContentX, doc.y);
+    doc.moveDown();
 
     // stream endpoint
     doc.flushPages();

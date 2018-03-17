@@ -6,7 +6,7 @@ module.exports =  {
     h3Size: 18,
     textSize: 12,
     margin: 32,
-    mainContentWidth: (595.28 - (2 * 32)) * 0.66,
+    mainContentWidth: (595.28 - (2 * 32)) * 0.63,
     sideContentWidth: (595.28 - (2 * 32)) * 0.33,
     mainContentX: 32,
     sideContentX: ((595.28 - (2 * 32)) * 0.66) + 62,
@@ -41,11 +41,11 @@ module.exports =  {
         highlightColour2: '#7C1B10'
     },
     light: {
-        backGroundColour: '#F0F0F0',
+        backGroundColour: '#FAFAFA',
         textColour: '#0B0B0B',
         lightTextColour: '#636363',
-        hightlightTextColour: '#4BA6B6',
+        hightlightTextColour: '#0F73BB',
         highlightColour1: 'grey',
-        highlightColour2: '#7C1B10'
+        highlightColour2: '#DBDCDA'
     }
 };

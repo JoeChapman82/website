@@ -11,13 +11,17 @@
     "heading9": "Ralph Thoresby: September 1989 - July 2000",
     "heading10": "Work History",
     "heading11": "Department for Work and pensions: 2008 - Current",
+    "heading12": "Event participations",
+    "heading13": "Department of Health Hackathon",
+    "heading14": "Homeless Hackathon",
+    "heading15": "References",
     "splitHeading1": {
         "content": "",
         "span": "Joe Chapman: ",
         "content2": "Curriculum Vitae."
     },
     "p1": "I am a dedicated full-stack software engineer with a flare for performance and optimisation. I have a long history working on both front and backend applications in agile environments. I also have experience with CI, setting up automated build pipelines and deployment across multiple platforms.",
-    "p2": "I have a genuine passion for the work I do, which means I'm always up to date with the latest advancements in languanges and technologies.",
+    "p2": "I have a genuine passion for the work I do, which means I'm always up to date with the latest advancements in languages and technologies.",
     "p3": "In my spare time, I enjoy making games with Javascript, Android Studio (Java), Unity (C#) and Unreal (C++). Away from the screen, I enjoy music and cooking.",
     "p4": "Meanwood,",
     "p5": "Leeds,",
@@ -29,6 +33,9 @@
     "p11": "A level: History",
     "p12": "A level: Business",
     "p13": "Within my time at the DWP I have worked in both the Software Engineering and Frontend Developer professions. Notable accomplishments include:",
+    "p14": "Part of a team creating an application that could be used to easily find patient information upon hospital attendance by querying the national database. The application consisted of three microservices written in NodeJs and Python.",
+    "p15": "Part of a very small team that created an application to help tackle issues with identity amongst homeless individuals. The application utilised QR codes to create a form of identity that was easily replaceable and could build an increased level of trust over time.",
+    "p16": "Available upon request",
     "splitP1": {
         "content": "",
         "span": "Back: ",
@@ -56,8 +63,8 @@
     },
     "list1": {
         "item1": "Worked closely with others as part of various multi-disciplinary agile teams. Providing help and support to others and showing willingness to step outside of my main job role to aid and assist others where needed.",
-        "item2": "Designed, developed, QA'd and deployed an application that facilited room bookings and car park management for the office. The application was built with TDD, clean code practises, and with reusibility in mind. I worked closely with a User Researcher in order to ensure the application was truly user-focused.",
-        "item3": "Created a national case management system used to manage the transition of customers between two services. The application was designed to, amongst other things, import large amounts of data whilst using minimal memory. I engaged and worked closely with business partners and stakeholders in order to get a better understanding of the needs of the application, enabling the production of a system that was uniformly appriciated."
+        "item2": "Designed, developed, QA'd and deployed an application that facilitated room bookings and car park management for the office. The application was built with TDD, clean code practises, and with reusability in mind. I worked closely with a User Researcher in order to ensure the application was truly user-focused.",
+        "item3": "Created a national case management system used to manage the transition of customers between two services. The application was designed to, amongst other things, import large amounts of data whilst using minimal memory. I engaged and worked closely with business partners and stakeholders in order to get a better understanding of the needs of the application, enabling the production of a system that was uniformly appreciated."
     },
     "splitEmail": {
         "p1": "joechapman.digitaldwp@",

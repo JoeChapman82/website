@@ -10,11 +10,43 @@
 .audio-visualiser-details {
     bottom: 20px;
     position: absolute;
-    left: 50%;
-    transform: translate(-50%, 0);
+    left: 20px;
     padding: .5rem;
     border: 1px solid rgba(99, 99, 99, 1);
     background-color: rgba(122, 122, 122, .4);
+    z-index: 5;
+}
+
+.audio-visualiser-canvas {
+    max-width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.audio-visualiser-bg {
+    width: 100%;
+    height: calc(100vh - 50px);
+    max-width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.audio-visualiser-bg-0 {
+    background: linear-gradient(to top, $black -20%, #00223e);
+}
+
+.audio-visualiser-bg-1 {
+    background: linear-gradient(to top, #0d0f0f, #1b1d1e);
+}
+
+.audio-visualiser-bg-2 {
+    background: linear-gradient(to bottom, #b8aeae, #274046);
+}
+
+.audio-visualiser-bg-3 {
+    background: linear-gradient(to top, #c0392b, #8e44ad);
 }
 
 .audio-visualiser-file-input {
@@ -25,4 +57,126 @@
 
 .audio-visualiser-audio-control {
     display: block;
+}
+
+.audio-visualiser-controls {
+    position: absolute;
+    bottom: 25px;
+    right: 0;
+    box-sizing: border-box;
+    margin-right: 2vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    border: 1px solid rgba(99, 99, 99, 1);
+    background-color: rgba(122, 122, 122, .3);
+    z-index: 2;
+    padding: 1.5rem 1.5rem .9rem;
+}
+
+.audio-visualiser-button {
+    display: block;
+    width: 100%;
+    padding: .75rem 1rem;
+    margin: 1rem 0;
+    font-weight: bold;
+    box-shadow: 3px 3px $black;
+    background-color: rgba(173, 216, 230, .15);
+    border: 1px solid rgba(99, 99, 99, 1);
+    color: rgba(177, 177, 177, 1);
+}
+
+.audio-visualiser-close-button {
+    position: absolute;
+    top: .5rem;
+    right: .5rem;
+    box-sizing: border-box;
+    border: 1px solid $black;
+    color: $red;
+    background-color: rgba(173, 216, 230, .15);
+    box-shadow: 1px 1px 1px $black;
+    padding: .1rem .25rem;
+    font-weight: bold;
+}
+
+.audio-visualiser-close-button:hover {
+    cursor: pointer;
+    background-color: $red;
+    color: $white;
+}
+
+.audio-visualiser-open-button {
+    position: absolute;
+    bottom: 25px;
+    right: 0;
+    box-sizing: border-box;
+    margin-right: 2vw;
+    border: 1px solid rgba(255, 255, 255, .8);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    background-color: rgba(222, 222, 222, .2);
+    background-image: url('../icons/settings-grey.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto;
+    z-index: 2;
+    padding: 1.5rem;
+    transition: background-image 2s ease, background-color 2s ease;
+}
+
+.audio-visualiser-open-button:hover {
+    cursor: pointer;
+    background-image: url('../icons/settings-hover.svg');
+    background-color: rgba(222, 222, 222, .6);
+}
+
+.audio-visualiser-button:hover {
+    background-color: lighten(rgba(173, 216, 230, .15), 40%);
+}
+
+.audio-visualiser-control-title {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    color: rgba(177, 177, 177, 1);
+}
+
+@media screen and(max-width: 1050px) {
+    .audio-visualiser-control {
+        display: block;
+    }
+}
+
+@media screen and(max-width: 600px) {
+    .audio-visualiser-details {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+
+    .audio-visualiser-open-button {
+        top: 60px;
+        display: block;
+        height: 30px;
+        padding: 1rem;
+        margin-right: 1vw;
+    }
+
+    .audio-visualiser-controls {
+        top: 60px;
+        right: 0;
+        display: block;
+        margin-right: 1vw;
+        height: 170px;
+        padding: 1.5rem .5rem .75rem;
+    }
+
+    .audio-visualiser-button {
+        padding: .5rem .75rem;
+        margin: .7rem 0;
+    }
 }
