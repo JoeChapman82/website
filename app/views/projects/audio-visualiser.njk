@@ -12,7 +12,7 @@
 {% endblock %}
 
 {% block main %}
-<div class="audio-visualiser-main-wrapper">
+<div id="audioVisualiserWrapper" class="audio-visualiser-main-wrapper">
     <div id="controlsWrapper" class="audio-visualiser-details">
         <input class="audio-visualiser-file-input" type="file" id="fileInput" accept="audio/*" />
         <audio class="audio-visualiser-audio-control hello" id="audioElement" controls controlsList="nodownload"></audio>
@@ -20,20 +20,23 @@
     <div id="audioVisualiserBackground" class="audio-visualiser-bg audio-visualiser-bg-0">
         <canvas class="audio-visualiser-canvas" id="canvas" width="900" height="650"></canvas>
     </div>
+
+
+    <button id="audioVisualiserOpenButton" class="audio-visualiser-open-button" type="button" name="button"></button>
+    <div id="audioVisualiserControls" class="audio-visualiser-controls js-hidden">
+        <fieldset>
+            <button id="audioVisualiserCloseButton" class="audio-visualiser-close-button" type="button" name="button">X</button>
+            <div class="audio-visualiser-control">
+                <span class="audio-visualiser-control-title">Controls</span>
+                <button id="audioVisualiserModeButton" class="audio-visualiser-button" type="button" name="button">Change Style</button>
+                <button id="audioVisualiserBackgroundButton" class="audio-visualiser-button" type="button" name="button">Change Background</button>
+                <button id="audioVisualiserTimerButton" class="audio-visualiser-button" type="button" name="button">Change Timer</button>
+            </div>
+        </fieldset>
+    </div>
 </div>
 
-<button id="audioVisualiserOpenButton" class="audio-visualiser-open-button" type="button" name="button"></button>
-<div id="audioVisualiserControls" class="audio-visualiser-controls js-hidden">
-    <fieldset>
-        <button id="audioVisualiserCloseButton" class="audio-visualiser-close-button" type="button" name="button">X</button>
-        <div class="audio-visualiser-control">
-            <span class="audio-visualiser-control-title">Controls</span>
-            <button id="audioVisualiserModeButton" class="audio-visualiser-button" type="button" name="button">Change Style</button>
-            <button id="audioVisualiserBackgroundButton" class="audio-visualiser-button" type="button" name="button">Change Background</button>
-            <button id="audioVisualiserTimerButton" class="audio-visualiser-button" type="button" name="button">Change Timer</button>
-        </div>
-    </fieldset>
-</div>
+
 
 {% endblock %}
 

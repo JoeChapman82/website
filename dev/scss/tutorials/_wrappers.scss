@@ -75,6 +75,19 @@
     border-radius: 5px;
 }
 
+.audio-visualiser-demo-canvas-wrapper {
+    position: relative;
+}
+
+.audio-visualiser-demo-canvas-controls-wrapper {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background-color: rgba(88, 88, 88, .8);
+    padding: .5rem;
+    width: 220px;
+}
+
 @media screen and(max-width: 1100px) {
     .tutorials-main-wrapper {
         padding-left: 13vw;

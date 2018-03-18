@@ -14,7 +14,7 @@
     padding: .5rem;
     border: 1px solid rgba(99, 99, 99, 1);
     background-color: rgba(122, 122, 122, .4);
-    z-index: 5;
+    z-index: 2;
 }
 
 .audio-visualiser-canvas {
@@ -26,11 +26,12 @@
 
 .audio-visualiser-bg {
     width: 100%;
-    height: calc(100vh - 50px);
+    // height: calc(100vh - 50px);
     max-width: 100%;
     position: absolute;
     top: 0;
     left: 0;
+    bottom: 0;
 }
 
 .audio-visualiser-bg-0 {
@@ -159,7 +160,7 @@
     }
 
     .audio-visualiser-open-button {
-        top: 60px;
+        top: 10px;
         display: block;
         height: 30px;
         padding: 1rem;
@@ -167,7 +168,7 @@
     }
 
     .audio-visualiser-controls {
-        top: 60px;
+        top: 10px;
         right: 0;
         display: block;
         margin-right: 1vw;

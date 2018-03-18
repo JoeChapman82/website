@@ -7,6 +7,7 @@ module.exports = {
     canvasDrawingCircles: [renderTutorials.canvasDrawingCircles],
     canvasDrawingTriangles: [renderTutorials.canvasDrawingTriangles],
     canvasLoadingSpinner: [renderTutorials.canvasLoadingSpinner],
+    canvasAudioVisualiser: [renderTutorials.canvasAudioVisualiser],
     canvasMatrixEffect: [renderTutorials.canvasMatrixEffect],
     gamesIndex: [renderTutorials.gamesIndex],
     gamesFpsCounter: [renderTutorials.gamesFpsCounter],

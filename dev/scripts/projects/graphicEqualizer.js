@@ -1,4 +1,5 @@
 (function() {
+
     "use strict";
     var canvas = document.getElementById("canvas");
     var ctx = canvas.getContext("2d");
@@ -301,6 +302,16 @@
     document.getElementById('audioVisualiserBackgroundButton').addEventListener('click', changeBackground);
     document.getElementById('audioVisualiserTimerButton').addEventListener('click', changeTimer);
     document.addEventListener('click', shouldCloseControls, true);
+
+    document.getElementById('fileInput').addEventListener('click', function() {
+        var el = document.getElementById('audioVisualiserWrapper');
+        var rfs = el.requestFullscreen || el.webkitRequestFullScreen || el.mozRequestFullScreen || el.msRequestFullscreen;
+        try {
+            rfs.call(el);
+        } catch(error) {
+            console.log('no full screen');
+        }
+    });
 
 
 })();

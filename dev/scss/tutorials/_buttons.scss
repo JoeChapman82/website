@@ -10,3 +10,17 @@
     font-size: calc(8px + 2vmin);
     z-index: 5;
 }
+
+.audio-visualiser-demo-canvas-file,
+.audio-visualiser-demo-canvas-audio {
+    display: block;
+}
+
+.audio-visualiser-demo-canvas-file {
+    margin-bottom: .25rem;
+    width: 200px;
+}
+
+.audio-visualiser-demo-canvas-audio {
+    width: 200px;
+}

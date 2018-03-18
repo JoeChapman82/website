@@ -23,4 +23,5 @@
     function isInPage(node) {
         return document.getElementById('mobileMenu').contains(node);
     }
+
 })();

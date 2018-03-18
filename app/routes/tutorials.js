@@ -7,6 +7,7 @@ module.exports = (tutorials) => {
     tutorials.get('/canvas/drawing-circles', tutorialsController.canvasDrawingCircles);
     tutorials.get('/canvas/drawing-triangles', tutorialsController.canvasDrawingTriangles);
     tutorials.get('/canvas/loading-spinner', tutorialsController.canvasLoadingSpinner);
+    tutorials.get('/canvas/audio-visualiser', tutorialsController.canvasAudioVisualiser);
     tutorials.get('/canvas/matrix-effect', tutorialsController.canvasMatrixEffect);
     tutorials.get('/games/index', tutorialsController.gamesIndex);
     tutorials.get('/games/display-fps-counter', tutorialsController.gamesFpsCounter);
