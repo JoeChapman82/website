@@ -331,7 +331,7 @@
         carwash: imageBasePath + 'carwash.png',
         pizza: imageBasePath + 'pizza.jpg',
         donut: imageBasePath + 'donut.jpg',
-        shrimp: imageBasePath + 'shrimp2.png',
+        shrimp: imageBasePath + 'shrimp.png',
         hockey: imageBasePath + 'hockey.png',
         studio: imageBasePath + 'studio.jpg',
         bank: imageBasePath + 'bank.png',
