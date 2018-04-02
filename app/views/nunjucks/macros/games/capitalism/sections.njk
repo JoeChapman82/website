@@ -1,0 +1,193 @@
+{% macro landingPage() %}
+    <div id="capitalismLandingPage" class="capitalism-landing-page">
+        <div class="capitalism-landing-new-game">
+            <div class="capitalism-landing-title-wrapper">
+                <h1 class="capitalism-main-title">Capitalism</h1>
+            </div>
+            <div class="capitalism-landing-start-wrapper">
+                <div id="capitalismLoadingMessage" class="capitalism-loading-message">
+                    <h2 class="capitalism-start-message">Now loading...</h2>
+                </div>
+                <div id="capitalismLoadingWrapper" class="capitalism-start-game-wrapper capitalism-is-loading">
+                    <p id="capitalismInitialStartMessage" class="capitalism-start-message"></p>
+                    <p id="capitalismIdleTime" class="capitalism-start-message"></p>
+                    <p id="capitalismIdleEarnings"  class="capitalism-start-message"></p>
+                    <button id="capitalismPlayButton" class="capitalism-start-game-button" type="button" name="button">Start</button>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro rotateDevice() %}
+<div class="capitalism-rotate-screen capitalism-no-display" id="capitalismRotateScreen">
+    <h1>Rotate device to play</h1>
+</div>
+{% endmacro %}
+
+{% macro company(name, id, initialCost) %}
+    <div id="{{ id }}UnpurchasedElement" class="capitalism-unbought-company-wrapper">
+        <button id="{{ id }}InitialBuyButton" class="capitalism-company-buy-initial-button capitalism-not-buyable" type="button" name="button" data-company="{{ id }}">
+            <span class="">Purchase your first {{ name }}</span>
+            <span class="">Price: {{ initialCost }}</span>
+        </button>
+    </div>
+    <div id="{{ id }}PurchasedElement" class="capitalism-company-wrapper capitalism-awaiting-purchase">
+        <div class="capitalism-company-left">
+            <div class="capitalism-company-run">
+                <button id="{{ id }}RunButton" class="capitalism-company-run-button {{ id }}-run-button" type="button" name="button">
+                    <span id="{{ id }}Owned" class="capitalism-company-owned">0</span>
+                </button>
+            </div>
+        </div>
+        <div class="capitalism-company-right">
+            <div class="capitalism-company-earnings">
+                <div class="capitalism-lupt"></div>
+                <div class="capitalism-llpt"></div>
+                <canvas class="capitalism-progress-canvas" id="{{ id }}ProgressCanvas" width="300" height="100"></canvas>
+                <span id="{{ id }}EarningsElement" class="capitalism-company-earnings-amount"></span>
+                <div class="capitalism-rupt"></div>
+                <div class="capitalism-rlpt"></div>
+            </div>
+            <div class="capitalism-company-options">
+                <div class="capitalism-company-buy-button-wrapper">
+                    <button id="{{ id }}BuyButton" class="capitalism-company-buy-button"  type="button" name="button" data-company="{{ id }}">
+                        <span class="capitalism-buy-button-left-top">Buy</span>
+                        <span id="{{ id }}IncrementElement" class="capitalism-buy-button-left-bottom capitalism-buy-increment">x 1</span>
+                        <span id="{{ id }}CostValue" class="capitalism-buy-button-right-top">50</span>
+                        <span id="{{ id }}CostName" class="capitalism-buy-button-right-bottom">million</span>
+                    </button>
+                </div>
+                <div class="capitalism-company-timer-wrapper">
+                    <div class="capitalism-timer-time">
+                        <span id="{{ id }}Timer">0:00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro managers(items) %}
+<div id="managerMenu" class="capitalism-menu capitalism-manager-menu">
+    <button class="capitalism-close-menu-button" type="button" name="button" data-menu="managerMenu">X</button>
+    <h1 class="capitalism-menu-heading">Managers</h1>
+    <div class="capitalism-manager-menu-managers-wrapper">
+        <div class="capitalism-manager-menu-managers">
+            {% for item in items %}
+                <div id="{{ item.id }}ManagerWrapper" class="capitalism-manager-buy-wrapper">
+                    <div class="capitalism-manager-avatar"></div>
+                    <div class="capitalism-manager-description">
+                        <h2 class="capitalism-manager-name">{{ item.name }}</h2>
+                        <p class="capitalism-manager-manager-of">Runs {{ item.runs }}</p>
+                        <p class="capitalism-manager-cost">£{{ item.price }}</p>
+                    </div>
+                    <div class="capitalism-menu-upgrade">
+                        <button id="{{ item.id }}Manager" class="capitalism-menu-upgrade-button capitalism-buy-manager-button capitalism-unavailable-option" type="button" name="button" data-cost="{{ item.price }}" data-company="{{ item.id }}">Employ</button>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endmacro %}
+
+{% macro achievements(items1, items2) %}
+    <div id="achievementsMenu" class="capitalism-menu capitalism-upgrades-menu">
+        <button class="capitalism-close-menu-button" type="button" name="button" data-menu="achievementsMenu">X</button>
+        <h1 class="capitalism-menu-heading">Achievements</h1>
+        <div class="capitalism-acheivements-menu-acheivements-wrapper">
+            <div class="capitalism-acheivements-menu-achievements-count">
+                <h2><span id="mainAchievementsText">0</span> out of 629 achievements unlocked</h2>
+            </div>
+            <p>Upcoming Achievements</p>
+            <div class="capitalism-acheivements-menu-achievements-section">
+                {% for item in items1 %}
+                    <div class="capitalism-acheivements-menu-achievement">
+                        <img id="{{ item }}AchievementImage" class="capitalism-acheivement-image" src="/images/games/arcade/capitalism/lemon.jpg" alt="">
+                        <span id="{{ item }}AchievementAmount" class="capitalism-acievement-text">100 lemons</span>
+                        <span id="{{ item }}AchievementReward" class="capitalism-acievement-text">2x lemon profit</span>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="capitalism-acheivements-menu-achievements-section">
+                {% for item in items2 %}
+                    <div class="capitalism-acheivements-menu-achievement">
+                        <img id="{{ item }}AchievementImage" class="capitalism-acheivement-image" src="/images/games/arcade/capitalism/lemon.jpg" alt="">
+                        <span id="{{ item }}AchievementAmount" class="capitalism-acievement-text">100 lemons</span>
+                        <span id="{{ item }}AchievementReward" class="capitalism-acievement-text">2x lemon profit</span>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="capitalism-acheivements-menu-achievements-section">
+                <div class="capitalism-acheivements-menu-achievement">
+                    <img id="superAchievementImage" class="capitalism-acheivement-image" src="/images/games/arcade/capitalism/lemon.jpg" alt="">
+                    <span id="superAchievementAmount" class="capitalism-acievement-text">100 lemons</span>
+                    <span id="superAchievementReward" class="capitalism-acievement-text">2x lemon profit</span>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro upgrades(items) %}
+<div id="upgradesMenu" class="capitalism-menu capitalism-upgrades-menu">
+    <button class="capitalism-close-menu-button" type="button" name="button" data-menu="upgradesMenu">X</button>
+    <h1 class="capitalism-menu-heading">Upgrades</h1>
+    <div class="capitalism-manager-menu-managers-wrapper">
+        <div class="capitalism-manager-menu-managers">
+            {% for i in range(0, 10) %}
+                <div id="upgradeWrapper{{ i }}" class="capitalism-manager-buy-wrapper" data-image="upgrade{{ i }}Image" data-name="upgrade{{ i }}Name" data-description="upgrade{{ i }}Description" data-cost="upgrade{{ i }}Cost" data-button="upgrade{{ i }}Button">
+                    <div class="capitalism-upgrade-image-wrapper">
+                        <img id="upgrade{{ i }}Image" class="capitalism-upgrade-image" src="/images/games/arcade/capitalism/lemon.jpg" alt="">
+                    </div>
+                    <div class="capitalism-manager-description">
+                        <h2 id="upgrade{{ i }}Name" class="capitalism-manager-name">name here</h2>
+                        <p id="upgrade{{ i }}Description"  class="capitalism-manager-manager-of">description</p>
+                        <p id="upgrade{{ i }}Cost"  class="capitalism-manager-cost">cost here</p>
+                    </div>
+                    <div class="capitalism-menu-upgrade">
+                        <button id="upgrade{{ i }}Button" class="capitalism-menu-upgrade-button capitalism-buy-upgrade-button capitalism-unavailable-option" type="button" name="button" data-cost="" data-company="" data-index="{{ i }}">Buy!</button>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endmacro %}
+
+{% macro angels() %}
+<div id="angelsMenu" class="capitalism-menu capitalism-upgrades-menu">
+    <button class="capitalism-close-menu-button" type="button" name="button" data-menu="angelsMenu">X</button>
+    <h1 class="capitalism-menu-heading">Angels</h1>
+    <div class="capitalism-manager-menu-managers-wrapper">
+        <div class="capitalism-angel-menu-wrapper">
+            <div class="capitalism-about-angels">
+                <p class="capitalism-angel-text">When you've made enough money, angels will fly down from the heavens to invest in your businesses.</p>
+                <p class="capitalism-angel-text">Each angel will increase your profits by 2%</p>
+                <p class="capitalism-angel-text">The catch? You need to reset your progress to get them on board. Don't worry. It's worth it.</p>
+            </div>
+            <div class="capitalism-angel-amounts">
+                <div class="">
+                    <p class="capitalism-angels-saved">Total Angels<br /><span id="savedAngels">0</span></p>
+                    <p class="capitalism-angels-bonus">Bonus per angel<br />
+                        <span id="angelsBonus">2</span>%</p>
+                    <p class="capitalism-angels-invested">Angels awaiting<br /><span id="newAngels">0</span></p>
+                </div>
+                <div class="">
+                    <button id="claimAngelButton" class="capitalism-claim-angel-button" type="button" name="button">Reset progress to claim</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+{% endmacro %}
+
+{% macro unlockNotice() %}
+<div id="capitalismUnlockNotice" class="capitalism-unlock-notice">
+    <h2 class="capitalism-unlock-notice-heading" >Acheivement!</h2>
+    <img id="capitalismUnlockImage" class="capitalism-unlock-notice-image" src="/images/games/arcade/capitalism/lemon.jpg" alt="">
+    <p id="capitalismUnlockText"  class="capitalism-unlock-notice-text" >Profit of lemon increased by 3!</p>
+</div>
+{% endmacro %}

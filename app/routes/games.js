@@ -13,6 +13,9 @@ module.exports = (games) => {
     games.get('/puzzle/match-three', gamesController.puzzleMatchThree);
 
     games.get('/adventure/index', gamesController.adventureIndex);
+
     games.get('/arcade/index', gamesController.arcadeIndex);
+    games.get('/arcade/capitalism', gamesController.arcadeCapitalism);
+
     return games;
 };

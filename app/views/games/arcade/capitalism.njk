@@ -1,0 +1,88 @@
+{% extends 'nunjucks/templates/base.njk' %}
+{% import "nunjucks/macros/games/navigation.njk" as navigation %}
+{% import "nunjucks/macros/games/capitalism/sections.njk" as sections %}
+
+
+
+{% block title %}Capitalism{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="/css/games.css">
+{% endblock %}
+
+{% block main %}
+<div id="capitalismFullScreen" class="capitalism-full-screen-wrapper">
+
+    {{ navigation.inGameButtons('/games/arcade/index', 'capitalism-ingame') }}
+
+    {{ sections.rotateDevice() }}
+
+    {{ sections.landingPage() }}
+
+    {{ sections.managers(
+        [{id: 'lemon', runs: 'Lemonade Stand', name: 'Sam Horner', price: '25.00'},
+        {id: 'news', runs: 'Newspapers', name: 'Bob Jamieson', price: '100.00'},
+        {id: 'carwash', runs: 'Carwash', name: 'Jim Sponge', price: '1000.00'},
+        {id: 'pizza', runs: 'Pizza', name: 'Sally Slice', price: '2500.00'},
+        {id: 'donut', runs: 'Donut Shop', name: 'Billy Dozen', price: '10000.00'},
+        {id: 'shrimp', runs: 'Shrimp Business', name: 'Billy Fish', price: '30000.00'},
+        {id: 'hockey', runs: 'Hockey Team', name: 'Puck Samson', price: '75000.00'},
+        {id: 'studio', runs: 'Movie Studio', name: 'Marlo Munro', price: '120000.00'},
+        {id: 'bank', runs: 'Bank', name: 'Venessa Loadsamoney', price: '400000.00'},
+        {id: 'oil', runs: 'Oil Rig', name: 'Sam Horner', price: '1000000.00'}]
+    )}}
+
+    {{ sections.achievements(['lemon', 'news', 'carwash', 'pizza', 'donut'], ['shrimp', 'hockey', 'studio', 'bank', 'oil']) }}
+    {{ sections.upgrades()}}
+    {{ sections.angels()}}
+
+    {{ sections.unlockNotice() }}
+
+    <div class="capitalism-overlay">
+
+        <div class="capitalism-options">
+            <div class="capitalism-options-avatar">
+
+            </div>
+            <div class="capitalism-options-menus">
+                <button class="capitalism-options-button capitalism-open-menu-button" type="button" name="button" data-menu="achievementsMenu">Achievements</button>
+                <button class="capitalism-options-button capitalism-open-menu-button" type="button" name="button" data-menu="upgradesMenu">Upgrades</button>
+                <button class="capitalism-options-button capitalism-open-menu-button" type="button" name="button" data-menu="managerMenu">Managers</button>
+                <button class="capitalism-options-button capitalism-open-menu-button" type="button" name="button" data-menu="angelsMenu">Investors</button>
+            </div>
+        </div>
+
+        <div class="capitalism-main">
+
+            <div class="capitalism-main-head">
+                <p class="capitalism-total-cash" id="money">money</p>
+                <button id="changeBuyIncrementButton" class="capitalism-change-buy-increment" type="button" name="button">x 1</button>
+            </div>
+
+            <div class="capitalism-main-wrapper">
+                <div class="capitalism-main-left">
+                    {{ sections.company('Lemonade Stand', 'lemon', '£4') }}
+                    {{ sections.company('Newspaper Route', 'news', '£60') }}
+                    {{ sections.company('Carwash', 'carwash', '£720') }}
+                    {{ sections.company('Pizza Shop', 'pizza', '£8,640') }}
+                    {{ sections.company('Donut Shop', 'donut', '£103,680') }}
+                </div>
+                <div class="capitalism-main-right">
+                    {{ sections.company('Shirimp Business', 'shrimp', '£1.244 Million') }}
+                    {{ sections.company('Hockey Team', 'hockey', '£14.929 Million') }}
+                    {{ sections.company('Movie Studio', 'studio', '£179.159 Million') }}
+                    {{ sections.company('Bank', 'bank', '£2.149 Billion') }}
+                    {{ sections.company('Oil Rig', 'oil', '£25.798 Billion') }}
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <canvas id="capitalismCanvas" class="layered-game-screen-canvas" width="300" height="300"></canvas>
+
+</div>
+{% endblock %}
+
+{% block scripts %}
+    <script type="text/javascript" src="/scripts/games/arcade/capitalism.js"></script>
+{% endblock %}

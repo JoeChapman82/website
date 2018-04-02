@@ -28,6 +28,18 @@
             <audio class="audio-visualiser-demo-canvas-audio" id="audioElement" controls controlsList="nodownload"></audio>
         </div>
     </div>
+
+<div class="tutorial-code-block tutorial-code-block-j"><pre><code class="language-js">
+{{ highlightedCode.full.code | safe }}
+</code></pre>
+</div>
+
+<div class="tutorial-code-block tutorial-code-block-h"><pre><code class="language-html">
+{{ highlightedCode.baseHtml.code | safe }}
+</code></pre>
+</div>
+
+
     {{ typography.heading(2, content.subHeading1, 'introdution', 'anchor-point') }}
     {{ typography.parapgraph(content.p1) }}
     {{ typography.parapgraph(content.p2) }}

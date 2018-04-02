@@ -1,4 +1,5 @@
 const renderTutorials = require('./renders/renderTutorials');
+const obtainCodeForView = require('../middleware/obtainCodeForView');
 
 module.exports = {
     index: [renderTutorials.index],
@@ -7,7 +8,7 @@ module.exports = {
     canvasDrawingCircles: [renderTutorials.canvasDrawingCircles],
     canvasDrawingTriangles: [renderTutorials.canvasDrawingTriangles],
     canvasLoadingSpinner: [renderTutorials.canvasLoadingSpinner],
-    canvasAudioVisualiser: [renderTutorials.canvasAudioVisualiser],
+    canvasAudioVisualiser: [obtainCodeForView.canvas, renderTutorials.canvasAudioVisualiser],
     canvasMatrixEffect: [renderTutorials.canvasMatrixEffect],
     gamesIndex: [renderTutorials.gamesIndex],
     gamesFpsCounter: [renderTutorials.gamesFpsCounter],

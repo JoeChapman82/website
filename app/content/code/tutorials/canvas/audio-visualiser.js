@@ -1,3 +1,28 @@
+const code = {
+baseHtml: {
+    type: 'html',
+    code:
+`
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description" content="demonstration"/>
+        <meta name="author" content="me"/>
+        <title> page name - site name </title>
+    </head>
+    <body>
+        <canvas class="demo-canvas" id="exampleCanvas" width="600" height="300"></canvas>
+        <script type="text/javascript" src="example.js"></script>
+    </body>
+</html>
+`
+},
+full: {
+    type: 'javascript',
+    code:
+`
 (function() {
     "use strict";
     var canvas = document.getElementById("demoCanvasTop");
@@ -119,3 +144,8 @@
 
     animate();
 })();
+`
+}
+};
+
+module.exports = code;

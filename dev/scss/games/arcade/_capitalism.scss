@@ -1,0 +1,831 @@
+.capitalism-full-screen-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+.capitalism-ingame-home {
+    top: 2%;
+}
+
+.capitalism-ingame-menu {
+    top: 2%;
+}
+
+.capitalism-rotate-screen {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: $black;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.capitalism-rotate-screen h1 {
+    font-size: calc(12px + 4vmin);
+    color: $white;
+}
+
+.capitalism-no-display {
+    display: none;
+    visibility: hidden;
+}
+
+.capitalism-landing-page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 3;
+    font-family: fantasy;
+    background-color: rgba(133, 124, 116, 1);
+    // background-image: url('/images/games/arcade/capitalism/5099.png');
+}
+
+.capitalism-landing-start-wrapper {
+    width: 50%;
+}
+
+.capitalism-landing-new-game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+}
+
+.capitalism-main-title {
+    font-size: calc(32px + 6vmin);
+    font-weight: bold;
+    margin-bottom: 10vh;
+}
+
+.capitalism-start-message {
+    font-size: calc(18px + 3vmin);
+    margin-bottom: 4vh;
+}
+
+.capitalism-start-game-button {
+    font-size: calc(18px + 3vmin);
+    font-family: fantasy;
+    box-shadow: 3px 3px rgba(44, 44, 44, 1);
+    width: 100%;
+    padding: .7rem 1rem 0;
+    background-color: darken(rgba(133, 124, 116, 1), 20%);
+    border: 2px solid darken(rgba(133, 124, 116, 1), 40%);
+}
+
+.capitalism-landing-page-closed {
+    visibility: hidden;
+    display: none;
+}
+
+.capitalism-is-loading,
+.capitalism-now-loaded {
+    visibility: hidden;
+    display: none;
+}
+
+.capitalism-options-avatar {
+    background-image: url('/images/games/arcade/capitalism/moneybag.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.capitalism-menu {
+    visibility: hidden;
+    position: absolute;
+    top: 15vh;
+    width: 100%;
+    height: 85vh;
+    background-color: rgba(244, 244, 244, 1);
+    z-index: 10;
+    padding: 1.5rem;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    box-shadow: 0px -5px 5px rgba(44, 44, 44, .6);
+}
+
+.capitalism-upgrades-menu {
+    text-align: center;
+    background-color: rgba(218, 195, 180, 1);
+}
+
+.capitalism-close-menu-button {
+    position: absolute;
+    top: 1.5%;
+    right: 1%;
+    border-radius: 50%;
+    background: rgba(255, 188, 188, 1);
+    border: 3px solid rgba(88, 88, 88, 1);
+    font-size: calc(12px + 3vmin);
+    font-family: fantasy;
+    font-weight: bold;
+    padding: .6rem 2rem 0 2rem;
+    box-shadow: 3px 3px 3px rgba(44, 44, 44, .6);
+}
+
+.capitalism-acheivements-menu-acheivements-wrapper {
+    margin-top: 1rem;
+    padding: 1rem;
+    padding-top: 0;
+    border: 1px solid grey;
+    height: 70vh;
+    overflow-y: scroll;
+    background-color: rgba(222, 222, 222, .8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.capitalism-acheivements-menu-achievements-section {
+    width: 80%;
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: space-between;
+    margin: 5vh auto;
+    text-align: center;
+}
+
+.capitalism-acheivements-menu-achievement {
+    margin: 0 2vw;
+    border: 1px solid rgba(44, 44, 44, 1);
+    background-color: rgba(244, 244, 244, 1);
+    height: 10vh;
+    width: 10%;
+}
+
+.capitalism-acheivements-menu-achievements-count {
+    font-size: calc(12px + 3vmin);
+    font-family: fantasy;
+    padding: 1rem;
+}
+
+.capitalism-acievement-text {
+    font-size: calc(6px + 1.5vmin);
+    font-family: fantasy;
+    margin-top: .5rem;
+}
+
+.capitalism-acievement-text {
+    display: block;
+}
+
+.capitalism-acheivement-image {
+    height: 100%;
+    max-width: 100%;
+}
+
+.capitalism-menu-displayed {
+    visibility: visible;
+}
+
+.capitalism-manager-menu {
+    flex-direction: column;
+    border: 1px solid goldenrod;
+    text-align: center;
+    background: rgba(244, 223, 140, 1);
+    position: relative;
+}
+
+.capitalism-manager-menu-managers {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    align-items: center;
+}
+
+.capitalism-manager-menu-managers-wrapper {
+    margin-top: 1rem;
+    padding: 1rem;
+    padding-top: 0;
+    border: 1px solid grey;
+    height: 70vh;
+    overflow-y: scroll;
+    background-color: rgba(222, 222, 222, .8);
+}
+
+.capitalism-manager-buy-wrapper {
+    width: 50%;
+    margin-bottom: 1rem;
+    border: 3px solid rgba(44, 44, 44, 1);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height: 5rem;
+}
+
+.capitalism-manager-avatar {
+    width: 20%;
+    background-image: url('/images/games/arcade/capitalism/stickman.png');
+    background-size: cover;
+}
+
+.capitalism-upgrade-image-wrapper {
+    width: 20%;
+    background-color: rgba(244, 244, 244, 1);
+}
+
+.capitalism-upgrade-image {
+    size: 100%;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.capitalism-manager-description {
+    width: 60%;
+    padding: .25rem;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(222, 222, 222, 1);
+    align-content: space-between;
+    justify-content: space-between;
+}
+
+.capitalism-menu-upgrade {
+    width: 20%;
+    height: 100%;
+    background-color: rgba(70, 158, 190, 1);
+    border-left: 1px solid rgba(44, 44, 44, 1);
+    padding: .2rem;
+}
+
+.capitalism-menu-upgrade-button {
+    height: 100%;
+    width: 100%;
+    font-size: calc(14px + 1vmin);
+    font-family: Arial;
+    border: 3px solid rgba(44, 44, 44, 1);
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px rgba(44, 44, 44, .6);
+    background: rgba(249, 117, 44, 1);
+}
+
+.capitalism-angel-menu-wrapper {
+    width: 60%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    padding: 5vmin;
+    justify-content: center;
+}
+
+.capitalism-angel-text {
+    width: 75%;
+    line-height: 120%;
+    margin: 0 auto;
+    font-size: calc(8px + 2vmin);
+    font-family: fantasy;
+    margin-bottom: 2vmin;
+}
+
+.capitalism-angel-amounts {
+    background-color: rgba(222, 222, 222, 1);
+    padding: 2vmin;
+    border: 1px solid rgba(44, 44, 44, 1);
+    border-radius: 5px;
+}
+
+.capitalism-angels-bonus {
+    display: inline-block;
+    border: 1px solid rgba(66, 66, 66, 1);
+    padding: 1vmin 2vmin;
+    margin-bottom: 2vmin;
+    margin-right: 3vmin;
+    width: 40%;
+    font-size: calc(4px + 2vmin);
+    line-height: 140%;
+    background-color: rgba(134, 132, 198, .3);
+    border-radius: 5px;
+}
+
+.capitalism-angels-invested {
+    display: inline-block;
+    border: 1px solid rgba(66, 66, 66, 1);
+    padding: 1vmin 2vmin;
+    margin-bottom: 2vmin;
+    width: 40%;
+    font-size: calc(4px + 2vmin);
+    line-height: 140%;
+    background-color: rgba(134, 132, 198, .3);
+    border-radius: 5px;
+}
+
+.capitalism-angels-saved {
+    border: 1px solid rgba(66, 66, 66, 1);
+    margin: 2vmin auto;
+    padding: 1vmin 2vmin;
+    width: 40%;
+    font-size: calc(4px + 2vmin);
+    line-height: 140%;
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 5px;
+}
+
+.capitalism-claim-angel-button {
+    padding: 2vmin;
+    box-shadow: 2px 2px $black;
+    font-size: 120%;
+    font-weight: bold;
+    background-color: rgba(249, 117, 44, 1);
+    border: 1px solid rgba(44, 44, 44, 1);
+    border-radius: 5px;
+}
+
+.capitalism-unavailable-option {
+    background: rgba(222, 222, 222, 1);
+}
+
+.capitalism-manager-name {
+    font-size: calc(12px + 1.5vmin);
+    font-weight: bold;
+}
+
+.capitalism-manager-cost {
+    font-size: calc(12px + 1.25vmin);
+}
+
+.capitalism-menu-heading {
+    font-size: calc(18px + 4vmin);
+    font-weight: bold;
+    font-family: fantasy;
+}
+
+.capitalism-overlay {
+    // background-image: url('/images/games/arcade/capitalism/capitalism.jpg');
+    // background-size: cover;
+    background-color: rgba(113, 105, 97, 1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+    height: 100vh;
+    z-index: 2;
+}
+
+.capitalism-total-cash {
+    font-size: calc(10px + 4vmin);
+    color: rgba(233, 233, 233, 1);
+    display: inline-block;
+    margin: 2vmin;
+}
+
+.capitalism-options {
+    width: 20%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    border-right: 3px solid rgba(44, 44, 44, 1);
+    // background-image: url('/images/games/arcade/capitalism/5010.png');
+}
+
+.capitalism-options-avatar {
+    height: 32.5%;
+    border-bottom: 3px solid rgba(44, 44, 44, 1);
+}
+
+.capitalism-options-menus {
+    height: 66.5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 1rem;
+}
+
+.capitalism-options-button {
+    margin-bottom: 1rem;
+    padding: 2vmin 0;
+    font-size: calc(6px + 2vmin);
+    border-radius: 5px;
+    background-color: rgba(222, 123, 143, 1);
+    border: 3px solid rgba(99, 99, 99, 1);
+    box-shadow: 5px 5px 5px rgba(44, 44, 44, .8);
+    outline: none;
+}
+
+.capitalism-main {
+    width: 80%;
+    // background-image: url('/images/games/arcade/capitalism/5099.png');
+}
+
+.capitalism-main-head {
+    height: 15vh;
+    border-bottom: 3px solid rgba(44, 44, 44, 1);
+    box-shadow: 0 3px 2px -2px rgba(0, 0, 0, .7);
+}
+
+.capitalism-main-wrapper {
+    padding-top: .1vmin;
+    background-color: rgba(203, 132, 31, .4);
+    display: flex;
+    height: 85vh;
+    max-height: 85vh;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+}
+
+.capitalism-main-left {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: stretch;
+}
+
+.capitalism-main-right {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: stretch;
+}
+
+.capitalism-company-wrapper {
+    height: 15vh;
+    padding: .5rem 2rem .5rem 1.5rem;
+    display: flex;
+    flex-direction: row;
+    border: 1px solid rgba(44, 44, 44, 1);
+    background-color: rgba(133, 124, 116, 1);
+    box-shadow: 2px 2px $black;
+    border-radius: 5px;
+    margin: 1vmin;
+}
+
+.capitalism-unbought-company-wrapper {
+    height: 15vh;
+    padding: .5rem 2rem;
+    display: flex;
+    flex-direction: row;
+    border: 1px solid rgba(44, 44, 44, 1);
+    background-color: rgba(133, 124, 116, 1);
+    box-shadow: 2px 2px $black;
+    border-radius: 5px;
+    margin: 1vmin;
+}
+
+.capitalism-now-puchased {
+    visibility: hidden;
+    display: none;
+}
+
+.capitalism-awaiting-purchase {
+    visibility: hidden;
+    display: none;
+}
+
+.capitalism-company-left {
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.capitalism-company-right {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+.capitalism-company-earnings {
+    width: 100%;
+    height: 50%;
+    padding: .25rem;
+    position: relative;
+}
+
+.capitalism-progress-canvas {
+    width: 100%;
+    max-height: 100%;
+    background-color: rgba(222, 222, 222, 0.8);
+}
+
+.capitalism-lupt {
+    position: absolute;
+    top: .25rem;
+    width: 10%;
+    height: calc(50% - .25rem);
+    background: linear-gradient(to top right, rgba(133, 124, 116, 1) 0%, rgba(133, 124, 116, 1) 50%, transparent 50%);
+}
+
+.capitalism-llpt {
+    position: absolute;
+    bottom: .25rem;
+    width: 10%;
+    height: calc(50% - .25rem);
+    background: linear-gradient(to bottom right, rgba(133, 124, 116, 1) 0%, rgba(133, 124, 116, 1) 50%, transparent 50%);
+}
+
+.capitalism-rupt {
+    position: absolute;
+    top: .25rem;
+    right: 1%;
+    width: 11%;
+    height: calc(50% - .25rem);
+    background: linear-gradient(to top right, transparent 0%, transparent 50%, rgba(133, 124, 116, 1) 50%);
+}
+
+.capitalism-rlpt {
+    position: absolute;
+    top: 50%;
+    right: 1%;
+    width: 11%;
+    height: calc(50% - .25rem);
+    background: linear-gradient(to bottom right, transparent 0%, transparent 50%, rgba(133, 124, 116, 1) 50%);
+}
+
+.capitalism-company-earnings-amount {
+    position: absolute;
+    top: 57%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-weight: bold;
+    font-family: fantasy;
+    font-size: calc(4px + 2vmin);
+}
+
+.capitalism-timer-time {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(188, 188, 188, 1);
+    border-radius: 5px;
+    border: 3px solid rgba(66, 66, 66, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.capitalism-company-options {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: row;
+}
+
+.capitalism-company-timer-wrapper {
+    width: 30%;
+    position: relative;
+}
+
+.capitalism-company-run {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.capitalism-company-run-button {
+    // display: block;
+    display: flex;
+     justify-content: center;
+     align-items: center;
+    box-shadow: 1px 1px $black;
+    width: 12vmin;
+    height: 12vmin;
+    padding: 0;
+    border-radius: 50%;
+    margin-right: 1vmin;
+    position: relative;
+    outline: none;
+    background-repeat: no-repeat;
+}
+
+.capitalism-company-owned {
+    position: absolute;
+    width: 100%;
+    padding-top: 7%;
+    padding-bottom: 7%;
+    vertical-align: middle;
+    border: 1px solid darkgrey;
+    border-radius: 12px;
+    background-color: grey;
+    bottom: -4%;
+    left: 50%;
+    transform: translate(-50%);
+    box-shadow: 1px 1px $black;
+}
+
+.lemon-run-button {
+    background: url('/images/games/arcade/capitalism/lemon.jpg'), rgba(246, 246, 246, 1);
+    background-size: 85%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.news-run-button {
+    background: url('/images/games/arcade/capitalism/news.jpg'), rgba(246, 246, 246, 1);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.carwash-run-button {
+    background: url('/images/games/arcade/capitalism/carwash2.jpeg'), rgba(246, 246, 246, 1);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.pizza-run-button {
+    background: url('/images/games/arcade/capitalism/pizza.jpg'), rgba(246, 246, 246, 1);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.donut-run-button {
+    background: url('/images/games/arcade/capitalism/donut.jpg'), rgba(255, 255, 255, 1);
+    background-size: 85%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.shrimp-run-button {
+    background: url('/images/games/arcade/capitalism/shrimp2.png'), rgba(246, 246, 246, 1);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hockey-run-button {
+    background: url('/images/games/arcade/capitalism/hockey.png'), rgba(246, 246, 246, 1);
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: 50% 10%;
+}
+
+.studio-run-button {
+    background: url('/images/games/arcade/capitalism/studio.jpg'), rgba(246, 246, 246, 1);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.bank-run-button {
+    background: url('/images/games/arcade/capitalism/bank.png'), rgba(255, 255, 255, 1);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.oil-run-button {
+    background: url('/images/games/arcade/capitalism/oil.png'), rgba(255, 255, 255, 1);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.capitalism-company-run-button-message {
+    position: absolute;
+    top: 57%;
+    left: 50%;
+    transform: translate(-50%, -43%);
+}
+
+.capitalism-company-buy-button-wrapper {
+    width: 70%;
+}
+
+.capitalism-company-buy-button {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    background-color: rgba(251, 117, 24, 1);
+    border: 1px solid rgba(44, 44, 44, 1);
+    position: relative;
+    font-family: fantasy;
+    outline: none;
+}
+
+.capitalism-company-buy-initial-button {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    background-color: rgba(251, 117, 24, 1);
+    border: 1px solid rgba(44, 44, 44, 1);
+    position: relative;
+    font-family: fantasy;
+    outline: none;
+}
+
+.capitalism-company-buy-initial-button > span {
+    font-size: calc(4px + 2vmin);
+    display: block;
+}
+
+.capitalism-not-buyable {
+    background-color: rgba(166, 166, 166, 1);
+}
+
+.capitalism-buy-button-left-top {
+    position: absolute;
+    top: 2px;
+    left: 5px;
+    font-size: calc(4px + 1.5vmin);
+}
+
+.capitalism-buy-button-right-top {
+    position: absolute;
+    top: 0;
+    right: 5px;
+    font-size: calc(4px + 2.5vmin);
+}
+
+.capitalism-buy-button-left-bottom {
+    position: absolute;
+    bottom: 2px;
+    left: 5px;
+    font-size: calc(4px + 2vmin);
+    line-height: 60%;
+}
+
+.capitalism-buy-button-right-bottom {
+    position: absolute;
+    bottom: 2px;
+    right: 5px;
+    font-size: calc(4px + 1.5vmin);
+    line-height: 60%;
+}
+
+.capitalism-change-buy-increment {
+    display: inline-block;
+    float: right;
+    margin: 2vmin;
+    margin-right: 6vw;
+    font-size: calc(12px + 3vmin);
+    background-color: rgba(251, 117, 24, 1);
+    font-family: fantasy;
+    line-height: 100%;
+    padding: .9rem 1.2rem .2rem 1.2rem;
+    border-radius: 5px;
+    width: 15vmin;
+    outline: none;
+}
+
+.capitalism-unlock-notice {
+    position: absolute;
+    bottom: 0%;
+    left: 1%;
+    z-index: 20;
+    height: 28%;
+    width: 17.5%;
+    border: 3px solid rgba(44, 44, 44, 1);
+    box-shadow: 3px 3px rgba(44, 44, 44, .6);
+    padding: 1rem;
+    text-align: center;
+    font-family: fantasy;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background-color: rgba(222, 222, 222, 1);
+    visibility: hidden;
+}
+
+.capitalism-unlock-notice-heading {
+    font-size: calc(8px + 1.75vmin);
+    margin-bottom: .5rem;
+    font-weight: bold;
+}
+
+.capitalism-unlock-notice-image {
+    max-width: 100%;
+    height: 60%;
+    margin-bottom: .5rem;
+}
+
+.capitalism-unlock-notice-displayed {
+    visibility: visible;
+}
+
+// media queries
+@media screen and(max-width: 900px) {
+    .capitalism-change-buy-increment {
+        padding: 0;
+        padding-top: .5rem;
+        margin-right: 10vw;
+        font-size: calc(8px + 3vmin);
+    }
+
+    .capitalism-company-wrapper,
+    .capitalism-unbought-company-wrapper {
+        padding: 0;
+    }
+
+    .capitalism-company-run-button {
+        margin-right: -2vmin;
+    }
+}
