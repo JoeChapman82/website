@@ -8,6 +8,7 @@ module.exports = {
     actionIndex: [renderGames.actionIndex],
     puzzleIndex: [renderGames.puzzleIndex],
     puzzleMatchThree: [renderGames.puzzleMatchThree],
+    puzzleSudoku: [renderGames.puzzleSudoku],
     adventureIndex: [renderGames.adventureIndex],
     arcadeIndex: [renderGames.arcadeIndex],
     arcadeCapitalism: [renderGames.arcadeCapitalism]

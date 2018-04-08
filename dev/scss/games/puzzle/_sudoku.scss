@@ -1,0 +1,308 @@
+.sudoku-wrapper {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    height: 100vh;
+    background: #38404e url('../images/games/tile.png') 0 0 repeat;
+}
+
+.sudoku-inner-wrapper {
+    width: 450px;
+    max-width: 100%;
+    margin: 0 auto;
+    height: 100vh;
+    max-height: 100vh;
+    position: relative;
+    border: 2px solid $black;
+    background-color: rgba(232, 232, 232, 1);
+    display: flex;
+    flex-direction: column;
+}
+
+.sudoku-start-page {
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: repeating-linear-gradient(45deg, #606dbc, #606dbc 20px, #465298 20px, #465298 40px);
+    text-align: center;
+    border: 6px solid rgba(66, 66, 66, 1);
+}
+
+.sudoku-start-page-inner {
+    width: 80%;
+    height: 40%;
+    background-color: #6cf;
+    border: 6px solid rgba(66, 66, 66, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 6px 6px 6px rgba(44, 44, 44, .6);
+}
+
+.sudoku-start-page-inner h1 {
+    font-size: calc(16px + 6vmin);
+    font-weight: bold;
+    margin-bottom: 10%;
+}
+
+.sudoku-play-button {
+    font-size: calc(6px + 5vmin);
+    border: 2px solid rgba(44, 44, 44, 1);
+    box-shadow: 6px 6px 6px rgba(44, 44, 44, .6);
+    background-color: rgba(182, 182, 182, 1);
+    outline: none;
+    border-radius: 5px;
+    width: 75%;
+    padding: 1rem;
+}
+
+.sudoku-play-button:hover {
+    background-color: lighten(rgba(182, 182, 182, 1), 15%);
+}
+
+.sudoku-heading-wrapper {
+    height: 7.5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #6cf;
+}
+
+.sudoku-main-wrapper {
+    width: 100%;
+    height: 50%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.sudoku-buttons-wrapper {
+    height: 30%;
+    padding: 2vmin;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: #0099CC;
+    border-top: 3px solid rgba(44, 44, 44, 1);
+    border-left: 1px solid $black;
+    border-right: 1px solid $black;
+}
+
+.sudoku-bottom-wrapper {
+    height: 14%;
+    border: 1px solid $black;
+    background-color: darken(#0099CC, 10%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sudoku-number-buttons {
+    margin-bottom: 4vmin;
+}
+
+.sudoku-number-button {
+    padding: .5vmin;
+    width: 8.9%;
+    font-size: calc(8px + 2vmin);
+    border: 2px solid rgba(44, 44, 44, 1);
+    box-shadow: 2px 2px 2px rgba(44, 44, 44, .6);
+    background-color: rgba(182, 182, 182, 1);
+    outline: none;
+    border-radius: 5px;
+}
+
+.sudoku-eraser-button {
+    background: url('/images/games/puzzle/sudoku/eraser.svg'), rgba(182, 182, 182, 1);
+    background-size: 80% 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.sudoku-eraser-button:hover {
+    background: url('/images/games/puzzle/sudoku/eraser.svg'), lighten(rgba(182, 182, 182, 1), 15%);
+    background-size: 85% 85%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.sudoku-option-button,
+.sudoku-difficulty-button {
+    padding: .5vmin;
+    border-radius: 5px;
+    width: 32%;
+    font-size: calc(6px + 1vmin);
+    border: 2px solid rgba(44, 44, 44, 1);
+    box-shadow: 2px 2px 2px rgba(44, 44, 44, .6);
+    background-color: rgba(182, 182, 182, 1);
+    outline: none;
+    margin-bottom: 2vmin;
+}
+
+.sudoku-number-button:hover,
+.sudoku-option-button:hover,
+.sudoku-difficulty-button:hover {
+    background-color: lighten(rgba(182, 182, 182, 1), 20%);
+}
+
+.sudoku-subheading {
+    font-size: calc(6px + 1.75vmin);
+    margin-bottom: .35vmin;
+}
+
+.sudoku-selected-button {
+    background-color: lightyellow;
+}
+
+.sudoku-title {
+    font-size: calc(8px + 3vmin);
+    font-weight: bold;
+}
+
+.sudoku-user-entry {
+    color: rgba(66, 66, 255, 1);
+}
+
+.sudoku-table {
+    width: 100%;
+    height: 100%;
+    table-layout: fixed;
+    font-size: calc(6px + 2vmin);
+}
+
+.sudoku-number-wrapper {
+    position: relative;
+}
+
+.sudoku-number {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: calc(7px + 2vmin);
+}
+
+.sudoku-user-error {
+    background-color: rgba(255, 0, 0, .4);
+}
+
+.sudoku-user-error-single {
+    background-color: rgba(177, 14, 30, 1);
+}
+
+.sudoku-user-error-single span {
+    color: rgba(44, 44, 255, 1);
+}
+
+.sudoku-number:hover {
+    cursor: pointer;
+}
+
+.sudoku-number-wrapper:nth-of-type(n) {
+    border-right: 1px solid rgba(44, 44, 44, 1);
+}
+
+.sudoku-number-wrapper:nth-of-type(3n+0):not(:nth-of-type(9)) {
+    border-right: 4px solid rgba(44, 44, 44, 1);
+}
+
+.sudoku-number-wrapper:first-of-type {
+    border-left: 2px solid rgba(44, 44, 44, 1);
+}
+
+.sudoku-number-wrapper:nth-of-type(9) {
+    border-right: 2px solid rgba(44, 44, 44, 1);
+}
+
+.sudoku-row:first-of-type {
+    border-top: 4px solid rgba(44, 44, 44, 1);
+}
+
+.sudoku-row:nth-of-type(n) {
+    border-bottom: 1px solid rgba(44, 44, 44, 1);
+}
+
+.sudoku-row:nth-of-type(3n+0) {
+    border-bottom: 4px solid rgba(44, 44, 44, 1);
+}
+
+.sudoku-win-canvas {
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    background-color: $black;
+    border-top: 2px solid $black;
+}
+
+.sudoku-hidden {
+    visibility: hidden;
+    display: none;
+}
+
+.sudoku-ingame-button-home {
+    top: 10px;
+    left: 6px;
+}
+
+.sudoku-ingame-button-home svg,
+.sudoku-ingame-button-menu svg {
+    stroke: rgba(122, 122, 122, 1);
+}
+
+.sudoku-ingame-button-menu {
+    top: 10px;
+    right: 6px;
+}
+
+@media screen and(max-width: 800px) {
+    .sudoku-number-button {
+        margin-bottom: .75vmin;
+    }
+}
+
+@media screen and(max-width: 600px) {
+    .sudoku-option-button,
+    .sudoku-difficulty-button {
+        font-size: calc(6px + 2vmin);
+    }
+
+    .sudoku-number-button {
+        font-size: calc(8px + 3vmin);
+        margin-top: 1vmin;
+    }
+}
+
+@media screen and(max-width: 450px) {
+    .sudoku-number-button {
+        margin-bottom: 8vmin;
+    }
+
+    .sudoku-ingame-button-home {
+        top: 0px;
+        left: 6px;
+    }
+
+    .sudoku-ingame-button-menu {
+        top: 0px;
+        right: 6px;
+    }
+}
+
+@media screen and(max-width: 400px) {
+    .sudoku-number-button {
+        padding: .25vmin;
+        width: 8.5%;
+        margin-bottom: 4vmin;
+    }
+}

@@ -6,6 +6,7 @@ module.exports = {
     actionIndex: (req, res) => res.render('games/action/index'),
     puzzleIndex: (req, res) => res.render('games/puzzle/index'),
     puzzleMatchThree: (req, res) => res.render('games/puzzle/match-three'),
+    puzzleSudoku: (req, res) => res.render('games/puzzle/sudoku'),
     adventureIndex: (req, res) => res.render('games/adventure/index'),
     arcadeIndex: (req, res) => res.render('games/arcade/index'),
     arcadeCapitalism: (req, res) => res.render('games/arcade/capitalism')

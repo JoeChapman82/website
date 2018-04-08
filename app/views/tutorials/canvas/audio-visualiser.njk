@@ -29,6 +29,8 @@
         </div>
     </div>
 
+    {{ typography.parapgraph('Sorry. This tutorial isn\'t finished yet. I\'ve added the full code below until I get chance to finish it.') }}
+
 <div class="tutorial-code-block tutorial-code-block-j"><pre><code class="language-js">
 {{ highlightedCode.full.code | safe }}
 </code></pre>
@@ -46,7 +48,7 @@
     {{ typography.parapgraph(content.p3) }}
     {% include "nunjucks/partials/tutorials/canvas/base-html.njk" %}
 
-    {{ typography.rule('tutorials-seperator')}}
+    {# {{ typography.rule('tutorials-seperator')}}
     {{ typography.heading(2, content.subHeading2, 'settingUp', 'anchor-point') }}
     {% include "nunjucks/partials/tutorials/canvas/loading-spinner/example-1.njk" %}
 
@@ -80,7 +82,7 @@
         <div id="fullCodeResult" class="full-code-result">
             <canvas class="demo-canvas" id="demoCanvas" width="600" height="300"></canvas>
         </div>
-    </div>
+    </div> #}
 
     {{ typography.rule('tutorials-seperator')}}
     <div class="linked-tutorials">

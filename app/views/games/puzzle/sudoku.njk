@@ -1,0 +1,74 @@
+{% extends 'nunjucks/templates/base.njk' %}
+{% import "nunjucks/macros/games/navigation.njk" as navigation %}
+{% import "nunjucks/macros/games/typography.njk" as typography %}
+
+
+{% block title %}Sudoku{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="/css/games.css">
+{% endblock %}
+
+{% block main %}
+<div id="fullScreenWrapper" class="sudoku-wrapper">
+    {{ navigation.inGameButtons('/games/puzzle/index', 'sudoku-ingame-button') }}
+    <div class="sudoku-inner-wrapper">
+        <div id="sudokuStartPage" class="sudoku-start-page">
+            <div class="sudoku-start-page-inner">
+                {# <div class=""> #}
+                    <h1>SUDOKU</h1>
+                    <button id="sudokuPlayButton" class="sudoku-play-button" type="button" name="button">PLAY</button>
+                {# </div> #}
+            </div>
+        </div>
+        <div class="sudoku-heading-wrapper">
+            <h1 class="sudoku-title">SUDOKU</h1>
+        </div>
+        <div class="sudoku-main-wrapper">
+            <canvas id="sudokuWinCanvas" class="sudoku-win-canvas sudoku-hidden" width="600" height="600"></canvas>
+            <table class="sudoku-table">
+                <tbody>
+                    {% for i in range(0, 9) %}
+                        <tr class="sudoku-row">
+                            {% for j in range(0, 9) %}
+                                <td class="sudoku-number-wrapper">
+                                    <span id="sudoku-{{ i }}-{{ j }}" class="sudoku-number sudoku-cell">&nbsp;</span>
+                                </td>
+                            {% endfor %}
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="sudoku-buttons-wrapper">
+            <div class="sudoku-number-buttons">
+                    <button class="sudoku-number-button sudoku-eraser-button" type="button" name="button" data-number="x">&nbsp;</button>
+                {% for i in range(1, 10) %}
+                    <button class="sudoku-number-button {% if loop.index === 1 %}sudoku-selected-button{% endif %}" type="button" name="button" data-number="{{ i }}">{{ i }}</button>
+                {% endfor %}
+            </div>
+            <div class="sudoku-options-buttons">
+                <h2 class="sudoku-subheading">Validation</h2>
+                <button class="sudoku-option-button sudoku-validation-type-button sudoku-selected-button" type="button" name="button" data-method="entry">On entry</button>
+                <button class="sudoku-option-button sudoku-validation-type-button" type="button" name="button" data-method="completion">On completion</button>
+                <button id="startNewGameButton" class="sudoku-option-button" type="button" name="button">New game</button>
+            </div>
+            <div class="sudoku-difficulty-buttons">
+                <h2 class="sudoku-subheading">Difficulty</h2>
+                <button class="sudoku-difficulty-button sudoku-selected-button" type="button" name="button" data-difficulty="easy">Easy</button>
+                <button class="sudoku-difficulty-button" type="button" name="button" data-difficulty="medium">Medium</button>
+                <button class="sudoku-difficulty-button" type="button" name="button" data-difficulty="hard">Hard</button>
+            </div>
+        </div>
+        <div class="sudoku-bottom-wrapper">
+            <p>Brought to you by JoesPlayhouse</p>
+        </div>
+
+    </div>
+</div>
+<div class="clearfix"></div>
+{% endblock %}
+
+
+{% block scripts %}
+    <script type="text/javascript" src="/scripts/games/puzzle/sudoku.js"></script>
+{% endblock %}

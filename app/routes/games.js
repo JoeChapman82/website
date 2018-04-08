@@ -11,6 +11,7 @@ module.exports = (games) => {
 
     games.get('/puzzle/index', gamesController.puzzleIndex);
     games.get('/puzzle/match-three', gamesController.puzzleMatchThree);
+    games.get('/puzzle/sudoku', gamesController.puzzleSudoku);
 
     games.get('/adventure/index', gamesController.adventureIndex);
 
