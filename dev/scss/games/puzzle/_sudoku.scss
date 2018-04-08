@@ -111,7 +111,7 @@
 .sudoku-number-button {
     padding: .5vmin;
     width: 8.9%;
-    font-size: calc(8px + 2vmin);
+    font-size: calc(8px + 2.5vmin);
     border: 2px solid rgba(44, 44, 44, 1);
     box-shadow: 2px 2px 2px rgba(44, 44, 44, .6);
     background-color: rgba(182, 182, 182, 1);
@@ -181,12 +181,25 @@
     position: relative;
 }
 
+.sudoku-number-wrapper:hover {
+    cursor: pointer;
+}
+
 .sudoku-number {
     position: absolute;
     left: 50%;
     top: 50%;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
     transform: translate(-50%, -50%);
     font-size: calc(7px + 2vmin);
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .sudoku-user-error {
@@ -199,10 +212,6 @@
 
 .sudoku-user-error-single span {
     color: rgba(44, 44, 255, 1);
-}
-
-.sudoku-number:hover {
-    cursor: pointer;
 }
 
 .sudoku-number-wrapper:nth-of-type(n) {
@@ -278,8 +287,12 @@
     }
 
     .sudoku-number-button {
-        font-size: calc(8px + 3vmin);
+        font-size: calc(8px + 4vmin);
         margin-top: 1vmin;
+    }
+
+    .sudoku-number {
+        font-size: calc(7px + 4vmin);
     }
 }
 

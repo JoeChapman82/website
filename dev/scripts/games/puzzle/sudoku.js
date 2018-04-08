@@ -9,7 +9,7 @@
     var difficultyButtons = document.querySelectorAll('.sudoku-difficulty-button');
     var validationTypeButtons = document.querySelectorAll('.sudoku-validation-type-button');
     var startNewGameButton = document.getElementById('startNewGameButton');
-    var cellElements = document.querySelectorAll('.sudoku-cell');
+    var cellElements = document.querySelectorAll('.sudoku-number-wrapper');
     var playButton = document.getElementById('sudokuPlayButton');
     var startPage = document.getElementById('sudokuStartPage');
     var currentNumber = 1;
@@ -463,9 +463,10 @@
     }
 
     function handleUserEntry() {
-        if(this.classList.contains('sudoku-user-entry')) {
-            this.innerText = currentNumber !== 'x' ? currentNumber : '\xa0';
-            currentValidationType(this);
+        var cell = document.getElementById(this.dataset.cell);
+        if(cell.classList.contains('sudoku-user-entry')) {
+            cell.innerText = currentNumber !== 'x' ? currentNumber : '\xa0';
+            currentValidationType(cell);
             checkForCompletion();
         }
     }
@@ -525,8 +526,8 @@
 
     function clearAllUserErrors() {
         cellElements.forEach(function(cell) {
-            cell.parentNode.classList.remove('sudoku-user-error-single');
-            cell.parentNode.classList.remove('sudoku-user-error');
+            cell.classList.remove('sudoku-user-error-single');
+            cell.classList.remove('sudoku-user-error');
         });
     }
 
@@ -545,14 +546,15 @@
 
     function clearDisplayedErrors() {
         cellElements.forEach(function(cell) {
-            cell.parentNode.classList.remove('sudoku-user-error');
+            cell.classList.remove('sudoku-user-error');
         });
     }
 
     function checkForCompletion() {
         var hasErrors = false;
         for(var i = 0; i < cellElements.length; i++) {
-            if(cellElements[i].innerText === '\xa0') {
+            var cell = document.getElementById(cellElements[i].dataset.cell);
+            if(cell.innerText === '\xa0') {
                 return false;
             }
         }
@@ -594,6 +596,7 @@
     }
 
     function changeValidationMethod() {
+        clearAllUserErrors();
         validationTypeButtons.forEach(function(button) {
             button.classList.remove('sudoku-selected-button');
         });
@@ -605,6 +608,7 @@
         var canvas = document.getElementById('sudokuWinCanvas');
         canvas.classList.remove('sudoku-hidden');
         var ctx = canvas.getContext('2d');
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
         var particles = [];

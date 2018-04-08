@@ -1,3 +1,4 @@
+
 {% extends 'nunjucks/templates/base.njk' %}
 {% import "nunjucks/macros/games/navigation.njk" as navigation %}
 {% import "nunjucks/macros/games/typography.njk" as typography %}
@@ -14,10 +15,8 @@
     <div class="sudoku-inner-wrapper">
         <div id="sudokuStartPage" class="sudoku-start-page">
             <div class="sudoku-start-page-inner">
-                {# <div class=""> #}
-                    <h1>SUDOKU</h1>
-                    <button id="sudokuPlayButton" class="sudoku-play-button" type="button" name="button">PLAY</button>
-                {# </div> #}
+                <h1>SUDOKU</h1>
+                <button id="sudokuPlayButton" class="sudoku-play-button" type="button" name="button">PLAY</button>
             </div>
         </div>
         <div class="sudoku-heading-wrapper">
@@ -30,7 +29,7 @@
                     {% for i in range(0, 9) %}
                         <tr class="sudoku-row">
                             {% for j in range(0, 9) %}
-                                <td class="sudoku-number-wrapper">
+                                <td class="sudoku-number-wrapper" data-cell="sudoku-{{ i }}-{{ j }}">
                                     <span id="sudoku-{{ i }}-{{ j }}" class="sudoku-number sudoku-cell">&nbsp;</span>
                                 </td>
                             {% endfor %}
