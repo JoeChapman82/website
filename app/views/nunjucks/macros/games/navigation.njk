@@ -2,7 +2,7 @@
 <div class="games-index-flex-wrapper">
     {% for item in links %}
         <a class="games-index-link" href="{{ item.href }}">
-        <div class="games-index-link-image {% if item.class %}{{ item.class }}{% endif %}" {% if item.img %}style="background-image: url({{ item.img }})"{% endif %}>
+        <div class="games-index-link-image {% if item.class %}{{ item.class }}{% endif %}" {% if item.img %}style="background-image: url({{ item.img }}), linear-gradient(to top, #4c6778, #96a7af)"{% endif %}>
 
         </div>
         <div class="games-index-link-title">

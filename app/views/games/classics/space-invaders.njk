@@ -1,0 +1,34 @@
+{% extends 'nunjucks/templates/base.njk' %}
+{% import "nunjucks/macros/games/navigation.njk" as navigation %}
+
+{% block title %}Space Invaders{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="/css/games.css">
+{% endblock %}
+
+{% block main %}
+<div id="fullScreenWrapper" class="space-invaders-overlay">
+
+    <div id="landingScreen" class="invaders-landing-screen">
+        <h1>SPACE<br />INVADERS</h1>
+        <p>Touch: left or right to move and shoot.</p>
+        <p>Keyboard: Arrow keys move, space to fire.</p>
+        <button id="playButton" class="invaders-play-button" type="button" name="button">PLAY</button>
+    </div>
+
+    <div id="rotateScreen" class="invaders-rotate-screen invaders-no-display">
+        <h1>Please rotate device</h1>
+    </div>
+
+    {{ navigation.inGameButtons('/games/classics/index', 'invaders-ingame-button') }}
+
+    <canvas id="invadersMainCanvas" class="space-invaders-main-canvas" width="1920" height="1080"></canvas>
+    <canvas id="invadersBgCanvas" class="space-invaders-bg-canvas" width="1920" height="1080"></canvas>
+
+
+</div>
+{% endblock %}
+
+{% block scripts %}
+    <script type="text/javascript" src="/scripts/games/classics/space-invaders.js"></script>
+{% endblock %}

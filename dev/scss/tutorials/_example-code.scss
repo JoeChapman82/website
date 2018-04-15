@@ -47,6 +47,7 @@
     line-height: 1.4;
     font-family: Menlo Inconsolata, Monaco, Consolas, 'Courier New', Courier;
     font-size: calc(8px + .75vmin);
+    -ms-overflow-style: none;
 }
 
 .tutorial-code-block {
@@ -64,6 +65,7 @@
     line-height: 1.4;
     font-family: Menlo Inconsolata, Monaco, Consolas, 'Courier New', Courier;
     font-size: calc(8px + .75vmin);
+    -ms-overflow-style: none;
 }
 
 .full-code-wrapper .tutorial-code-block {

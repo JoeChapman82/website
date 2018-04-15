@@ -12,15 +12,17 @@
     var cellElements = document.querySelectorAll('.sudoku-number-wrapper');
     var playButton = document.getElementById('sudokuPlayButton');
     var startPage = document.getElementById('sudokuStartPage');
-    var currentNumber = 1;
+    var currentNumber = 'x';
     var isComplete;
+    var initialLoadComplete = false;
+    var isLoading = true;
     var solution;
     var startTime = Date.now();
     var completionTime = 0;
     var difficulties = {
         easy: 40,
         medium: 50,
-        hard: 63
+        hard: 64
     };
     var validationTypes = {
         entry: handleEntryValidation,
@@ -417,6 +419,10 @@
 
     function setup(difficulty) {
         isComplete = false;
+        isLoading = true;
+        if(!!initialLoadComplete) {
+            displayLoadingMessage();
+        }
         initGrid();
         setGrid(0, 0);
         setAllCluesTrue();
@@ -425,6 +431,9 @@
         removeEntries(difficulty);
         resetSolutionInGrid();
         linkElements();
+        isLoading = false;
+        initialLoadComplete = true;
+        clearLoadingMessage();
         startTime = Date.now();
     }
 
@@ -582,17 +591,22 @@
     }
 
     function startNewGame() {
-        clearAllUserErrors();
-        setup(currentDifficulty);
+        if(!isLoading) {
+            clearAllUserErrors();
+            setup(currentDifficulty);
+        }
     }
 
     function changeDifficulty() {
-        clearAllUserErrors();
-        difficultyButtons.forEach(function(button) {
-            button.classList.remove('sudoku-selected-button');
-        });
-        this.classList.add('sudoku-selected-button');
-        setup(difficulties[this.dataset.difficulty]);
+        if(!isLoading && currentDifficulty !== difficulties[this.dataset.difficulty]) {
+            clearAllUserErrors();
+            difficultyButtons.forEach(function(button) {
+                button.classList.remove('sudoku-selected-button');
+            });
+            this.classList.add('sudoku-selected-button');
+            currentDifficulty = difficulties[this.dataset.difficulty];
+            setup(difficulties[this.dataset.difficulty]);
+        }
     }
 
     function changeValidationMethod() {
@@ -602,6 +616,26 @@
         });
         this.classList.add('sudoku-selected-button');
         currentValidationType = validationTypes[this.dataset.method];
+    }
+
+    function displayLoadingMessage() {
+        var canvas = document.getElementById('sudokuWinCanvas');
+        var ctx = canvas.getContext('2d');
+        canvas.classList.remove('sudoku-hidden');
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = 'rgba(222, 222, 222, 1)';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = 'black';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.font = '48px Arial';
+        ctx.beginPath();
+        ctx.fillText('Generating puzzle...', canvas.width / 2, canvas.height / 2);
+    }
+
+    function clearLoadingMessage() {
+        var canvas = document.getElementById('sudokuWinCanvas');
+        canvas.classList.add('sudoku-hidden');
     }
 
     function playVictoryAnimation() {

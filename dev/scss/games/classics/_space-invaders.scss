@@ -1,0 +1,85 @@
+.space-invaders-overlay {
+    width: 100%;
+    max-width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+}
+
+.invaders-rotate-screen,
+.invaders-landing-screen {
+    width: 100%;
+    max-width: 100%;
+    height: 100vh;
+    position: absolute;
+    background-color: $black;
+    top: 0;
+    left: 0;
+    z-index: 4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.invaders-rotate-screen h1 {
+    font-size: calc(12px + 4vmin);
+    color: $white;
+}
+
+.invaders-landing-screen h1 {
+    font-size: calc(12px + 13vmin);
+    color: $white;
+    margin-bottom: 5vmin;
+}
+
+.invaders-landing-screen p {
+    font-size: calc(6px + 3vmin);
+    color: $white;
+    margin-bottom: 5vmin;
+}
+
+.invaders-play-button {
+    font-size: calc(12px + 4vmin);
+    background-color: rgba(222, 222, 222, 1);
+    border: 3px solid rgba(155, 155, 155, 1);
+    padding: 4vmin 8vmin;
+    border-radius: 5px;
+}
+
+.space-invaders-main-canvas {
+    max-width: 100%;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.space-invaders-bg-canvas {
+    width: 100%;
+    max-width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.invaders-ingame-button-home {
+    top: 10px;
+    left: 5px;
+}
+
+.invaders-ingame-button-menu {
+    top: 10px;
+    right: 5px;
+}
+
+.invaders-no-display {
+    visibility: hidden;
+    display: none;
+}

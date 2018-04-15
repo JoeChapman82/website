@@ -1174,7 +1174,6 @@
 
     window.addEventListener('resize', function() {
         if(window.innerWidth < window.innerHeight) {
-            console.log('it happended');
             rotateScreen.classList.remove('capitalism-no-display');
         } else if(!rotateScreen.classList.contains('capitalism-no-display')) {
             rotateScreen.classList.add('capitalism-no-display');

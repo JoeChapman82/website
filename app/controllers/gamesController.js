@@ -5,6 +5,8 @@ module.exports = {
     classicsIndex: [renderGames.classicsIndex],
     classicsSnake: [renderGames.classicsSnake],
     classicsPong: [renderGames.classicsPong],
+    classicsAsteroids: [renderGames.classicsAsteroids],
+    classicsSpaceInvaders: [renderGames.classicsSpaceInvaders],
     actionIndex: [renderGames.actionIndex],
     puzzleIndex: [renderGames.puzzleIndex],
     puzzleMatchThree: [renderGames.puzzleMatchThree],

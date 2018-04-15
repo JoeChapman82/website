@@ -1,0 +1,40 @@
+{% extends 'nunjucks/templates/base.njk' %}
+{% import "nunjucks/macros/games/navigation.njk" as navigation %}
+
+{% block title %}Asteroids{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="/css/games.css">
+{% endblock %}
+
+{% block main %}
+<div id="fullScreenWrapper" class="asteroids-overlay">
+
+    <div id="landingScreen" class="asteroids-landing-screen">
+        <h1>ASTEROIDS</h1>
+        <div class="asteroids-high-scores-wrapper">
+            <h2 class="asteroids-highscore-heading">High Scores</h2>
+            {% for i in range(1, 6) %}
+            <p class="asteroids-high-score" data-score="asteroidsHighScoreScore-{{ i }}" data-player="asteroidsHighScorePlayer-{{ i }}">{{ i }}: <span id="asteroidsHighScorePlayer-{{ i }}">BOB</span> - <span  id="asteroidsHighScoreScore-{{ i }}">10000</span></p>
+            {% endfor %}
+        </div>
+        <p>Touch: No touch controls yet - sorry</p>
+        <p>Keyboard: Arrow keys move, space to fire.</p>
+        <button id="playButton" class="asteroids-play-button" type="button" name="button">PLAY</button>
+    </div>
+
+    <div id="rotateScreen" class="asteroids-rotate-screen asteroids-no-display">
+        <h1>Please rotate device</h1>
+    </div>
+
+    {{ navigation.inGameButtons('/games/classics/index', 'asteroids-ingame-button') }}
+
+    <canvas id="asteroidsMainCanvas" class="asteroids-main-canvas" width="1920" height="1080"></canvas>
+    <canvas id="asteroidsBgCanvas" class="asteroids-bg-canvas" width="1920" height="1080"></canvas>
+
+
+</div>
+{% endblock %}
+
+{% block scripts %}
+    <script type="text/javascript" src="/scripts/games/classics/asteroids.js"></script>
+{% endblock %}

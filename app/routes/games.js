@@ -6,6 +6,8 @@ module.exports = (games) => {
     games.get('/classics/index', gamesController.classicsIndex);
     games.get('/classics/snake', gamesController.classicsSnake);
     games.get('/classics/pong', gamesController.classicsPong);
+    games.get('/classics/asteroids', gamesController.classicsAsteroids);
+    games.get('/classics/space-invaders', gamesController.classicsSpaceInvaders);
 
     games.get('/action/index', gamesController.actionIndex);
 
