@@ -9,7 +9,9 @@
   "scripts": {
     "test": "NODE_ENV=testing mocha --recursive",
     "start": "node app.js",
-    "package": "zip -r alpha-release-${VERSION}.zip app app.js package.json && mv ./alpha-release-${VERSION}.zip ../releases/controller"
+    "package": "zip -r alpha-release-${VERSION}.zip app app.js package.json && mv ./alpha-release-${VERSION}.zip ../releases/controller",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "keywords": [
     "website"
@@ -56,6 +58,8 @@
     "request": "^2.83.0",
     "request-promise-native": "^1.0.5",
     "require-dir": "^0.3.2",
-    "serve-favicon": "^2.4.5"
-  }
+    "serve-favicon": "^2.4.5",
+    "snyk": "^1.316.1"
+  },
+  "snyk": true
 }
