@@ -49,7 +49,7 @@
     "express-nunjucks": "^2.2.3",
     "helmet": "^3.9.0",
     "jsonwebtoken": "^8.1.0",
-    "nunjucks": "^3.0.1",
+    "nunjucks": "^3.2.1",
     "path": "^0.12.7",
     "pdfkit": "^0.8.3",
     "prismjs": "^1.12.2",
